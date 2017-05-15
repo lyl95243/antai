@@ -1,0 +1,117 @@
+.sysSet{
+    height: 790px;
+    border: 1px solid lightgray;
+    border-top: none;
+    border-radius: 4px;
+    padding: 22px 0 0 18px;
+    margin: 0 12px 0 12px;
+    background: #f7f7f7;
+    position: relative;
+}
+.fenxian{
+    width: 100%;
+    height: 20px;
+    background: url("../image/hacker_03.png") center;
+    position: absolute;
+    top: 36px;
+    left: 0;
+}
+.setWrap{
+    float: left;
+    position: relative;
+}
+.portset{
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #dedede;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid #aaaaaa;
+}
+.portset:hover{
+    background: #367ac5;
+    color: white;
+}
+.setWrapXl{
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 500px;
+    display:none;
+}
+.portsetB{
+    background: #367ac5;
+    color: white;
+}
+.table tr th,.table tr td{
+    text-align: center;
+}
+.edit{
+    height: 21px;
+    width: 68px;
+    border: none;
+    color:#3c8fc7;
+    background: transparent;
+}
+.edit:hover{
+    background: #3c8fc7;
+    border-radius: 5px;
+    color: white;
+}
+.addd{
+    height: 24px;
+    line-height: 24px;
+    width: 73px;
+    border: none;
+    cursor: pointer;
+    background: #3c8fc7;
+    border-radius: 5px;
+    color: white;
+    margin:15px 0 0 29px;
+}
+.addMange{
+    height: 41px;
+    line-height: 41px;
+    padding-left: 13px;
+    background: url("../image/tanchuang_03.png") center;
+}
+.addManC{
+    margin-bottom: 20px;
+}
+.addManC span{
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+    height: 29px;
+    line-height: 29px;
+    margin-right: 15px;
+}
+.addManC input{
+    border: 1px solid lightgray;
+    height: 29px;
+    width: 340px;
+}
+.quxiao,.chuangjian{
+    height: 28px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid lightgray;
+    float: right;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.modal-footer{
+    padding: 0 82px 15px 15px;
+    border-top: none;
+}
+.quxiao{
+    width: 58px;
+}
+.chuangjian{
+    width: 100px;
+    color: white;
+    margin: 0 95px 0 11px;
+    background: #3485bb;
+}

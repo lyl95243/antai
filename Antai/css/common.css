@@ -1,0 +1,171 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family:"微软雅黑";
+}
+#ifie6{
+    width: 650px;
+    height: 66px;
+    position: absolute;
+    top: 67%;left:50%;
+    margin-top:-250px;
+    margin-left:-250px;
+    color: #333;
+    padding: 40px 20px 12px 20px;
+    font-family: "微软雅黑";
+    background: lightgrey;
+    z-index: 999;
+}
+.header{
+    width: 100%;
+    height: 70px;
+    background: url("../image/Threat_03.png") center;
+}
+.logoWrap{
+    width: 11%;
+    height: 53px;
+    float: left;
+    text-align: center;
+    color: white;
+    margin-top: 17px;
+    cursor:pointer;
+}
+.logo{
+    font-weight:400;
+    font-size: 17px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.logoText{
+    font-size: 13px;
+    -webkit-text-size-adjust:auto;
+}
+.menu{
+    float: left;
+    margin-top:14px;
+    cursor: pointer;
+}
+.set{
+    float: right;
+    margin:25px 30px 0 0;
+    color:white;
+    font-size: 22px;
+    cursor: pointer;
+}
+/*头部结束*/
+/*左侧导航*/
+.row .leftNav{
+    width: 11%;
+    background: #f3f0f0;
+    padding: 0px;
+    float: left;
+}
+.even{
+    width: 100%;
+    height: 41px;
+    line-height: 41px;
+    cursor: pointer;
+    background: url("../image/Threat_05.png") center;
+}
+.even img{
+    width: 15%;
+    height: 41%;
+    margin:0 10% 0 20%;
+}
+.evenText{
+    width: 100%;
+    font-size: 95%;
+    color: #465467;
+}
+.evenXl{
+    height: 59px;
+    background: url("../image/Threat_08.png") center;
+    display: none;
+}
+.evenXll{
+    height: 28px;
+}
+.system{
+    height: 110px;
+    background: url("../image/system_03.png") center;
+}
+.evenXl a{
+    display: block;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    color: #89919d;
+    text-align: right;
+    padding-right: 24%;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.system a{padding-right: 31%}
+.evenXl a:hover{
+    text-decoration: none;
+    background: lightblue;
+}
+.row .rightC{
+    width: 89%;
+    padding:0;
+}
+@media (max-width:1600px){
+    .logoWrap{
+        width: 14%;
+    }
+    .row .leftNav{
+        width: 14%;
+    }
+    .row .rightC{
+        width: 86%;
+    }
+}
+.threatHead{
+    height: 40px;
+    background: url("../image/Threat_26.png") center;
+}
+.threatHead p{
+    color: #3479c1;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 15px;
+}
+.hideNav{
+    animation:hideN 0.5s linear forwards
+}
+@keyframes hideN {
+    0% {width: 11%;opacity: 1}
+    50%{width: 5.5%;opacity:0.1}
+    100% {width: 0;opacity: 0}
+}
+.showNav{
+    animation:showN 0.5s linear forwards
+}
+@keyframes showN {
+    0% {width: 0;opacity: 0; filter: alpha(opacity=0);}
+    50%{width: 5.5%;opacity:0.1;filter: alpha(opacity=10);}
+    100% {width: 11%;opacity: 1;filter: alpha(opacity=100)}
+}
+
+.showRight{
+    animation:hideR 0.5s linear forwards
+}
+@keyframes hideR {
+    0% {width: 89%;}
+    100% {width: 100%;}
+}
+.hideRight{
+    animation:showR 0.5s linear forwards
+}
+@keyframes showR {
+    0% {width: 100%}
+    100% {width: 89%}
+}

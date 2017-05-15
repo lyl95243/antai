@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮件详情</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/emailDetail.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/placehlod.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/emailDetail.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="logoWrap" onclick="window.open('index.html','_self')">
+        <p class="logo">LOGO</p>
+        <span class="logoText">慧眼网络空间威胁感知系统</span>
+    </div>
+    <div class="menu">
+        <img src="image/menu_03.png" alt="">
+    </div>
+    <div class="set">
+        <i class="fa fa-cog"></i>
+    </div>
+</div>
+<!--头部结束-->
+<!--内容开始-->
+<div class="container-fluid">
+    <div class="row">
+        <!--左侧导航-->
+        <div class="col-lg-2 leftNav col-md-2 col-sm-2">
+
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/evenicon.png" alt="">
+                    <span class="evenText">事件分析</span>
+                </div>
+                <div class="evenXl">
+                    <a href="threatStatistic.html" target="_self">威胁事件统计</a>
+                    <a href="onlineThreat.html" target="_self">上网行为分析</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/manges.png" alt="">
+                    <span class="evenText">资产管理</span>
+                </div>
+                <div class="evenXl evenXll">
+                    <a href="assetManage.html" target="_self">资产管理</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/systemmes.png" alt="">
+                    <span class="evenText">系统管理</span>
+                </div>
+                <div class="evenXl system">
+                    <a href="systemView.html" target="_self">系统概览</a>
+                    <a href="systemSet.html" target="_self">系统设置</a>
+                    <a href="systemUpgrade.html" target="_self">系统升级</a>
+                    <a href="userManage.html" target="_self">用户管理</a>
+                </div>
+            </div>
+        </div>
+        <!--左侧导航结束-->
+        <div class="col-lg-10 rightC col-md-10 col-sm-10">
+            <!--邮件详情-->
+            <div class="threatHead">
+                <p> 邮件详情</p>
+            </div>
+            <div class="rightContent">
+                <div class="rightConT">
+                    <ul>
+                        <li>
+                            <span>标题 &nbsp;:</span>
+                            <div class="dd">
+                                <p>我爱你</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>时间 &nbsp;:</span>
+                            <div class="dd">
+                                <p>2017-03-17 11:03:42</p>
+                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span>发件人 &nbsp;:</span>
+                            <div class="dd">
+                                <p>952430243@qq.com</p>
+                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span>收件人 &nbsp;:</span>
+                            <div class="dd">
+                                <p>csp001314@sohu.com</p>
+                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            </div>
+                        </li>
+                        <li>
+                            <span>抄送 &nbsp;:</span>
+                            <div class="dd">
+                                <p>cso1234@163.com</p>
+                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            </div>
+                            <div class="dd" style="margin-left: 5%">
+                                <p>kaoaaa@sina.com</p>
+                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            </div>
+                            <div class="dd" style="margin-left: 5%">
+                                <p>kkkkkk@126.com</p>
+                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <p style="color: darkgray">
+                        附件: <span>3</span>个 （png-w02-begond-student-state-of-ask 等）
+                    </p>
+                </div>
+                <div class="rightConM">
+                    <p>context->cpool = NULL;</p>
+                    <p>context->port = NULL;</p>
+                    <p>context->rxtp = NULL;</p>
+                    <p>context->log_name = LOG_NAME_DEFAULT;</p>
+                    <p>context->log_level = LOG_LEVEL_DEFAULT;</p>
+                    <p>context->core_mask = 0;</p>
+                    <p>context->port_rx_mask = 0;</p>
+                    <p>context->n_rxtasks = 1;</p>
+                    <p>context->astask_ring_size = 0;</p>
+                    <p>context->tcp_cfname = "/usr/local/dpdk/CloudHands/conf/assemble_tcp.conf";</p>
+                    <p>context->udp_cfname = "/usr/local/dpdk/CloudHands/conf/assemble_udp.conf";</p>
+                    <p>context->app_tcp_cfname = "/usr/local/dpdk/CloudHands/conf/app_tcp.conf";</p>
+                    <p>context->app_udp_cfname = "/usr/local/dpdk/CloudHands/conf/app_udp.conf";</p>
+                    <p>context->port_cfname = "/usr/local/dpdk/CloudHands/conf/port.conf";</p>
+                </div>
+                <div class="rightConB">
+                    <div class="fujian">
+                        附件:(<span>1</span>)
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src=js/placehlod.js></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/world.js"></script>
+    <script src="js/laydate-v1.1/laydate/laydate.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://www.5imoban.net/tpl/js/iepng.js"></script>
+    <script type="text/javascript">
+        EvPNG.fix('div, ul, img, li, input, a');
+    </script>
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <div id="ifie6"><span>
+        非常抱歉：您的浏览器版本过低。本网站不支持IE7及其以下版本内核的浏览器，请您更换更高级版本浏览器。
+        请<a href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads">点击</a>这里。</span>
+    </div>
+    <![endif]-->
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="logoWrap">
+        <p class="logo">LOGO</p>
+        <span class="logoText">慧眼网络空间威胁感知系统</span>
+    </div>
+    <div class="menu">
+        <img src="image/menu_03.png" alt="">
+    </div>
+    <div class="set">
+        <i class="fa fa-cog"></i>
+    </div>
+</div>
+<!--头部结束-->
+<!--内容开始-->
+<div class="container-fluid">
+    <div class="row">
+        <!--左侧导航-->
+        <div class="col-lg-2 leftNav col-md-2 col-sm-2">
+
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/evenicon.png" alt="">
+                    <span class="evenText">事件分析</span>
+                </div>
+                <div class="evenXl">
+                    <a href="threatStatistic.html" target="_self">威胁事件统计</a>
+                    <a href="onlineThreat.html" target="_self">上网行为分析</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/manges.png" alt="">
+                    <span class="evenText">资产管理</span>
+                </div>
+                <div class="evenXl evenXll">
+                    <a href="assetManage.html" target="_self">资产管理</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/systemmes.png" alt="">
+                    <span class="evenText">系统管理</span>
+                </div>
+                <div class="evenXl system">
+                    <a href="systemView.html" target="_self">系统概览</a>
+                    <a href="systemSet.html" target="_self">系统设置</a>
+                    <a href="systemUpgrade.html" target="_self">系统升级</a>
+                    <a href="userManage.html" target="_self">用户管理</a>
+                </div>
+            </div>
+        </div>
+        <!--左侧导航结束-->
+        <div class="col-lg-10 rightC col-md-10 col-sm-10" id="right">
+            <!--概要-->
+            <div class="threatHead">
+                <p> 首页</p>
+            </div>
+            <div class="rightCon">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                              data-toggle="tab">概要</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                               data-toggle="tab">服务器威胁</a>
+                    </li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
+                                               data-toggle="tab">上网威胁</a></li>
+                </ul>
+                <div class="tab-content">
+                    <!--概要-->
+                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                        <div class="textWrap">
+                            <div class="threatWrap row">
+                                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/shouye_03.png" style="vertical-align: top" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">1000</p>
+                                        <p class="heike">黑客</p>
+                                     </span>
+                                </div>
+                                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/shouye_05.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                       <p class="num">60</p>
+                                       <p class="heike">被攻击服务器</p>
+                                    </span>
+                                </div>
+                                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/shouye_07.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">20</p>
+                                        <p class="heike">攻击类型</p>
+                                     </span>
+                                </div>
+                                <div class="threatList col-lg-3 col-md-3 col-sm-3" style="border-right: none">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/shouye_09.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">800</p>
+                                        <p class="heike">利用协议</p>
+                                      </span>
+                                </div>
+                            </div>
+                            <div class="hackerDis">
+                                <div id="chart01"
+                                     style="width: 75%;margin: 0 auto;height: 560px;padding-top: 40px"></div>
+                            </div>
+                            <div class="hackerDis">
+                                <div style="width: 100%;clear: both;padding-top: 50px">
+                                    <button type="button" class="dayBut">每分钟/每小时</button>
+                                    <button type="button" class="dayBut" style="width: 4%;">按天</button>
+                                    <button type="button" class="dayBut">每周/每月</button>
+                                </div>
+                                <div id="chart02" style="height: 450px;width: 80%;margin: 0 auto;" ;></div>
+                            </div>
+                            <div class="hackerDis">
+                                <p style="margin: 0 0 29px 15px">威胁事件统计</p>
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th>内部IP</th>
+                                        <th>外部IP</th>
+                                        <th>事件类型</th>
+                                        <th>数量</th>
+                                        <th>百分比</th>
+                                    </tr>
+                                    <tr>
+                                        <td>172.16.4.10</td>
+                                        <td>192.168.1.1</td>
+                                        <td>访问黑域名</td>
+                                        <td>1000</td>
+                                        <td>50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>172.16.4.10</td>
+                                        <td>192.168.1.1</td>
+                                        <td>访问黑域名</td>
+                                        <td>1000</td>
+                                        <td>50</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--服务器威胁-->
+                    <div role="tabpanel" class="tab-pane fade" id="profile">
+                        <div class="textWrap">
+                            <div class="threatWrap row">
+                                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/Threat_11.png" style="vertical-align: top" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                          <p class="num">1000</p>
+                                          <p class="heike">黑客</p>
+                                    </span>
+                                </div>
+                                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/Threat_13.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">60</p>
+                                        <p class="heike">被攻击服务器</p>
+                                    </span>
+                                </div>
+                                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/Threat_16.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">20</p>
+                                        <p class="heike">攻击类型</p>
+                                    </span>
+                                </div>
+                                <div class="threatList col-lg-3 col-md-3 col-sm-3" style="border-right: none">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/Threat_19.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">800</p>
+                                        <p class="heike">利用协议</p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="hackerDis">
+                                <div id="chart03"
+                                     style="width: 75%;margin: 40px auto 30px;height: 560px"></div>
+                                <div id="chart04" style="height: 295px;width: 38%;float: left;margin: 0 6% 4% 6%;"></div>
+                                <div id="chart05" style="height: 295px;width: 44%;float: left;margin: 0 3% 0 3%;"></div>
+                                <div style="width: 98%;clear: both;border-top:1px solid lightgrey;padding-top: 50px;margin-left: 35px">
+                                    <button type="button" class="dayBut">每分钟/每小时</button>
+                                    <button type="button" class="dayBut" style="width: 4%;">按天</button>
+                                    <button type="button" class="dayBut">每周/每月</button>
+                                </div>
+                                <div id="chart06" style="height: 450px;width: 80%;margin: 0 auto;" ;></div>
+                                <div style="width: 96%;clear: both;border-top:1px solid lightgrey;padding-top: 50px;margin:30px auto 0">
+                                    <button type="button" class="dayBut">每分钟/每小时</button>
+                                    <button type="button" class="dayBut" style="width: 4%;">按天</button>
+                                    <button type="button" class="dayBut">每周/每月</button>
+                                </div>
+                                <div id="chart07" style="height: 450px;width: 80%;margin: 0 auto;" ;></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--上网威胁-->
+                    <div role="tabpanel" class="tab-pane fade" id="messages">
+                        <div class="textWrap">
+                            <div class="threatWrap row">
+                                <div class="threatList threatListt">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/online_03.png" style="vertical-align: top" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">1000</p>
+                                        <p class="heike">黑客</p>
+                                    </span>
+                                </div>
+                                <div class="threatList threatListt">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/online_05.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">60</p>
+                                        <p class="heike">被攻击服务器</p>
+                                    </span>
+                                </div>
+                                <div class="threatList threatListt">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/online_07.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">20</p>
+                                        <p class="heike">攻击类型</p>
+                                    </span>
+                                </div>
+                                <div class="threatList threatListt">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/online_09.png" style="vertical-align: top" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">1000</p>
+                                        <p class="heike">黑客</p>
+                                    </span>
+                                </div>
+                                <div class="threatList threatListt" style="border-right: none">
+                                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                                        <img src="image/online_10.png" alt="">
+                                    </div>
+                                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                                        <p class="num">800</p>
+                                        <p class="heike">利用协议</p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 30px;overflow: hidden">
+                                <div id="chart08" style="width: 20%;height: 340px;float: left;margin: 0 0 0 4%"></div>
+                                <div id="chart09" style="width: 20%;height: 340px;float: left;margin: 0 0 0 4%"></div>
+                                <div id="chart10" style="width: 20%;height: 340px;float: left;margin: 0 0 0 4%"></div>
+                                <div id="chart11" style="width: 20%;height: 340px;float: left;margin: 0 4% 0 4%"></div>
+                            </div>
+                            <div class="hackerDis" style="clear: both">
+                                <div style="width: 100%;clear: both;padding-top: 50px">
+                                    <button type="button" class="dayBut">每分钟/每小时</button>
+                                    <button type="button" class="dayBut" style="width: 4%;">按天</button>
+                                    <button type="button" class="dayBut">每周/每月</button>
+                                </div>
+                                <div id="chart12" style="height: 450px;width: 80%;margin: 0 auto;" ;></div>
+                            </div>
+                            <div class="hackerDis">
+                                <p style="margin: 0 0 29px 15px">DNS查询统计</p>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a href="#homee" aria-controls="homee" role="tab"
+                                                                              data-toggle="tab">查询域名</a></li>
+                                    <li role="presentation"><a href="#profilee" aria-controls="profilee" role="tab"
+                                                               data-toggle="tab">查询IP</a>
+                                    </li>
+                                    <li role="presentation"><a href="#messagess" aria-controls="messagess" role="tab"
+                                                               data-toggle="tab">DNS服务器IP</a></li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <!--查询域名-->
+                                    <div role="tabpanel" class="tab-pane fade in active" id="homee">
+                                        <div class="textWrap" style="padding: 25px 35px">
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <th style="width: 30%;">域名</th>
+                                                    <th style="width: 40%;">总数</th>
+                                                    <th style="width: 30%;">百分比</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>qq.com</td>
+                                                    <td>82</td>
+                                                    <td>20.1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>weibo.com</td>
+                                                    <td>82</td>
+                                                    <td>17.4</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!--查询IP-->
+                                    <div role="tabpanel" class="tab-pane fade" id="profilee">
+                                        <div class="textWrap">
+
+                                        </div>
+                                    </div>
+                                    <!--DNS服务器IP-->
+                                    <div role="tabpanel" class="tab-pane fade" id="messagess">
+                                        <div class="textWrap">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

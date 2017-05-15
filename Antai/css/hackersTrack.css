@@ -1,0 +1,179 @@
+
+/*右侧内容*/
+
+.rightTab{
+    padding: 22px 28px 0 8px;
+}
+.ipC,.liulfx{
+    height: 88px;
+    line-height: 88px;
+    /*width: 100%;*/
+    margin-top: 19px;
+    background: #f5f5f5;
+    padding-left: 14px;
+}
+.ipC ul li{
+    color: #333;
+    width: 18%;
+    float: left;
+}
+.threatList{
+    height: 160px;
+    border-right: 1px solid #c4c4c4;
+    float: left;
+    padding: 8px 0 0 18px;
+}
+.threatAnalList,.threatAnalListt{
+    float: left;
+    width: 12%;
+    height: 35px;
+    margin-right: 12px;
+    border-radius: 2px;
+    padding:7px 10px 0 12px;
+    border: 1px solid #eee3da;
+    background: url("../image/Threat_29.png") center;
+    position: relative;
+}
+.threatAnalListt{
+    padding:4px 0 0 12px;
+}
+
+.threatAnalList input,.threatAnalListt input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.threatAnalListt input{
+    width: 80%;
+    padding-top: 3px;
+}
+.threatAnalList i{
+    margin: 2px 2px 0 0;
+}
+.threatAnalList i,.threatAnalListt button{
+    float: right;
+}
+.threatAnalList ::-webkit-input-placeholder,
+.threatAnalListt ::-webkit-input-placeholder {
+    color:    #333;
+}
+.threatAnalList :-moz-placeholder,
+.threatAnalListt :-moz-placeholder{
+    color:    #333;
+    opacity:  1;
+}
+.threatAnalList ::-moz-placeholder,
+.threatAnalListt ::-moz-placeholder{
+    color:    #333;
+    opacity:  1;
+}
+.threatAnalList :-ms-input-placeholder,
+.threatAnalListt :-ms-input-placeholder{
+    color:    #333;
+}
+#button,#button2,#button3,#button4,#button5,#button6{
+    border: none;
+    background: none;
+    width: 15%;
+    height: 27px;
+    margin-right: 0;
+    border-left: 1px solid #e3e2e2;
+}
+.chaxun{
+    width: 8%;
+    background: #3a8cc3;
+    color: white;
+}
+.chaxun:hover{
+    color: white;
+    background: #2f7eb3;
+}
+/*table表格部分*/
+.table{
+    margin:15px 0 0 0;
+}
+.trr{
+    border: 1px solid lightgray;
+    color: #454747;
+    height: 48px;
+    line-height: 48px;
+}
+.table tbody tr th,.table tbody tr td{
+    vertical-align: middle;
+    text-align: center
+}
+.trace{
+    width: 60%;
+    height: 26px;
+    background: #3485bb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+.trace:hover{
+    background: #2877bb;
+    color: white;
+}
+.paginationn{
+    float: right;
+    margin-right:10%;
+}
+.pageTotal{
+    float: right;
+    height: 36px;
+    line-height: 36px;
+    margin:20px 3% 0 0;
+}
+.hktjfxW{
+    border: 1px solid lightyellow;
+}
+.hktjfx{
+    height: 56px;
+    line-height: 56px;
+    padding-left: 20px;
+    border-bottom:1px solid lightgray;
+}
+/*黑客分析*/
+.dayBut{
+    height: 26px;
+    width: 8%;
+    border-radius: 7px;
+    margin:0 15px 0 0;
+    background: url("../image/dayBut_03.png") repeat-x center;
+}
+.dayBut:hover{
+    background: url("../image/dayBut_05.png") repeat-x center;
+}
+/*流量分析部分*/
+.liulfx ul li{
+    line-height: 44px;
+    padding-left: 20px;
+    color: #333;
+    float: left;
+    width: 25%;
+}
+.gongjqs{
+    height: 36px;
+    background: url("../image/gongjqst_03.png") no-repeat center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+.rightContent{
+    height: 885px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    margin: 14px;
+    padding:18px;
+}
+.flowBg{
+    height: 340px;
+    border: 1px solid lightgray;
+    background: url("../image/liuljk_03.png") no-repeat center;
+    border-radius: 5px;
+}
+.flowUpL{
+    height: 16px;
+    background: #ebebeb;
+    border-right: 1px solid black;
+    border-bottom:1px solid black;
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 10px;
+}
+.flowUpLB{
+    overflow: auto;
+    height: 320px;
+    line-height: 13px;
+    font-size: 13px;
+    border-right: 1px solid lightgray;
+}
+.flowUpLB p{
+    margin-bottom: 0;
+}

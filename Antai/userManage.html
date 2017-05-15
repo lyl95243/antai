@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/userManage.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src=js/placehlod.js></script>
+    <script src="js/common.js"></script>
+    <script src="js/laydate-v1.1/laydate/laydate.js"></script>
+    <script src="js/userManage.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="logoWrap" onclick="window.open('index.html','_self')">
+        <p class="logo">LOGO</p>
+        <span class="logoText">慧眼网络空间威胁感知系统</span>
+    </div>
+    <div class="menu">
+        <img src="image/menu_03.png" alt="">
+    </div>
+    <div class="set">
+        <i class="fa fa-cog"></i>
+    </div>
+</div>
+<!--头部结束-->
+<!--内容开始-->
+<div class="container-fluid">
+    <div class="row">
+        <!--左侧导航-->
+        <div class="col-lg-2 leftNav col-md-2 col-sm-2">
+
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/evenicon.png" alt="">
+                    <span class="evenText">事件分析</span>
+                </div>
+                <div class="evenXl">
+                    <a href="threatStatistic.html" target="_self">威胁事件统计</a>
+                    <a href="onlineThreat.html" target="_self">上网行为分析</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/manges.png" alt="">
+                    <span class="evenText">资产管理</span>
+                </div>
+                <div class="evenXl evenXll">
+                    <a href="assetManage.html" target="_self">资产管理</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/systemmes.png" alt="">
+                    <span class="evenText">系统管理</span>
+                </div>
+                <div class="evenXl system">
+                    <a href="systemView.html" target="_self">系统概览</a>
+                    <a href="systemSet.html" target="_self">系统设置</a>
+                    <a href="systemUpgrade.html" target="_self">系统升级</a>
+                    <a href="userManage.html" target="_self">用户管理</a>
+                </div>
+            </div>
+        </div>
+        <!--左侧导航结束-->
+        <div class="col-lg-10 rightC col-md-10 col-sm-10" id="right">
+            <!--用户管理-->
+            <div class="threatHead">
+                <p>用户管理</p>
+            </div>
+            <div class="sysSet">
+                <div class="fenxian"></div>
+                <!--超级管理员-->
+                <div class="setWrap">
+                    <div class="portset portsetB">
+                        超级管理员
+                    </div>
+                    <div class="setWrapXl" style="display: block">
+                        <div>
+                            <table class="table table-striped" style="margin-left: 25px">
+                                <tr style="background: #d8d8d8">
+                                    <th style="width: 65%;text-align: left;padding-left: 50px">用户名</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <button class="addd" data-toggle="modal" data-target="#myModal">添加</button>
+                        <!--弹窗-->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="background:#f0f0f0">
+                                    <div class="modal-header" style="padding: 0">
+                                        <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">
+                                            <div class="addMange">添加管理员</div>
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div style="margin-top: 30px;">
+                                            <div class="addManC">
+                                                <span>全名:</span>
+                                                <input type="text">
+                                            </div>
+                                            <div class="addManC">
+                                                <span>账户名称:</span>
+                                                <input type="text">
+                                            </div>
+                                            <div class="addManC">
+                                                <span>密码:</span>
+                                                <input type="text" placeholder="必填">
+                                            </div>
+                                            <div class="addManC">
+                                                <span>验证:</span>
+                                                <input type="text" placeholder="验证">
+                                            </div>
+                                            <div class="addManC">
+                                                <span>密码提示(推荐):</span>
+                                                <input type="text" style="height: 58px;" placeholder="密码提示">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                        </button>
+                                        <button type="button" class="btn btn-primary">
+                                            创建用户
+                                        </button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>
+                    </div>
+                </div>
+                <!--管理员-->
+                <div class="setWrap">
+                    <div class="portset">
+                        管理员
+                    </div>
+                    <div class="setWrapXl" style="left: -90px">
+                        <div>
+                            <table class="table table-striped" style="margin-left: 25px">
+                                <tr style="background: #d8d8d8">
+                                    <th style="width: 65%;text-align: left;padding-left: 50px">用户名</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--<button class="addd">添加</button>-->
+                    </div>
+                </div>
+                <!--审计员-->
+                <div class="setWrap">
+                    <div class="portset">
+                        审计员
+                    </div>
+                    <div class="setWrapXl" style="left: -180px">
+                        <div>
+                            <table class="table table-striped" style="margin-left: 25px">
+                                <tr style="background: #d8d8d8">
+                                    <th style="width: 65%;text-align: left;padding-left: 50px">用户名</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 65%;text-align: left;padding-left: 50px">admin111</td>
+                                    <td>
+                                        <button class="edit">编辑</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--<button class="addd">添加</button>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

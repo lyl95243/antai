@@ -1,0 +1,68 @@
+.rightContent{
+    /*height: 1250px;*/
+    border:1px solid lightgray;
+    border-radius: 5px;
+    margin: 7px;
+    padding:23px 23px 0 23px;
+}
+.attackNew>p{
+    color: #5ea8f4;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+.pianyiWrap p{
+    float: left;
+    margin: 13px 50px 25px 0;
+}
+.pianYi{
+    float: left;
+    width: 12%;
+    height: 35px;
+    margin-right: 12px;
+    border-radius: 2px;
+    padding:7px 10px 0 12px;
+    border: 1px solid #eee3da;
+    margin: 5px 40px 0 0;
+    background: url("../image/Threat_29.png") center;
+    position: relative;
+}
+.pianYi input{
+    width: 87%;
+    border: none;
+    border-right: 1px solid grey;
+    outline: none;
+    background: transparent;
+}
+.up,.down{
+    position: absolute;
+    right:5.5%;
+    cursor:pointer
+}
+.up{
+    top:1%;
+}
+.down{
+    bottom: 1%;
+}
+.trr{
+    border:1px solid lightgray;
+}
+.tt{
+    height: 80px;
+    background: url("../image/attack_03.png") repeat center;
+}
+.table tbody tr th,.table tbody tr td{
+    vertical-align: middle;
+    text-align: center
+}
+.paginationn{
+    float: right;
+    margin-right:10%;
+}
+.pageTotal{
+    float: right;
+    height: 36px;
+    line-height: 36px;
+    margin:20px 3% 0 0;
+}

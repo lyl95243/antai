@@ -1,0 +1,76 @@
+.rightContent{
+    padding:0 12px 0 12px;
+}
+.rightConT{
+    height: 275px;
+    background: #f6f6f6;
+    padding: 30px 0 0 15px;
+}
+.rightConT ul li ,.dd {
+    overflow: hidden;
+}
+.rightConT ul li span{
+    color: #333;
+    font-size: 14px;
+    display: block;
+    float: left;
+    width: 5%;
+}
+
+.dd p{
+    color: #868f9b;
+    float: left;
+    width: 15%;
+}
+.traceNew {
+    color: #3479c1;
+    font-size: 14px;
+    float: left;
+    cursor: pointer;
+    width: 7%;
+    text-align: center;
+}
+.traceNew:hover{
+    color: #2b72b0;
+    border:1px solid #9f9f9f;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #d2d2d2;
+}
+.rightConM{
+    height: 550px;
+    overflow: auto;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid darkgray;
+    border-radius: 3px;
+}
+.rightConB{
+    height: 243px;
+    border: 1px solid darkgray;
+    padding: 12px;
+    margin-top: 22px;
+    border-radius: 5px;
+}
+.fujian{
+    border-bottom: 1px solid darkgray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

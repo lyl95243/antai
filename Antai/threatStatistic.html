@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>威胁事件统计</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/threatStatistics.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src=js/placehlod.js></script>
+    <script src="js/common.js"></script>
+    <script src="js/laydate-v1.1/laydate/laydate.js"></script>
+    <script src="js/threatStatistics.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="logoWrap" onclick="window.open('index.html','_self')">
+        <p class="logo">LOGO</p>
+        <span class="logoText">慧眼网络空间威胁感知系统</span>
+    </div>
+    <div class="menu">
+        <img src="image/menu_03.png" alt="">
+    </div>
+    <div class="set">
+        <i class="fa fa-cog"></i>
+    </div>
+</div>
+<!--头部结束-->
+<!--内容开始-->
+<div class="container-fluid">
+    <div class="row">
+        <!--左侧导航-->
+        <div class="col-lg-2 leftNav col-md-2 col-sm-2">
+
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/evenicon.png" alt="">
+                    <span class="evenText">事件分析</span>
+                </div>
+                <div class="evenXl">
+                    <a href="javascript:">威胁事件统计</a>
+                    <a href="onlineThreat.html" target="_self">上网行为分析</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/manges.png" alt="">
+                    <span class="evenText">资产管理</span>
+                </div>
+                <div class="evenXl evenXll">
+                    <a href="assetManage.html" target="_self">资产管理</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/systemmes.png" alt="">
+                    <span class="evenText">系统管理</span>
+                </div>
+                <div class="evenXl system">
+                    <a href="systemView.html" target="_self">系统概览</a>
+                    <a href="systemSet.html" target="_self">系统设置</a>
+                    <a href="systemUpgrade.html" target="_self">系统升级</a>
+                    <a href="userManage.html" target="_self">用户管理</a>
+                </div>
+            </div>
+        </div>
+        <!--左侧导航结束-->
+        <div class="col-lg-10 rightC col-md-10 col-sm-10" id="right">
+            <!--威胁事件统计-->
+            <div class="threatHead">
+                <p> 威胁事件统计</p>
+            </div>
+            <div class="threatWrap row">
+                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                        <img src="image/Threat_11.png" style="vertical-align: top" alt="">
+                    </div>
+                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                       <p class="num">1000</p>
+                       <p class="heike">黑客</p>
+                   </span>
+                </div>
+                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                        <img src="image/Threat_13.png" alt="">
+                    </div>
+                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                       <p class="num">60</p>
+                       <p class="heike">被攻击服务器</p>
+                   </span>
+                </div>
+                <div class="threatList col-lg-3 col-md-3 col-sm-3">
+                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                        <img src="image/Threat_16.png" alt="">
+                    </div>
+                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                       <p class="num">20</p>
+                       <p class="heike">攻击类型</p>
+                   </span>
+                </div>
+                <div class="threatList col-lg-3 col-md-3 col-sm-3" style="border-right: none">
+                    <div class="threatImg col-lg-6 col-md-6 col-sm-6">
+                        <img src="image/Threat_19.png" alt="">
+                    </div>
+                    <span class="threatLR col-lg-6 col-md-6 col-sm-6">
+                       <p class="num">800</p>
+                       <p class="heike">利用协议</p>
+                   </span>
+                </div>
+            </div>
+            <!--威胁事件分析-->
+            <div class="threatHead">
+                <p> 威胁事件分析</p>
+            </div>
+            <div class="threatAnal">
+                <!--筛选项-->
+                <div>
+                    <div class="threatAnalList">
+                        <input type="text" class="laydate-icon" placeholder="起止时间" id="hello1">
+                    </div>
+                    <div class="threatAnalList">
+                        <input type="text" class="laydate-icon" placeholder="结束时间" id="hello2">
+                    </div>
+                    <div class="threatAnalList">
+                        <input type="text" placeholder="攻击IP">
+                    </div>
+                    <div class="threatAnalList">
+                        <input type="text" placeholder="服务器IP">
+                    </div>
+                    <div class="threatAnalListt">
+                        <input type="text" placeholder="事件类型">
+                        <button id="button" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:">Action</a></li>
+                            <li><a href="javascript:">Another action</a></li>
+                            <li><a href="javascript:">Something else here</a></li>
+                            <li><a href="javascript:">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <div class="threatAnalListt">
+                        <input type="text" placeholder="利用协议">
+                        <button id="button2" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:">Action</a></li>
+                            <li><a href="javascript:">Another action</a></li>
+                            <li><a href="javascript:">Something else here</a></li>
+                            <li><a href="javascript:">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <div class="threatAnalListt">
+                        <input type="text" placeholder="危险级别">
+                        <button id="button3" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:">Action</a></li>
+                            <li><a href="javascript:">Another action</a></li>
+                            <li><a href="javascript:">Something else here</a></li>
+                            <li><a href="javascript:">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-default chaxun" type="submit">查询</button>
+                </div>
+                <!--表格部分-->
+                <table class="table table-striped">
+                    <tr class="trr">
+                        <th>时间</th>
+                        <th>黑客国家信息</th>
+                        <th>攻击IP</th>
+                        <th>服务器IP</th>
+                        <th>利用协议</th>
+                        <th>事件类型</th>
+                        <th>危险级别</th>
+                        <th>攻击次数</th>
+                        <th>深度分析</th>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2016.01.02-2016.12.06</td>
+                        <td class="tdImg"><img src="image/America.png" alt=""> 美国</td>
+                        <td>1.1.1.1</td>
+                        <td>192.168.1.1</td>
+                        <td>HTTP FTP TELNET</td>
+                        <td>web后门XSS</td>
+                        <td>高级威胁</td>
+                        <td>10</td>
+                        <td>
+                            <button class="trace" onclick="window.open('hackersTrack.html','_self')">追踪</button>
+                        </td>
+                    </tr>
+                </table>
+                <!--页码部分-->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination paginationn">
+                        <li>
+                            <a href="javascript:" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="javascript:">1</a></li>
+                        <li><a href="javascript:">2</a></li>
+                        <li><a href="javascript:">3</a></li>
+                        <li><a href="javascript:">4</a></li>
+                        <li><a href="javascript:">5</a></li>
+                        <li>
+                            <a href="javascript:" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="pageTotal">每页显示: <span>12</span></span>
+                    <span class="pageTotal">总页数: <span>1000</span></span>
+                </nav>
+            </div>
+
+        </div>
+</div>
+</div>
+</body>
+</html>

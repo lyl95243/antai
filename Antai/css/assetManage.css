@@ -1,0 +1,228 @@
+.rightTab{
+    padding: 22px 28px 0 8px;
+}
+.assetWrap{
+    border: 1px solid lightgray;
+    border-top:none;
+    padding: 25px 24px 0 24px;
+    height: 657px;
+}
+.threatList{
+    height: 160px;
+    border-right: 1px solid #c4c4c4;
+    float: left;
+    padding: 8px 0 0 18px;
+}
+.threatAnalList,.threatAnalListt{
+    float: left;
+    width: 12%;
+    height: 35px;
+    margin-right: 12px;
+    border-radius: 2px;
+    padding:7px 10px 0 12px;
+    border: 1px solid #eee3da;
+    background: url("../image/Threat_29.png") center;
+    position: relative;
+}
+.threatAnalListt{
+    padding:4px 0 0 12px;
+}
+
+.threatAnalList input,.threatAnalListt input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.threatAnalListt input{
+    width: 80%;
+    padding-top: 3px;
+}
+.threatAnalList i{
+    margin: 2px 2px 0 0;
+}
+.threatAnalList i,.threatAnalListt button{
+    float: right;
+}
+.threatAnalList ::-webkit-input-placeholder,
+.threatAnalListt ::-webkit-input-placeholder {
+    color:    #333;
+}
+.threatAnalList :-moz-placeholder,
+.threatAnalListt :-moz-placeholder{
+    color:    #333;
+    opacity:  1;
+}
+.threatAnalList ::-moz-placeholder,
+.threatAnalListt ::-moz-placeholder{
+    color:    #333;
+    opacity:  1;
+}
+.threatAnalList :-ms-input-placeholder,
+.threatAnalListt :-ms-input-placeholder{
+    color:    #333;
+}
+#button,#button2,#button3,#button4{
+    border: none;
+    background: none;
+    width: 15%;
+    height: 27px;
+    margin-right: 0;
+    border-left: 1px solid #e3e2e2;
+}
+.chaxun,.chaxunn{
+    width: 8%;
+    background: #3a8cc3;
+    color: white;
+    margin: 0 10px 0 10px;
+}
+.chaxun:hover{
+    color: white;
+    background: #2f7eb3;
+}
+.chaxunn{
+    color: #333;
+    background: #d3d3d3;
+}
+.chaxunn:hover{
+    background: #cacaca;
+}
+.table{
+    margin:15px 0 0 0;
+}
+.trr{
+    border: 1px solid lightgray;
+    color: #454747;
+    height: 48px;
+    line-height: 48px;
+}
+.table tbody tr th,.table tbody tr td{
+    vertical-align: middle;
+    text-align: center
+}
+.trace{
+    width:20%;
+    height: 26px;
+    margin-right: 2%;
+    background: #dadada;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+}
+.trace:hover{
+    background: #2877bb;
+    color: white;
+}
+.addMange{
+    height: 41px;
+    line-height: 41px;
+    padding-left: 13px;
+    background: url("../image/tanchuang_03.png") center;
+}
+.addManC{
+    margin-bottom: 20px;
+}
+.addManC>span{
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+    height: 29px;
+    line-height: 29px;
+    margin-right: 15px;
+}
+.addManC input{
+    border: 1px solid lightgray;
+    height: 29px;
+    width: 340px;
+}
+.quxiao,.chuangjian{
+    height: 28px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid lightgray;
+    float: right;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.modal-footer{
+    padding: 0 82px 15px 15px;
+    border-top: none;
+}
+.quxiao{
+    width: 58px;
+}
+.chuangjian{
+    width: 100px;
+    color: white;
+    margin: 0 95px 0 11px;
+    background: #3485bb;
+}
+#button2,#button3,#button4{
+    position: absolute;
+    top:0;
+    right: 71px;
+    width: 6%;
+    border-left: none;
+}
+#button3,#button4{
+    top: 3px;;
+    right: 0;
+    width: 20%;
+}
+.assetLeft{
+   float: left;
+    width: 6%;
+    margin: 1% 2% 1% 1%;
+}
+.assetLeft>button{
+    width: 63px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid lightgrey;
+    background: #dedede;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+.tablee{
+    width: 91%;
+}
+.shibie{
+    width: 140px;
+    height: 38px;
+    background: #3688be;
+    line-height: 38px;
+    text-align: center;
+    color: white;
+    border-radius: 7px;
+    margin-right: 20px;
+    border: none;
+}
+.shibieText{
+    padding-left: 4%;
+}
+.shibieText p{
+   display: inline-block;
+    width: 90%;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

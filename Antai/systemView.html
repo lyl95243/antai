@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统概览</title>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/systemView.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src=js/placehlod.js></script>
+    <script src="js/common.js"></script>
+    <script src="js/laydate-v1.1/laydate/laydate.js"></script>
+    <script src="js/systemViem.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--头部开始-->
+<div class="header">
+    <div class="logoWrap" onclick="window.open('index.html','_self')">
+        <p class="logo">LOGO</p>
+        <span class="logoText">慧眼网络空间威胁感知系统</span>
+    </div>
+    <div class="menu">
+        <img src="image/menu_03.png" alt="">
+    </div>
+    <div class="set">
+        <i class="fa fa-cog"></i>
+    </div>
+</div>
+<!--头部结束-->
+<!--内容开始-->
+<div class="container-fluid">
+    <div class="row">
+        <!--左侧导航-->
+        <div class="col-lg-2 leftNav col-md-2 col-sm-2">
+
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/evenicon.png" alt="">
+                    <span class="evenText">事件分析</span>
+                </div>
+                <div class="evenXl">
+                    <a href="threatStatistic.html" target="_self">威胁事件统计</a>
+                    <a href="onlineThreat.html" target="_self">上网行为分析</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/manges.png" alt="">
+                    <span class="evenText">资产管理</span>
+                </div>
+                <div class="evenXl evenXll">
+                    <a href="assetManage.html" target="_self">资产管理</a>
+                </div>
+            </div>
+            <div class="leftNavv">
+                <div class="even">
+                    <img src="image/systemmes.png" alt="">
+                    <span class="evenText">系统管理</span>
+                </div>
+                <div class="evenXl system">
+                    <a href="systemView.html" target="_self">系统概览</a>
+                    <a href="systemSet.html" target="_self">系统设置</a>
+                    <a href="systemUpgrade.html" target="_self">系统升级</a>
+                    <a href="userManage.html" target="_self">用户管理</a>
+                </div>
+            </div>
+        </div>
+        <!--左侧导航结束-->
+        <div class="col-lg-10 rightC col-md-10 col-sm-10" id="right">
+            <!--系统概览-->
+            <div class="threatHead">
+                <p>系统概览</p>
+            </div>
+            <div class="systemContent">
+               <div class="sysBanben">
+                   <i class="fa fa-paste" style="color: olivedrab;font-size: 18px"></i>
+                   <span style="color: #333">系统版本:</span>
+                   <span style="color:grey;">10.12.3(16D32)</span>
+               </div>
+                <div class="sysBanben" style="padding-top: 0px">
+                    <i class="fa fa-file-text-o" style="color: olivedrab;font-size: 18px"></i>
+                    <span style="color: #333">规则库版本:</span>
+                    <span style="color:grey;">10.12.3(16D32)</span>
+                </div>
+                <div style="height: 204px;">
+                    <div class="portWrap">
+                        接口信息
+                    </div>
+                    <div class="port">
+                        管理口: <span style="padding: 0 10px 0 10px;">etho</span>
+                        <span>IP:</span> <span>192.168.1.1/24</span>
+                    </div>
+                    <div class="port">
+                       <div style="float: left"> 工作接口:</div>
+                        <div class="workPort">
+                            <img src="image/jiekou_03.png" alt="">
+                            <img src="image/jiekou_03.png" alt="">
+                            <img src="image/jiekou_03.png" alt="">
+                            <img src="image/jiekou_03.png" alt="">
+                            <img src="image/jiekou_03.png" alt="">
+                            <img src="image/jiekou_03.png" alt="">
+                            <img src="image/jiekou_07.png" alt="">
+                            <img src="image/jiekou_03.png" alt="">
+                            <img src="image/jiekou_03.png" alt="">
+                            <img src="image/jiekou_03.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 204px;">
+                    <div class="portWrap">
+                        系统状态
+                    </div>
+                    <div class="state">
+                        <span>内存:</span>
+                        <div id="chart1"></div>
+                    </div>
+                    <div class="state">
+                        <span>CPU:</span>
+                        <div id="chart2"></div>
+                    </div>
+                    <div class="state">
+                        <span>硬件:</span>
+                        <div id="chart3"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="portWrap">
+                        其他
+                    </div>
+                    <div class="state">
+                        <span>语言:</span>
+                        <span style="color: grey;padding-left: 15px">中国</span>
+                    </div>
+                    <div class="state">
+                        <span>时区:</span>
+                        <span style="color: grey;padding-left: 15px">北京</span>
+                    </div>
+                    <div class="state">
+                        <span>时间:</span>
+                        <span style="color: grey;padding-left: 15px">2017-06-06</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
