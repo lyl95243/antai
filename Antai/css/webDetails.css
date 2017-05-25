@@ -1,51 +1,89 @@
 
 .rightContent{
     padding: 0 12px 0 12px;
+    margin-bottom: 50px;
 }
 .webXq{
-    height: 153px;
+    min-height: 153px;
     background: #ebeeeb;
-    padding: 21px 0 0 21px;
+    padding: 21px 0 10px 21px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
 .webXq ul li{
-    height: 27px;
-    line-height: 27px;
+    min-height: 27px;
+    margin-bottom: 10px;
+}
+.webXq ul li p{
+    vertical-align: top;
+    margin-bottom: 0;
+}
+.webXq ul li span {
+    display: inline-block;
+    width: 92%;
+    color: grey;
+    padding-left: 13px;
+    word-wrap:break-word;
+    word-break:break-all;
 }
 .nav>li>a{
     padding: 10px 28px;
 }
-.qqhf{
-    color: white;
-    background: #3181b6;
-    width: 114px;
-    height: 27px;
-    line-height: 27px;
-    text-align: center;
-    border: none;
-    border-radius: 6px;
-    margin:8px 0 0 57%;
+.text .table{
+    margin:10px 0 0 0;
 }
-.qqhf:hover{
-    background: #029eb6;
+
+.text .table tbody tr th,.text .table tbody tr td{
+    vertical-align: middle;
+    text-align: left;
+}
+.text .table>thead>tr>th,.text .table>tbody>tr>th,.text .table>tfoot>tr>th,
+.text .table>thead>tr>td,.text .table>tbody>tr>td,.text .table>tfoot>tr>td{
+    border-top:0px solid #ddd
 }
 .textWrap{
      border: 1px solid lightgray;
      border-top:none;
-     padding-top: 42px
+     padding-top: 20px;
+    min-height: 250px;
+    overflow: auto;
+    word-wrap:break-word;
+    word-break:break-all;
  }
 .text{
-    height: 750px;
+    min-height: 250px;
+    max-height: 650px;
     border: 1px solid lightgray;
     margin: 0 20px 40px 20px;
-    padding: 20px;
+    padding:20px 20px 28px 20px;
     overflow: auto;
-    line-height: 24px;
     background: #0F192a;
-    color: green;
+    color: #17ad11;
+    clear: both;
 }
-
+.textWrapP{
+    margin:0 21px 2px 21px;
+    padding: 0 0 0 10px;
+    line-height: 35px;
+    font-size: 17px;
+    background:#829e48;
+    color: white;
+}
+.xiazai{
+    color: white;
+    background: #3181b6;
+    width: 10%;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    float: right;
+    margin:0 7% 1% 0;
+}
+.xiazai:hover{
+    background: #029eb6;
+}
 
 
 

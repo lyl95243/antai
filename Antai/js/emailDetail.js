@@ -4,9 +4,9 @@
 $(function () {
 
 
-    $(".dropdown-menu li a").click(function () {
-        var text=$(this).text()
-        $(this).parents(".threatAnalListt").find("input").val(text)
-    })
+    // $(".dropdown-menu li a").click(function () {
+    //     var text=$(this).text()
+    //     $(this).parents(".threatAnalListt").find("input").val(text)
+    // })
 
 })

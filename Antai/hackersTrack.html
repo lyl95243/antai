@@ -12,6 +12,7 @@
     <script src="js/placehlod.js"></script>
     <script src="js/echarts.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/bootstrapPaginator.js"></script>
     <script src="js/hackersTrack.js"></script>
     <script src="js/laydate-v1.1/laydate/laydate.js"></script>
     <!--[if lt IE 9]>
@@ -95,7 +96,7 @@
                             <ul>
                                 <li>
                                     IP &nbsp;:
-                                    <span style="color: grey;margin-left: 14px">192.168.1.1</span>
+                                    <span style="color: grey;margin-left: 14px"></span>
                                 </li>
                                 <li>
                                     国家 &nbsp;:
@@ -112,250 +113,75 @@
                             </ul>
 
                         </div>
-                        <div style="margin-top: 15px">
+                        <div style="margin: 15px 0 0 15PX">
                             <div class="threatAnalList">
-                                <input type="text" class="laydate-icon" placeholder="起止时间" id="hello1">
+                                <input type="text" class="laydate-icon attkStartTime" placeholder="起始时间" id="hello1">
                                 <!--<i class="fa fa-calendar" onclick="laydate({elem:'#hello'})"></i>-->
                             </div>
                             <div class="threatAnalList">
-                                <input type="text" class="laydate-icon" placeholder="结束时间" id="hello2">
+                                <input type="text" class="laydate-icon attkEndTime" placeholder="结束时间" id="hello2">
                                 <!--<i class="fa fa-calendar" onclick="laydate({elem: '#hello1'})"></i>-->
                             </div>
-                            <div class="threatAnalList">
-                                <input type="text" placeholder="攻击IP">
-                            </div>
-                            <div class="threatAnalList">
-                                <input type="text" placeholder="服务器IP">
-                            </div>
-                            <!--<select name="" class="threatAnalList">-->
-                                <!--<option selected="selected">事件类型</option>-->
-                                <!--<option value="">1</option>-->
-                                <!--<option value="">2</option>-->
-                                <!--<option value="">3</option>-->
-                                <!--<option value="">4</option>-->
-                                <!--<option value="">5</option>-->
-                            <!--</select>-->
-                            <!--<select name="" class="threatAnalList">-->
-                                <!--<option selected="selected">利用协议</option>-->
-                                <!--<option value="">1</option>-->
-                                <!--<option value="">2</option>-->
-                                <!--<option value="">3</option>-->
-                                <!--<option value="">4</option>-->
-                                <!--<option value="">5</option>-->
-                            <!--</select>-->
-                            <!--<select name="" class="threatAnalList">-->
-                                <!--<option selected="selected">危险级别</option>-->
-                                <!--<option value="">1</option>-->
-                                <!--<option value="">2</option>-->
-                                <!--<option value="">3</option>-->
-                                <!--<option value="">4</option>-->
-                                <!--<option value="">5</option>-->
-                            <!--</select>-->
+                            <!--<div class="threatAnalList">-->
+                                <!--<input type="text" class="servIP" placeholder="服务器IP">-->
+                            <!--</div>-->
                             <div class="threatAnalListt">
-                                <input type="text" placeholder="事件类型">
+                                <input type="text" class="evenTypes" placeholder="事件类型">
                                 <button id="button" type="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                     <span class="caret"></span>
                                 </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:">Action</a></li>
-                                    <li><a href="javascript:">Another action</a></li>
-                                    <li><a href="javascript:">Something else here</a></li>
-                                    <li><a href="javascript:">Separated link</a></li>
-                                </ul>
+                                <ul class="dropdown-menu" id="evenL"></ul>
                             </div>
                             <div class="threatAnalListt">
-                                <input type="text" placeholder="利用协议">
+                                <input type="text" class="protos" placeholder="利用协议">
                                 <button id="button2" type="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="javascript:">Action</a></li>
-                                    <li><a href="javascript:">Another action</a></li>
-                                    <li><a href="javascript:">Something else here</a></li>
-                                    <li><a href="javascript:">Separated link</a></li>
+                                    <li><a href="javascript:">HTTP</a></li>
+                                    <li><a href="javascript:">SMTP</a></li>
+                                    <li><a href="javascript:">IMAP</a></li>
+                                    <li><a href="javascript:">POP3</a></li>
+                                    <li><a href="javascript:">TELNET</a></li>
+                                    <li><a href="javascript:">FTP</a></li>
+                                    <li><a href="javascript:">DNS</a></li>
                                 </ul>
                             </div>
                             <div class="threatAnalListt">
-                                <input type="text" placeholder="危险级别">
+                                <input type="text" class="level" placeholder="危险级别">
                                 <button id="button3" type="button" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="javascript:">Action</a></li>
-                                    <li><a href="javascript:">Another action</a></li>
-                                    <li><a href="javascript:">Something else here</a></li>
-                                    <li><a href="javascript:">Separated link</a></li>
+                                    <li><a href="javascript:">高级威胁</a></li>
+                                    <li><a href="javascript:">中级威胁</a></li>
+                                    <li><a href="javascript:">低级威胁</a></li>
                                 </ul>
                             </div>
-                            <button class="btn btn-default chaxun" type="submit">查询</button>
+                            <button class="btn btn-default chaxun">查询</button>
                         </div>
-                        <table class="table table-striped">
-                            <tr class="trr">
-                                <th>时间</th>
-                                <th>服务器IP</th>
-                                <th>利用协议</th>
-                                <th>事件类型</th>
-                                <th>危险级别</th>
-                                <th>攻击载荷</th>
-                                <th>深度分析</th>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2016.01.02-2016.12.06</td>
-                                <td>192.168.1.1</td>
-                                <td>HTTP</td>
-                                <td>恶意命令</td>
-                                <td>高级威胁</td>
-                                <td>fuck.php</td>
-                                <td>
-                                    <button class="trace" onclick="window.open('attack.html','_self')">查看攻击过程</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination paginationn">
-                                <li>
-                                    <a href="javascript:" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li><a href="javascript:">1</a></li>
-                                <li><a href="javascript:">2</a></li>
-                                <li><a href="javascript:">3</a></li>
-                                <li><a href="javascript:">4</a></li>
-                                <li><a href="javascript:">5</a></li>
-                                <li>
-                                    <a href="javascript:" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <span class="pageTotal">每页显示: <span>12</span></span>
-                            <span class="pageTotal">总页数: <span>1000</span></span>
-                        </nav>
+                        <div style="min-height: 553px;margin-left: 15px;">
+                            <table class="table table-striped" id="tablee">
+                                <tr>
+                                    <th>攻击时间</th>
+                                    <th>服务器IP</th>
+                                    <th>利用协议</th>
+                                    <th>事件类型</th>
+                                    <th>危险级别</th>
+                                    <th>深度分析</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <!--页码-->
+                        <div id="yema"></div>
+                        <div style="float: right; margin:30px 3% 3% 0;">
+                            <span class="pageTotal pagee">每页显示: <span>12</span></span>
+                            <span class="pageTotal pagez">总页数: <span></span></span>
+                        </div>
+
                     </div>
                     <!--统计分析-->
                     <div role="tabpanel" class="tab-pane fade hktjfxW" id="profile">

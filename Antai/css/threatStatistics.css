@@ -51,11 +51,11 @@
 .threatAnalList,.threatAnalListt{
     float: left;
     width: 12%;
-    height: 35px;
+    height: 34px;
     line-height: 36px;
     margin-right: 1%;
     border-radius: 2px;
-    padding:0 10px 0 12px;
+    padding:0 7px 0 12px;
     border: 1px solid #eee3da;
     background: url("../image/Threat_29.png") center;
     position: relative;
@@ -68,7 +68,7 @@
     width: 100%;
     border: none;
     outline: none;
-    height: 35px;
+    height: 34px;
     background-color: transparent;
 }
 .threatAnalListt input{
@@ -100,11 +100,15 @@
 .threatAnalListt :-ms-input-placeholder{
     color:    #333;
 }
+#evenL{
+    height: 194px;
+    overflow: auto;
+}
 #button,#button2,#button3{
     border: none;
     background: none;
     width: 15%;
-    height: 27px;
+    height: 32px;
     margin-right: 0;
     border-left: 1px solid #e3e2e2;
 }
@@ -118,9 +122,11 @@
     background: #2f7eb3;
 }
 .table{
-    margin:13px 0 0 0;
+    margin:23px 0 0 0;
+    /*min-height: 480px;*/
 }
-.trr{
+
+.trrr{
     border: 1px solid lightgray;
     color: #454747;
     height: 48px;
@@ -128,24 +134,28 @@
 }
 .table tbody tr th,.table tbody tr td{
     vertical-align: middle;
-    text-align: center
+    text-align: center;
 }
 .tdImg img{
-    width: 25px;
+    width: 29px;
     height: 22px;
     vertical-align: middle;
 }
 .trace{
+    display: block;
     width: 60%;
     height: 26px;
+    line-height: 26px;
     background: #3485bb;
     color: white;
     border: none;
     border-radius: 4px;
+    margin:0 auto;
 }
 .trace:hover{
     background: #2877bb;
     color: white;
+    text-decoration: none;
 }
 
 .paginationn{
@@ -153,15 +163,30 @@
     margin-right:10%;
 }
 .pageTotal{
-    float: right;
     height: 36px;
     line-height: 36px;
-    margin:20px 3% 0 0;
+    margin-right: 25px;
 }
 #laydate_hms{
     display: block !important;
 }
-
+#yema{
+    float: right;
+    margin:37px 4% 0 0;
+}
+#yema ul li{
+    float: left;
+}
+#yema ul li a{
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #428bca;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
 
 
 

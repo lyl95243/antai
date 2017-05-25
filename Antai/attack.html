@@ -10,6 +10,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/placehlod.js"></script>
+    <script src="js/bootstrapPaginator.js"></script>
     <script src="js/common.js"></script>
     <script src="js/attack.js"></script>
     <!--[if lt IE 9]>
@@ -21,7 +22,7 @@
 <!--头部开始-->
 <div class="header">
     <div class="logoWrap" onclick="window.open('index.html','_self')">
-        <p class="logo">LOGO9999</p>
+        <p class="logo">LOGO</p>
         <span class="logoText">慧眼网络空间威胁感知系统</span>
     </div>
     <div class="menu">
@@ -90,14 +91,14 @@
                             <th>深度分析</th>
                         </tr>
                         <tr class="tt">
-                            <td>2016/01/02 11:08</td>
-                            <td>192.168.1.1</td>
-                            <td>192.168.0.1</td>
-                            <td>HTTP</td>
-                            <td>XSS</td>
-                            <td>高级</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td>
-                                <button class="trace" onclick="window.open('webDetails.html')">查看详情</button>
+                                <button class="tracee">查看详情</button>
                             </td>
                         </tr>
                     </table>
@@ -112,134 +113,29 @@
                             <div class="up">∧</div>
                             <div class="down">∨</div>
                         </div>
-                        <p><input type="checkbox" style="vertical-align: top">&nbsp;查看攻击点前日志</p>
-                        <p><input type="checkbox" style="vertical-align: top">&nbsp;查看攻击点后日志</p>
+                        <div>
+                            <p class="attkBeP"><input type="checkbox" class="attkBe" style="vertical-align: top">&nbsp;查看攻击点前日志</p>
+                            <p class="attkAfP"><input type="checkbox" class="attkAf" style="vertical-align: top">&nbsp;查看攻击点后日志</p>
+                        </div>
+                        <button class="btn btn-default chaxun">筛选</button>
                     </div>
-                    <table class="table table-striped">
-                        <tr class="trr">
-                            <th style="width: 22%;">访问时间</th>
-                            <th style="width: 28%;">服务器IP</th>
-                            <th style="width: 28%;">利用协议</th>
-                            <th style="width: 22%;">深度分析</th>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2016/01/02 11:08:35</td>
-                            <td>192.168.1.1</td>
-                            <td>HTTP</td>
-                            <td>
-                                <button class="trace" onclick="window.open('webDetails.html','_self')">查看详情</button>
-                            </td>
-                        </tr>
-                    </table>
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination paginationn">
-                            <li>
-                                <a href="javascript:" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="javascript:">1</a></li>
-                            <li><a href="javascript:">2</a></li>
-                            <li><a href="javascript:">3</a></li>
-                            <li><a href="javascript:">4</a></li>
-                            <li><a href="javascript:">5</a></li>
-                            <li>
-                                <a href="javascript:" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <span class="pageTotal">每页显示: <span>12</span></span>
-                        <span class="pageTotal">总页数: <span>1000</span></span>
-                    </nav>
+                    <div style="min-height: 553px;">
+                        <table class="table table-striped" id="tablee">
+                            <tr class="trr">
+                                <th>访问时间</th>
+                                <th>服务器IP</th>
+                                <th>利用协议</th>
+                                <th>是否攻击</th>
+                                <th>深度分析</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--页码-->
+                    <div id="yema"></div>
+                    <div style="float: right; margin:30px 3% 3% 0;">
+                        <span class="pageTotal pagee">每页显示: <span>12</span></span>
+                        <span class="pageTotal pagez">总页数: <span></span></span>
+                    </div>
                 </div>
             </div>
         </div>

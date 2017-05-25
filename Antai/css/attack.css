@@ -34,6 +34,15 @@
     outline: none;
     background: transparent;
 }
+.chaxun{
+    width: 6%;
+    background: #3a8cc3;
+    color: white;
+}
+.chaxun:hover{
+    color: white;
+    background: #2f7eb3;
+}
 .up,.down{
     position: absolute;
     right:5.5%;
@@ -56,13 +65,30 @@
     vertical-align: middle;
     text-align: center
 }
+
 .paginationn{
     float: right;
     margin-right:10%;
 }
 .pageTotal{
-    float: right;
     height: 36px;
     line-height: 36px;
-    margin:20px 3% 0 0;
+    margin-right: 25px;
+}
+#yema{
+    float: right;
+    margin:37px 4% 0 0;
+}
+#yema ul li{
+    float: left;
+}
+#yema ul li a{
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #428bca;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
 }
