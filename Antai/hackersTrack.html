@@ -46,7 +46,7 @@
                     <img src="image/evenicon.png" alt="">
                     <span class="evenText">事件分析</span>
                 </div>
-                <div class="evenXl">
+                <div class="evenXl" style="display: block">
                     <a href="threatStatistic.html" target="_self">威胁事件统计</a>
                     <a href="onlineThreat.html" target="_self">上网行为分析</a>
                 </div>
@@ -86,7 +86,7 @@
                     </li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">统计分析</a>
                     </li>
-                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">流量分析</a>
+                    <li role="presentation" id="flowf"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">流量分析</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -161,18 +161,11 @@
                                     <li><a href="javascript:">低级威胁</a></li>
                                 </ul>
                             </div>
-                            <button class="btn btn-default chaxun">查询</button>
+                            <button class="btn btn-default chaxun" id="hackChaX">查询</button>
                         </div>
                         <div style="min-height: 553px;margin-left: 15px;">
                             <table class="table table-striped" id="tablee">
-                                <tr>
-                                    <th>攻击时间</th>
-                                    <th>服务器IP</th>
-                                    <th>利用协议</th>
-                                    <th>事件类型</th>
-                                    <th>危险级别</th>
-                                    <th>深度分析</th>
-                                </tr>
+
                             </table>
                         </div>
                         <!--页码-->
@@ -204,22 +197,22 @@
                         <div class="liulfx">
                             <ul style="width: 81%;">
                                 <li>
-                                    最早进入时间 : <span style="color: grey">2017/02/03 11:02</span>
+                                    最早进入时间 : <span style="color: grey"></span>
                                 </li>
                                 <li>
-                                    最近进入时间 : <span style="color: grey">2017/02/13 11:03</span>
+                                    最近进入时间 : <span style="color: grey"></span>
                                 </li>
                                 <li>
-                                    上行总流量 : <span style="color: grey">10024字节</span>
+                                    上行总流量 : <span style="color: grey"></span>
                                 </li>
                                 <li>
-                                    下行总流量 : <span style="color: grey">100240字节</span>
+                                    下行总流量 : <span style="color: grey"></span>
                                 </li>
                                 <li>
-                                    TCP会话数 : <span style="color: grey">10000</span>
+                                    TCP会话数 : <span style="color: grey"></span>
                                 </li>
                                 <li>
-                                    UDP会话数 : <span style="color: grey">10000</span>
+                                    UDP会话数 : <span style="color: grey"></span>
                                 </li>
                             </ul>
                         </div>
@@ -228,237 +221,53 @@
                         <div class="gongjqs">
                             <div style="margin-top: 15px;padding-top: 31px">
                                 <div class="threatAnalList">
-                                    <input type="text" class="laydate-icon" placeholder="起止时间" id="hello3">
+                                    <input type="text" class="laydate-icon flowStartTime" placeholder="起止时间" id="hello3">
                                     <!--<i class="fa fa-calendar" onclick="laydate({elem:'#hello'})"></i>-->
                                 </div>
                                 <div class="threatAnalList">
-                                    <input type="text" class="laydate-icon" placeholder="结束时间" id="hello4">
+                                    <input type="text" class="laydate-icon flowLastTime" placeholder="结束时间" id="hello4">
                                     <!--<i class="fa fa-calendar" onclick="laydate({elem: '#hello1'})"></i>-->
                                 </div>
                                 <div class="threatAnalList">
-                                    <input type="text" placeholder="端口">
+                                    <input type="text" class="flowPort" placeholder="端口">
                                 </div>
                                 <div class="threatAnalList">
-                                    <input type="text" placeholder="对端IP">
+                                    <input type="text" class="flowPairIP" placeholder="对端IP">
                                 </div>
                                 <div class="threatAnalListt">
-                                    <input type="text" placeholder="对端端口">
-                                    <button id="button4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:">Action</a></li>
-                                        <li><a href="javascript:">Another action</a></li>
-                                        <li><a href="javascript:">Something else here</a></li>
-                                        <li><a href="javascript:">Separated link</a></li>
-                                    </ul>
+                                    <input type="text" class="flowPairPort" placeholder="对端端口">
                                 </div>
                                 <div class="threatAnalListt">
-                                    <input type="text" placeholder="传输协议协议">
+                                    <input type="text" class="flowProto" placeholder="传输协议">
                                     <button id="button5" type="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:">Action</a></li>
-                                        <li><a href="javascript:">Another action</a></li>
-                                        <li><a href="javascript:">Something else here</a></li>
-                                        <li><a href="javascript:">Separated link</a></li>
+                                    <ul class="dropdown-menu" style="overflow: auto;height: 194px;">
+                                        <li><a href="javascript:">HTTP</a></li>
+                                        <li><a href="javascript:">SMTP</a></li>
+                                        <li><a href="javascript:">IMAP</a></li>
+                                        <li><a href="javascript:">POP3</a></li>
+                                        <li><a href="javascript:">TELNET</a></li>
+                                        <li><a href="javascript:">FTP</a></li>
+                                        <li><a href="javascript:">DNS</a></li>
+                                        <li><a href="javascript:">UDP</a></li>
+                                        <li><a href="javascript:">TCP</a></li>
                                     </ul>
                                 </div>
-                                <button class="btn btn-default chaxun" type="submit">查询</button>
+                                <button class="btn btn-default chaxun" id="flowChaX">查询</button>
                             </div>
-                            <table class="table table-striped">
-                                <tr class="trr">
-                                    <th>会话时间</th>
-                                    <th>端口</th>
-                                    <th>对端IP</th>
-                                    <th>对端端口</th>
-                                    <th>传输协议</th>
-                                    <th>上行流量</th>
-                                    <th>下行流量</th>
-                                    <th>包含攻击数</th>
-                                    <th>深度分析</th>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02-2016.12.06</td>
-                                    <td>1231</td>
-                                    <td>192.168.1.1</td>
-                                    <td>80</td>
-                                    <td>TCP</td>
-                                    <td>10k</td>
-                                    <td>20k</td>
-                                    <td>1</td>
-                                    <td>
-                                        <button class="trace" onclick="window.open('flowDetail.html','_self')">详情</button>
-                                    </td>
-                                </tr>
-                            </table>
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination paginationn">
-                                    <li>
-                                        <a href="javascript:" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li><a href="javascript:">1</a></li>
-                                    <li><a href="javascript:">2</a></li>
-                                    <li><a href="javascript:">3</a></li>
-                                    <li><a href="javascript:">4</a></li>
-                                    <li><a href="javascript:">5</a></li>
-                                    <li>
-                                        <a href="javascript:" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <span class="pageTotal">每页显示: <span>12</span></span>
-                                <span class="pageTotal">总页数: <span>1000</span></span>
-                            </nav>
+                           <div style="min-height: 467px">
+                               <table class="table table-striped" id="flowTab">
+
+                               </table>
+                           </div>
+                            <!--页码-->
+                            <div id="yemaa"></div>
+                            <div style="float: right; margin:30px 3% 3% 0;">
+                                <span class="pageTotal pagee">每页显示: <span>10</span></span>
+                                <span class="pageTotal pagezz">总页数: <span></span></span>
+                            </div>
                         </div>
                     </div>
                 </div>

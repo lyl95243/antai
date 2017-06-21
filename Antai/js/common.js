@@ -34,41 +34,6 @@ $(function () {
 
     })
 
-    // 事件威胁下拉选项
-    var oAjax=new XMLHttpRequest();
-    oAjax.open("GET","RuleTypes.txt",true);
-    oAjax.send(null);
-    oAjax.onreadystatechange=function(){
-        if(oAjax.readyState==4){
-            if(oAjax.status==200){
-                var text=oAjax.responseText
-                var arrText=text.split("\n");
-                for(var i=0;i<arrText.length;i++){
-                    var leixing=arrText[i].split(",")[0];
-                    var oLi=document.createElement("li");
-                    var oA=document.createElement("a");
-                    var oevenL=document.getElementById("evenL");
-                    oA.href="javascript:";
-                    oA.innerHTML=leixing
-                    oLi.appendChild(oA);
-                    oevenL.appendChild(oLi);
-                }
-            }else{
-                console.log("请求失败");
-            }
-        }
-    }
-
-        var inputPlaceHolder;
-        $("input").focus(function () {
-            // console.log(1);
-            inputPlaceHolder=$(this).attr("placeholder")
-            $(this).prop("placeholder", "");
-            // $(this).val("")
-        })
-        $("input").blur(function () {
-            $(this).prop("placeholder",inputPlaceHolder)
-        })
 
 })
 

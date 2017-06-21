@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>威胁事件统计</title>
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/threatStatistics.css">
@@ -40,13 +40,12 @@
     <div class="row">
         <!--左侧导航-->
         <div class="col-lg-2 leftNav col-md-2 col-sm-2">
-
             <div class="leftNavv">
                 <div class="even">
                     <img src="image/evenicon.png" alt="">
                     <span class="evenText">事件分析</span>
                 </div>
-                <div class="evenXl">
+                <div class="evenXl" style="display: block">
                     <a href="javascript:">威胁事件统计</a>
                     <a href="onlineThreat.html" target="_self">上网行为分析</a>
                 </div>
@@ -174,17 +173,7 @@
                 <!--表格部分-->
                 <div style="min-height: 553px;">
                     <table class="table table-striped" id="tablee">
-                        <tr class="trr">
-                            <th>最早攻击时间</th>
-                            <th>最近攻击时间</th>
-                            <th>黑客国家信息</th>
-                            <th>攻击IP</th>
-                            <th>利用协议</th>
-                            <th>事件类型</th>
-                            <th>危险级别</th>
-                            <th>攻击次数</th>
-                            <th>深度分析</th>
-                        </tr>
+
                     </table>
                 </div>
                 <!--页码部分-->

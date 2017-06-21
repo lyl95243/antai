@@ -31,17 +31,7 @@ $(function () {
                 return params.seriesName + '<br/>' + params.name + ' : ' + value;
             }
         },
-        toolbox: {
-            show: true,
-            orient: 'vertical',
-            left: 'right',
-            top: 'center',
-            feature: {
-                dataView: {readOnly: false},
-                restore: {},
-                saveAsImage: {}
-            }
-        },
+
         visualMap: {
             min: 0,
             max: 1000000,
@@ -255,18 +245,7 @@ $(function () {
             x:'right',
             data:['TCP通讯流量','UDP通讯流量']
         },
-        toolbox: {
-            show: false,
-            feature: {
-                dataZoom: {
-                    yAxisIndex: 'none'
-                },
-                dataView: {readOnly: false},
-                magicType: {type: ['line', 'bar']},
-                restore: {},
-                saveAsImage: {}
-            }
-        },
+
         xAxis:  {
             type: 'category',
             boundaryGap: false,
@@ -343,17 +322,7 @@ $(function () {
                 return params.seriesName + '<br/>' + params.name + ' : ' + value;
             }
         },
-        toolbox: {
-            show: true,
-            orient: 'vertical',
-            left: 'right',
-            top: 'center',
-            feature: {
-                dataView: {readOnly: false},
-                restore: {},
-                saveAsImage: {}
-            }
-        },
+
         visualMap: {
             min: 0,
             max: 1000000,
@@ -564,15 +533,6 @@ $(function () {
         tooltip: {
             trigger: 'item'
         },
-        toolbox: {
-            show: true,
-            feature: {
-                dataView: {show: true, readOnly: false},
-                restore: {show: true},
-                saveAsImage: {show: true}
-            }
-        },
-        calculable: true,
         grid: {
             borderWidth: 0,
             y: 80,
@@ -611,24 +571,6 @@ $(function () {
                     }
                 },
                 data: [12,21,10,4],
-                // markPoint: {
-                //     tooltip: {
-                //         trigger: 'item',
-                //         backgroundColor: 'rgba(0,0,0,0)',
-                //         formatter: function(params){
-                //             return '<img src="'
-                //                 + params.data.symbol.replace('image://', '')
-                //                 + '"/>';
-                //         }
-                //     },
-                //     data: [
-                //         {xAxis:0, y: 350, name:'Line', symbolSize:20, symbol: 'image://../asset/ico/折线图.png'},
-                //         {xAxis:1, y: 350, name:'Bar', symbolSize:20, symbol: 'image://../asset/ico/柱状图.png'},
-                //         {xAxis:2, y: 350, name:'Scatter', symbolSize:20, symbol: 'image://../asset/ico/散点图.png'},
-                //         {xAxis:3, y: 350, name:'K', symbolSize:20, symbol: 'image://../asset/ico/K线图.png'},
-                //
-                //     ]
-                // }
             }
         ]
     };
@@ -642,15 +584,7 @@ $(function () {
         tooltip: {
             trigger: 'item'
         },
-        toolbox: {
-            show: true,
-            feature: {
-                dataView: {show: true, readOnly: false},
-                restore: {show: true},
-                saveAsImage: {show: true}
-            }
-        },
-        calculable: true,
+
         grid: {
             borderWidth: 0,
             y: 80,
@@ -689,26 +623,6 @@ $(function () {
                     }
                 },
                 data: [12,21,12,25,23,7],
-                // markPoint: {
-                //     tooltip: {
-                //         trigger: 'item',
-                //         backgroundColor: 'rgba(0,0,0,0)',
-                //         formatter: function(params){
-                //             return '<img src="'
-                //                 + params.data.symbol.replace('image://', '')
-                //                 + '"/>';
-                //         }
-                //     },
-                //     data: [
-                //         {xAxis:0, y: 350, name:'Line', symbolSize:20, symbol: 'image://../asset/ico/折线图.png'},
-                //         {xAxis:1, y: 350, name:'Bar', symbolSize:20, symbol: 'image://../asset/ico/柱状图.png'},
-                //         {xAxis:2, y: 350, name:'Scatter', symbolSize:20, symbol: 'image://../asset/ico/散点图.png'},
-                //         {xAxis:3, y: 350, name:'K', symbolSize:20, symbol: 'image://../asset/ico/K线图.png'},
-                //         {xAxis:4, y: 350, name:'Pie', symbolSize:20, symbol: 'image://../asset/ico/饼状图.png'},
-                //         {xAxis:5, y: 350, name:'Radar', symbolSize:20, symbol: 'image://../asset/ico/雷达图.png'},
-                //
-                //     ]
-                // }
             }
         ]
     };
@@ -752,48 +666,11 @@ $(function () {
                 name:'TCP通讯流量',
                 type:'line',
                 data:[400, 1100, 500, 1200,1500,700, 1000],
-                // markPoint: {
-                //     data: [
-                //         {type: 'max', name: '最大值'},
-                //         {type: 'min', name: '最小值'}
-                //     ]
-                // },
-                // markLine: {
-                //     data: [
-                //         {type: 'average', name: '平均值'}
-                //     ]
-                // }
             },
             {
                 name:'UDP通讯流量',
                 type:'line',
                 data:[600, 800,750,1111,890, 560, 950],
-                // markPoint: {
-                //     data: [
-                //         {type: 'max', name: '最大值'},
-                //         {type: 'min', name: '最小值'}
-                //     ]
-                // },
-                // markLine: {
-                //     data: [
-                //         {type: 'average', name: '平均值'},
-                //         [{
-                //             symbol: 'none',
-                //             x: '90%',
-                //             yAxis: 'max'
-                //         }, {
-                //             symbol: 'circle',
-                //             label: {
-                //                 normal: {
-                //                     position: 'start',
-                //                     formatter: '最大值'
-                //                 }
-                //             },
-                //             type: 'max',
-                //             name: '最高点'
-                //         }]
-                //     ]
-                // }
             }
         ]
     };
@@ -829,48 +706,11 @@ $(function () {
                 name:'TCP通讯流量',
                 type:'line',
                 data:[400, 1100, 500, 1200,1500,700, 1000],
-                // markPoint: {
-                //     data: [
-                //         {type: 'max', name: '最大值'},
-                //         {type: 'min', name: '最小值'}
-                //     ]
-                // },
-                // markLine: {
-                //     data: [
-                //         {type: 'average', name: '平均值'}
-                //     ]
-                // }
             },
             {
                 name:'UDP通讯流量',
                 type:'line',
                 data:[600, 800,750,1111,890, 560, 950],
-                // markPoint: {
-                //     data: [
-                //         {type: 'max', name: '最大值'},
-                //         {type: 'min', name: '最小值'}
-                //     ]
-                // },
-                // markLine: {
-                //     data: [
-                //         {type: 'average', name: '平均值'},
-                //         [{
-                //             symbol: 'none',
-                //             x: '90%',
-                //             yAxis: 'max'
-                //         }, {
-                //             symbol: 'circle',
-                //             label: {
-                //                 normal: {
-                //                     position: 'start',
-                //                     formatter: '最大值'
-                //                 }
-                //             },
-                //             type: 'max',
-                //             name: '最高点'
-                //         }]
-                //     ]
-                // }
             }
         ]
     };
@@ -929,17 +769,7 @@ $(function () {
                     }
                 },
                 data: [22,13,7,4],
-                markPoint: {
-                    tooltip: {
-                        trigger: 'item',
-                        backgroundColor: 'rgba(0,0,0,0)',
-                        formatter: function(params){
-                            return '<img src="'
-                                + params.data.symbol.replace('image://', '')
-                                + '"/>';
-                        }
-                    },
-                }
+
             }
         ]
     };
@@ -998,17 +828,7 @@ $(function () {
                     }
                 },
                 data: [22,13,7,4],
-                markPoint: {
-                    tooltip: {
-                        trigger: 'item',
-                        backgroundColor: 'rgba(0,0,0,0)',
-                        formatter: function(params){
-                            return '<img src="'
-                                + params.data.symbol.replace('image://', '')
-                                + '"/>';
-                        }
-                    },
-                }
+
             }
         ]
     };
@@ -1024,15 +844,7 @@ $(function () {
         tooltip: {
             trigger: 'item'
         },
-        toolbox: {
-            show: true,
-            feature: {
-                dataView: {show: true, readOnly: false},
-                restore: {show: true},
-                saveAsImage: {show: true}
-            }
-        },
-        calculable: true,
+
         grid: {
             left: '3%',
             right: '4%',
@@ -1077,17 +889,7 @@ $(function () {
                     }
                 },
                 data: [12,6,10,4,5,4,8,7,9,2],
-                markPoint: {
-                    tooltip: {
-                        trigger: 'item',
-                        backgroundColor: 'rgba(0,0,0,0)',
-                        formatter: function(params){
-                            return '<img src="'
-                                + params.data.symbol.replace('image://', '')
-                                + '"/>';
-                        }
-                    },
-                }
+
             }
         ]
     };
@@ -1146,17 +948,6 @@ $(function () {
                     }
                 },
                 data: [22,13,7,4],
-                markPoint: {
-                    tooltip: {
-                        trigger: 'item',
-                        backgroundColor: 'rgba(0,0,0,0)',
-                        formatter: function(params){
-                            return '<img src="'
-                                + params.data.symbol.replace('image://', '')
-                                + '"/>';
-                        }
-                    },
-                }
             }
         ]
     };

@@ -17,11 +17,22 @@
     color: #3479c1;
     background: url('../image/zhexian_03.png') repeat-x center
 }
-.port,.state{
+.state{
     margin:0 0 20px 54px;
 }
-.port span{
-    color: grey;
+.cpuMemDisk{
+    width: 18%;
+    margin:0 5% 0 0;
+    float: left;
+}
+.cpuMemDisk>span{
+    float: left;
+}
+.cpuMemDisk>div{
+    float: left;
+    margin-left: 20px;
+    width: 250px;
+    height: 250px;
 }
 .workPort{
     float: left;

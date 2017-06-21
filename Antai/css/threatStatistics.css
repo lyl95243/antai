@@ -56,8 +56,8 @@
     margin-right: 1%;
     border-radius: 2px;
     padding:0 7px 0 12px;
-    border: 1px solid #eee3da;
-    background: url("../image/Threat_29.png") center;
+    border: 1px solid #cac9c8;
+    /*background: url("../image/Threat_29.png") center;*/
     position: relative;
 }
 .threatAnalListt{
@@ -110,11 +110,11 @@
     width: 15%;
     height: 32px;
     margin-right: 0;
-    border-left: 1px solid #e3e2e2;
+    border-left: 1px solid #cac9c8;
 }
 .chaxun{
     width: 8%;
-    background: #3a8cc3;
+    background: url("../image/chaxun.png");
     color: white;
 }
 .chaxun:hover{
@@ -136,6 +136,9 @@
     vertical-align: middle;
     text-align: center;
 }
+.table tbody tr .tdImg{
+
+}
 .tdImg img{
     width: 29px;
     height: 22px;
@@ -151,6 +154,7 @@
     border: none;
     border-radius: 4px;
     margin:0 auto;
+    text-align: center;
 }
 .trace:hover{
     background: #2877bb;
@@ -162,31 +166,11 @@
     float: right;
     margin-right:10%;
 }
-.pageTotal{
-    height: 36px;
-    line-height: 36px;
-    margin-right: 25px;
-}
+
 #laydate_hms{
     display: block !important;
 }
-#yema{
-    float: right;
-    margin:37px 4% 0 0;
-}
-#yema ul li{
-    float: left;
-}
-#yema ul li a{
-    padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-    color: #428bca;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
+
 
 
 

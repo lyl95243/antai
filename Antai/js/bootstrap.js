@@ -134,7 +134,6 @@ if (typeof jQuery === 'undefined') {
       removeElement()
   }
 
-
   // ALERT PLUGIN DEFINITION
   // =======================
 

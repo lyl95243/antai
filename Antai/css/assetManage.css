@@ -20,8 +20,8 @@
     margin-right: 12px;
     border-radius: 2px;
     padding:7px 10px 0 12px;
-    border: 1px solid #eee3da;
-    background: url("../image/Threat_29.png") center;
+    border: 1px solid #cac9c8;
+    /*background: url("../image/Threat_29.png") center;*/
     position: relative;
 }
 .threatAnalListt{
@@ -62,17 +62,17 @@
 .threatAnalListt :-ms-input-placeholder{
     color:    #333;
 }
-#button,#button2,#button3,#button4{
+#button,#button1,#button2,#button3,#button4,#button5{
     border: none;
     background: none;
     width: 15%;
-    height: 32px;
+    height: 27px;
     margin-right: 0;
-    border-left: 1px solid #e3e2e2;
+    border-left: 1px solid #cac9c8;
 }
-.chaxun,.chaxunn{
+.chaxun{
     width: 8%;
-    background: #3a8cc3;
+    background: url("../image/chaxun.png");
     color: white;
     margin: 0 10px 0 10px;
 }
@@ -81,11 +81,13 @@
     background: #2f7eb3;
 }
 .chaxunn{
+    width: 8%;
     color: #333;
-    background: #d3d3d3;
+    margin: 0 10px 0 10px;
+    background: #fff;
 }
 .chaxunn:hover{
-    background: #cacaca;
+    background:  #78bfdc;
 }
 .table{
     margin:15px 0 0 0;
@@ -104,14 +106,21 @@
     width:20%;
     height: 26px;
     margin-right: 2%;
-    background: #dadada;
+    background: #fff;
     color: #333;
-    border: none;
+    border: 1px solid lightgrey;
     border-radius: 4px;
 }
 .trace:hover{
-    background: #2877bb;
+    background: #3a8cc3;
     color: white;
+}
+.confirm{
+    background: #3a8cc3;
+    color: white;
+}
+.confirm:hover{
+    background-color:#2f7eb3;
 }
 .addMange{
     height: 41px;
@@ -134,6 +143,7 @@
     border: 1px solid lightgray;
     height: 29px;
     width: 340px;
+    padding-left: 11px;
 }
 .quxiao,.chuangjian{
     height: 28px;
@@ -157,37 +167,31 @@
     margin: 0 95px 0 11px;
     background: #3485bb;
 }
-#button2,#button3,#button4{
+#button2,#button3,#button4,#button5{
     position: absolute;
     top:0;
     right: 71px;
     width: 6%;
     border-left: none;
 }
-#button3,#button4{
-    top: 3px;;
-    right: 0;
-    width: 20%;
-}
 .assetLeft{
-   float: left;
     width: 6%;
     margin: 1% 2% 1% 1%;
 }
 .assetLeft>button{
-    width: 63px;
-    height: 26px;
-    line-height: 26px;
+    width: 122px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
     font-size: 13px;
     border: 1px solid lightgrey;
-    background: #dedede;
-    border-radius: 7px;
+    background: #fff;
+    border-radius: 3px;
     cursor: pointer;
     margin-bottom: 12px;
 }
 .tablee{
-    width: 91%;
+    width: 100%;
 }
 .shibie{
     width: 140px;
@@ -208,10 +212,40 @@
     width: 90%;
     font-size: 13px;
 }
-
-
-
-
+#addView:hover{
+    background: #78bfdc;
+}
+.qiyong span{
+    margin:0 auto;
+    transition: 0.3s;
+    background: url('../image/manage.png') no-repeat 0 2px;
+    width: 18px;height: 18px;
+    display: block
+}
+.qiyong .qiyongB{
+    background-position: bottom;
+}
+.qiyong .qiyongT{
+    background-position: 0 2px;
+}
+.qiyongSpan{
+    cursor: pointer;
+    background: url('../image/qiyong.png') no-repeat center;
+    width: 18px;height: 18px;
+    display: inline-block
+}
+.tingyongSpan{
+    cursor: pointer;
+    background: url('../image/tingyong.png') no-repeat center;
+    width: 18px;height: 18px;
+    display: inline-block
+}
+.qitingyong{
+    background-color: #e5e5e5;
+    border-radius: 100%;
+    opacity: 0.4;
+    filter:alpha(opacity=40);
+}
 
 
 

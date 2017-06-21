@@ -60,12 +60,12 @@
     margin-right: 12px;
     border-radius: 2px;
     padding:7px 10px 0 12px;
-    border: 1px solid #eee3da;
-    background: url("../image/Threat_29.png") center;
+    border: 1px solid #cac9c8;
+    /*background: url("../image/Threat_29.png") center;*/
     position: relative;
 }
 .threatAnalListt{
-    padding:4px 0 0 12px;
+    padding:0px 0 0 12px;
 }
 
 .threatAnalList input,.threatAnalListt input{
@@ -76,7 +76,7 @@
 }
 .threatAnalListt input{
     width: 80%;
-    padding-top: 3px;
+    padding-top: 7px;
 }
 .threatAnalList i{
     margin: 2px 2px 0 0;
@@ -106,13 +106,13 @@
     border: none;
     background: none;
     width: 15%;
-    height: 32px;
+    height: 33px;
     margin-right: 0;
     border-left: 1px solid #e3e2e2;
 }
 .chaxun{
     width: 8%;
-    background: #3a8cc3;
+    background: url("../image/chaxun.png");
     color: white;
 }
 .chaxun:hover{
@@ -141,7 +141,7 @@
 .trace{
     width: 70%;
     height: 26px;
-    background: #3485bb;
+    background: url("../image/zhuiz.png");
     color: white;
     border: none;
     border-radius: 4px;

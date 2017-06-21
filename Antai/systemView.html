@@ -10,6 +10,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src=js/placehlod.js></script>
+    <script src="js/echarts.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/laydate-v1.1/laydate/laydate.js"></script>
     <script src="js/systemViem.js"></script>
@@ -63,7 +64,7 @@
                     <img src="image/systemmes.png" alt="">
                     <span class="evenText">系统管理</span>
                 </div>
-                <div class="evenXl system">
+                <div class="evenXl system" style="display: block">
                     <a href="systemView.html" target="_self">系统概览</a>
                     <a href="systemSet.html" target="_self">系统设置</a>
                     <a href="systemUpgrade.html" target="_self">系统升级</a>
@@ -81,52 +82,30 @@
                <div class="sysBanben">
                    <i class="fa fa-paste" style="color: olivedrab;font-size: 18px"></i>
                    <span style="color: #333">系统版本:</span>
-                   <span style="color:grey;">10.12.3(16D32)</span>
+                   <span style="color:grey;" id="sysVersion"></span>
                </div>
                 <div class="sysBanben" style="padding-top: 0px">
                     <i class="fa fa-file-text-o" style="color: olivedrab;font-size: 18px"></i>
                     <span style="color: #333">规则库版本:</span>
-                    <span style="color:grey;">10.12.3(16D32)</span>
-                </div>
-                <div style="height: 204px;">
-                    <div class="portWrap">
-                        接口信息
-                    </div>
-                    <div class="port">
-                        管理口: <span style="padding: 0 10px 0 10px;">etho</span>
-                        <span>IP:</span> <span>192.168.1.1/24</span>
-                    </div>
-                    <div class="port">
-                       <div style="float: left"> 工作接口:</div>
-                        <div class="workPort">
-                            <img src="image/jiekou_03.png" alt="">
-                            <img src="image/jiekou_03.png" alt="">
-                            <img src="image/jiekou_03.png" alt="">
-                            <img src="image/jiekou_03.png" alt="">
-                            <img src="image/jiekou_03.png" alt="">
-                            <img src="image/jiekou_03.png" alt="">
-                            <img src="image/jiekou_07.png" alt="">
-                            <img src="image/jiekou_03.png" alt="">
-                            <img src="image/jiekou_03.png" alt="">
-                            <img src="image/jiekou_03.png" alt="">
-                        </div>
-                    </div>
+                    <span style="color:grey;" id="ruleVersion"></span>
                 </div>
                 <div style="height: 204px;">
                     <div class="portWrap">
                         系统状态
                     </div>
-                    <div class="state">
-                        <span>内存:</span>
-                        <div id="chart1"></div>
-                    </div>
-                    <div class="state">
-                        <span>CPU:</span>
-                        <div id="chart2"></div>
-                    </div>
-                    <div class="state">
-                        <span>硬件:</span>
-                        <div id="chart3"></div>
+                    <div>
+                        <div class="state cpuMemDisk" style="margin-left: 5%">
+                            <span>内存:</span>
+                            <div id="chart01"></div>
+                        </div>
+                        <div class="state cpuMemDisk">
+                            <span>CPU:</span>
+                            <div id="chart02"></div>
+                        </div>
+                        <div class="state cpuMemDisk" style="margin-right: 0">
+                            <span>硬盘:</span>
+                            <div id="chart03"></div>
+                        </div>
                     </div>
                 </div>
                 <div>

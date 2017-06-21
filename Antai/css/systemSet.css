@@ -5,16 +5,16 @@
     border-radius: 4px;
     padding: 22px 0 0 18px;
     margin: 0 12px 0 12px;
-    background: #f7f7f7;
+    background: #fff;
     position: relative;
 }
 .fenxian{
-    width: 100%;
+    width: 99%;
     height: 20px;
     background: url("../image/hacker_03.png") center;
     position: absolute;
     top: 36px;
-    left: 0;
+    left: 19px;
 }
 .setWrap{
     float: left;
@@ -25,13 +25,13 @@
     height: 30px;
     line-height: 30px;
     text-align: center;
-    background: #dedede;
+    background:url("../image/sysset_03.png");
     border-radius: 2px;
     cursor: pointer;
-    border: 1px solid #aaaaaa;
+    border: 1px solid #e2e0e0;
 }
 .portset:hover{
-    background: #367ac5;
+    background: #3a8cc3;
     color: white;
 }
 .setWrapXl{
@@ -42,7 +42,7 @@
     display:none;
 }
 .portsetB{
-    background: #367ac5;
+    background: #3a8cc3;
     color: white;
 }
 .shuxing{
@@ -66,7 +66,7 @@
     height: 35px;
     margin:0 12px 0 25px;
     border-radius: 2px;
-    padding:4px 0 0 12px;
+    padding:0px 0 0 12px;
     border: 1px solid #bcb4ad;
     position: relative;
 }
@@ -76,23 +76,25 @@
     border: none;
     outline: none;
     background-color: transparent;
+    margin-top: 4px;
 }
 .threatAnalList button{
     float: right;
     border: none;
     background: none;
     width: 15%;
-    height: 32px;
+    height: 33px;
     margin-right: 0;
     border-left: 1px solid #bcb4ad;
 }
 .ipInput{
-    margin: 40px 0 0 0;
+    margin: 40px 0 0 25px;
 }
 .ipInput input,.shuxing input{
     height: 34px;
     outline: none;
     margin-right: 18px;
+    padding-left: 8px;
 }
 .save{
     width: 83px;
@@ -105,6 +107,9 @@
     cursor: pointer;
     margin: 39px 0 0 25px;
     clear: both;
+}
+.save:hover{
+    background: #3a8cc3;
 }
 .guanji{
     width: 140px;
@@ -121,9 +126,15 @@
     font-family: "微软雅黑";
     cursor: pointer;
 }
+.guanji:hover{
+    background: #1b74c3;
+}
 .chongqi{
     color: #454747;
     background: #d2d2d2;
+}
+.chongqi:hover{
+    background: #c8c7cf;
 }
 
 

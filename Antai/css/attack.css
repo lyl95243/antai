@@ -22,9 +22,9 @@
     margin-right: 12px;
     border-radius: 2px;
     padding:7px 10px 0 12px;
-    border: 1px solid #eee3da;
+    border: 1px solid #cac9c8;
     margin: 5px 40px 0 0;
-    background: url("../image/Threat_29.png") center;
+    /*background: url("../image/Threat_29.png") center;*/
     position: relative;
 }
 .pianYi input{
@@ -66,29 +66,3 @@
     text-align: center
 }
 
-.paginationn{
-    float: right;
-    margin-right:10%;
-}
-.pageTotal{
-    height: 36px;
-    line-height: 36px;
-    margin-right: 25px;
-}
-#yema{
-    float: right;
-    margin:37px 4% 0 0;
-}
-#yema ul li{
-    float: left;
-}
-#yema ul li a{
-    padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-    color: #428bca;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
