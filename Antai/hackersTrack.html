@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>黑客追踪</title>
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/hackersTrack.css">
     <link rel="stylesheet" href="css/common.css">
     <script src="js/jquery.min.js"></script>
@@ -25,7 +25,7 @@
 <div class="header">
     <div class="logoWrap" onclick="window.open('index.html','_self')">
         <p class="logo">LOGO</p>
-        <span class="logoText">慧眼网络空间威胁感知系统</span>
+        <span class="logoText">安态网络空间威胁感知系统</span>
     </div>
     <div class="menu">
         <img src="image/menu_03.png" alt="">
@@ -47,7 +47,7 @@
                     <span class="evenText">事件分析</span>
                 </div>
                 <div class="evenXl" style="display: block">
-                    <a href="threatStatistic.html" target="_self">威胁事件统计</a>
+                    <a href="threatStatistic.html" target="_self" class="evenXlHover">威胁事件统计</a>
                     <a href="onlineThreat.html" target="_self">上网行为分析</a>
                 </div>
             </div>
@@ -82,11 +82,13 @@
             </div>
             <div class="rightTab">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">事件列表</a>
+                    <li role="presentation" id="evenF" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">事件列表</a>
                     </li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">统计分析</a>
+                    <li role="presentation" id="tongji"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">统计分析</a>
                     </li>
                     <li role="presentation" id="flowf"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">流量分析</a>
+                    </li>
+                    <li role="presentation" id="DNSfx"><a href="#DNS" aria-controls="messages" role="tab" data-toggle="tab">DNS统计分析</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -163,7 +165,7 @@
                             </div>
                             <button class="btn btn-default chaxun" id="hackChaX">查询</button>
                         </div>
-                        <div style="min-height: 553px;margin-left: 15px;">
+                        <div style="min-height: 467px;margin:23px 0 0 15px;">
                             <table class="table table-striped" id="tablee">
 
                             </table>
@@ -171,7 +173,7 @@
                         <!--页码-->
                         <div id="yema"></div>
                         <div style="float: right; margin:30px 3% 3% 0;">
-                            <span class="pageTotal pagee">每页显示: <span>12</span></span>
+                            <span class="pageTotal pagee">每页显示: <span>10</span></span>
                             <span class="pageTotal pagez">总页数: <span></span></span>
                         </div>
 
@@ -257,7 +259,7 @@
                                 </div>
                                 <button class="btn btn-default chaxun" id="flowChaX">查询</button>
                             </div>
-                           <div style="min-height: 467px">
+                           <div style="min-height: 467px;margin:23px 0 0 0;">
                                <table class="table table-striped" id="flowTab">
 
                                </table>
@@ -267,6 +269,223 @@
                             <div style="float: right; margin:30px 3% 3% 0;">
                                 <span class="pageTotal pagee">每页显示: <span>10</span></span>
                                 <span class="pageTotal pagezz">总页数: <span></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--DNS统计分析-->
+                    <div role="tabpanel" class="tab-pane fade" id="DNS">
+                        <div style="overflow: hidden">
+                            <div class="DNStjfx">
+                                <span>DNS统计分析</span>
+                                <span></span>
+                            </div>
+                            <div class="DNSCon">
+                                <div class="DNSConT DNSDomainB">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                                <div class="DNSConB DNSDomainBefore">
+                                    <div>
+                                        <img src="image/DNS.png" alt="">
+                                        <span style="text-align: left;width: 9.09%;">0</span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="DNSConName">前TOP10域名排名</div>
+                            </div>
+                            <div class="DNSCon">
+                                <div class="DNSConT DNSDomainA">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                                <div class="DNSConB DNSDomainAfter">
+                                    <div>
+                                        <img src="image/DNS.png" alt="">
+                                        <span style="text-align: left;width: 9.09%;">0</span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="DNSConName">后TOP10域名排名</div>
+                            </div>
+                            <div class="DNSCon">
+                                <div class="DNSConT DNSType">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                                <div class="DNSConB DNSTypeB">
+                                    <div>
+                                        <img src="image/DNS.png" alt="">
+                                        <span style="text-align: left;width: 9.09%;">0</span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="DNSConName">DNS查询类型排名</div>
+                            </div>
+                            <div class="DNSCon" style="margin-right: 0">
+                                <div class="DNSConT DNSOpcode">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                                <div class="DNSConB DNSOpcodeB">
+                                    <div>
+                                        <img src="image/DNS.png" alt="">
+                                        <span style="text-align: left;width: 9.09%;">0</span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="DNSConName">操作排名</div>
+                            </div>
+                        </div>
+                        <div class="DNSTable">
+                            <p>DNS查询列表</p>
+                            <!--筛选项-->
+                            <div>
+                                <div class="threatAnalList">
+                                    <input type="text" class="laydate-icon" placeholder="起止时间" id="hello5">
+                                </div>
+                                <div class="threatAnalList">
+                                    <input type="text" class="laydate-icon" placeholder="结束时间" id="hello6">
+                                </div>
+                                <div class="threatAnalList">
+                                    <input type="text" class="attkIP" placeholder="DNS服务器">
+                                </div>
+                                <div class="threatAnalList">
+                                    <input type="text" class="attkIP" placeholder="域名">
+                                </div>
+                                <div class="threatAnalListt">
+                                    <input type="text" class="evenTypes" placeholder="类型">
+                                    <button id="button6" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" id="DNSType">
+                                        <li><a href="javascript:">A</a></li>
+                                        <li><a href="javascript:">B</a></li>
+                                        <li><a href="javascript:">C</a></li>
+                                        <li><a href="javascript:">D</a></li>
+                                    </ul>
+                                </div>
+                                <div class="threatAnalListt">
+                                    <input type="text" class="protos" placeholder="排序类型">
+                                    <button id="button7" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:">A</a></li>
+                                        <li><a href="javascript:">B</a></li>
+                                        <li><a href="javascript:">C</a></li>
+                                        <li><a href="javascript:">D</a></li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-default chaxun" type="submit">查找</button>
+                            </div>
+                            <!--表格部分-->
+                            <div style="min-height: 467px;">
+                                <table class="table table-striped" id="DNStable">
+                                    <tr>
+                                        <th>最早查询时间</th>
+                                        <th>最近查询时间</th>
+                                        <th>DNS服务器</th>
+                                        <th>域名</th>
+                                        <th>操作</th>
+                                        <th>类型</th>
+                                        <th>查询次数</th>
+                                        <th>查询百分比</th>
+                                        <th>深度分析</th>
+                                    </tr>
+                                    <tr>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>8.8.8.8</td>
+                                        <td>www.baidu.com</td>
+                                        <td>QUERY</td>
+                                        <td>A</td>
+                                        <td>1200</td>
+                                        <td>70%</td>
+                                        <td>
+                                            <button class="trace DNSTrace">查看查询列表</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>8.8.8.8</td>
+                                        <td>www.baidu.com</td>
+                                        <td>QUERY</td>
+                                        <td>A</td>
+                                        <td>1200</td>
+                                        <td>70%</td>
+                                        <td>
+                                            <button class="trace DNSTrace">查看查询列表</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>8.8.8.8</td>
+                                        <td>www.baidu.com</td>
+                                        <td>QUERY</td>
+                                        <td>A</td>
+                                        <td>1200</td>
+                                        <td>70%</td>
+                                        <td>
+                                            <button class="trace DNSTrace">查看查询列表</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>8.8.8.8</td>
+                                        <td>www.baidu.com</td>
+                                        <td>QUERY</td>
+                                        <td>A</td>
+                                        <td>1200</td>
+                                        <td>70%</td>
+                                        <td>
+                                            <button class="trace DNSTrace">查看查询列表</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>2017.6.21 12:30:50</td>
+                                        <td>8.8.8.8</td>
+                                        <td>www.baidu.com</td>
+                                        <td>QUERY</td>
+                                        <td>A</td>
+                                        <td>1200</td>
+                                        <td>70%</td>
+                                        <td>
+                                            <button class="trace DNSTrace">查看查询列表</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--页码部分-->
+                            <div id="DNSyema"></div>
+                            <div style="float: right; margin:30px 3% 1% 0;">
+                                <span class="pageTotal pagee">每页显示: <span>10</span></span>
+                                <span class="pageTotal DNSpagez">总页数: <span></span></span>
                             </div>
                         </div>
                     </div>

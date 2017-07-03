@@ -10,32 +10,32 @@ $(function () {
 
     // 左侧下拉
     var height=$(".rightC").height();
-    $(".leftNav").height(height)
+    $(".leftNav").height(height);
     $(".even").click(function () {
-        $(this).next(".evenXl").slideToggle()
-        $(this).parents().siblings().find(".evenXl").slideUp()
+        $(this).next(".evenXl").slideToggle();
+        $(this).parents().siblings().find(".evenXl").slideUp();
     })
     // 左侧导航收起展开
     var i=1
     $(".menu").click(function () {
         i++;
         if(i%2==0){
-            $(".leftNav").addClass("hideNav").removeClass("showNav")
-            $(".rightC").addClass("showRight").removeClass("hideRight")
+            $(".leftNav").addClass("hideNav").removeClass("showNav");
+            $(".rightC").addClass("showRight").removeClass("hideRight");
         }else{
-            $(".rightC").removeClass("showRight").addClass("hideRight")
-            $(".leftNav").removeClass("hideNav").addClass("showNav")
+            $(".rightC").removeClass("showRight").addClass("hideRight");
+            $(".leftNav").removeClass("hideNav").addClass("showNav");
         }
-    })
+    });
     $(".dropdown-menu").delegate("li a","click",function () {
-        var text=$(this).text()
+        var text=$(this).text();
         $(this).parents(".threatAnalList,.threatAnalListt").find("input").val(text);
-        $(this).parents(".addManC").find("input").val(text)
+        $(this).parents(".addManC").find("input").val(text);
 
-    })
+    });
 
+});
 
-})
 
 function Ajax(url, type, datatype, param,async, callbackSuccess, callbackErr) {
     $.ajax({
@@ -51,7 +51,7 @@ function Ajax(url, type, datatype, param,async, callbackSuccess, callbackErr) {
         success: callbackSuccess,
         error: callbackErr,
     });
-}
+};
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var l = decodeURI(window.location.search);

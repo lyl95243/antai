@@ -139,6 +139,7 @@ a{
     height: 28px;
     line-height: 28px;
     color: grey;
+    outline: none;
     /*box-sizing: border-box;*/
     border: 1px solid lightgray;
     padding: 1.94% 0 1.94% 6%;

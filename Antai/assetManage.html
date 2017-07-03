@@ -24,7 +24,7 @@
 <div class="header">
     <div class="logoWrap" onclick="window.open('index.html','_self')">
         <p class="logo">LOGO</p>
-        <span class="logoText">慧眼网络空间威胁感知系统</span>
+        <span class="logoText">安态网络空间威胁感知系统</span>
     </div>
     <div class="menu">
         <img src="image/menu_03.png" alt="">
@@ -56,7 +56,7 @@
                     <span class="evenText">资产管理</span>
                 </div>
                 <div class="evenXl evenXll" style="display: block">
-                    <a href="javascript:">资产管理</a>
+                    <a href="javascript:" class="evenXlHover">资产管理</a>
                 </div>
             </div>
             <div class="leftNavv">
@@ -78,336 +78,338 @@
             <div class="threatHead">
                 <p> 资产管理</p>
             </div>
-            <div class="tab-content rightTab">
+            <div class="rightTab">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">资产列表</a>
                     </li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">自动识别资产</a>
                     </li>
                 </ul>
-                <!--资产列表-->
-                <div role="tabpanel" class="tab-pane fade in active biankuang" id="home">
-                    <div class="assetWrap">
-                        <div class="threatAnalList">
-                            <input type="text" placeholder="资产IP" id="ip">
-                        </div>
-                        <div class="threatAnalListt">
-                            <input type="text" placeholder="存活状态" id="live">
-                            <button id="button1" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:">在线</a></li>
-                                <li><a href="javascript:">不在线</a></li>
+              <div class="tab-content">
+                  <!--资产列表-->
+                  <div role="tabpanel" class="tab-pane fade in active biankuang" id="home">
+                      <div class="assetWrap">
+                          <div class="threatAnalList">
+                              <input type="text" placeholder="资产IP" id="ip">
+                          </div>
+                          <div class="threatAnalListt">
+                              <input type="text" placeholder="存活状态" id="live">
+                              <button id="button1" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">
+                                  <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                  <li><a href="javascript:">在线</a></li>
+                                  <li><a href="javascript:">不在线</a></li>
 
-                            </ul>
-                        </div>
-                        <div class="threatAnalList">
-                            <input type="text" placeholder="类型" id="type">
-                        </div>
-                        <div class="threatAnalList">
-                            <input type="text" placeholder="所有者" id="owner">
-                        </div>
-                        <div class="threatAnalList">
-                            <input type="text" placeholder="所属部门" id="dep">
-                        </div>
+                              </ul>
+                          </div>
+                          <div class="threatAnalList">
+                              <input type="text" placeholder="类型" id="type">
+                          </div>
+                          <div class="threatAnalList">
+                              <input type="text" placeholder="所有者" id="owner">
+                          </div>
+                          <div class="threatAnalList">
+                              <input type="text" placeholder="所属部门" id="dep">
+                          </div>
 
-                        <div class="threatAnalListt">
-                            <input type="text" placeholder="状态" id="status">
-                            <button id="button" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:">已确认</a></li>
-                                <li><a href="javascript:">未确认</a></li>
+                          <div class="threatAnalListt">
+                              <input type="text" placeholder="状态" id="status">
+                              <button id="button" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">
+                                  <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                  <li><a href="javascript:">已确认</a></li>
+                                  <li><a href="javascript:">未确认</a></li>
 
-                            </ul>
-                        </div>
-                        <button class="btn btn-default chaxun" type="button">查找</button>
-                        <button class="btn btn-default chaxunn" type="button" data-toggle="modal" data-target="#assetAdd" id="addMan">添加资产</button>
-                        <div style="min-height: 467px">
-                            <table class="table table-striped manTab" id="tablee">
+                              </ul>
+                          </div>
+                          <button class="btn btn-default chaxun" type="button">查找</button>
+                          <button class="btn btn-default chaxunn" type="button" data-toggle="modal" data-target="#assetAdd" id="addMan">添加资产</button>
+                          <div style="min-height: 467px;margin:23px 0 0 0;">
+                              <table class="table table-striped manTab" id="tablee">
 
-                            </table>
-                        </div>
-                        <!--页码部分-->
-                        <div id="yema"></div>
-                        <div style="float: right; margin:30px 3% 3% 0;">
-                            <span class="pageTotal pagee">每页显示: <span>10</span></span>
-                            <span class="pageTotal pagez">总页数: <span></span></span>
-                        </div>
-                        <!--资产编辑弹出框-->
-                        <div class="modal fade" id="assetEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content" style="background:#f0f0f0">
-                                    <div class="modal-header" style="padding: 0">
-                                        <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
-                                            &times;
-                                        </button>
-                                        <h4 class="modal-title" id="myModalLabel">
-                                            <div class="addMange">资产编辑</div>
-                                        </h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div style="margin-top: 30px;">
-                                            <div class="addManC" id="editIp">
-                                                <span>IP:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" id="editMac">
-                                                <span>MAC:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" style="position: relative" id="editLive">
-                                                <span>存活状态:</span>
-                                                <input type="text" readonly="readonly">
-                                                <button id="button2" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" style="top: 90%;left: 159px;">
-                                                    <li><a href="javascript:">在线</a></li>
-                                                    <li><a href="javascript:">不在线</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="addManC" id="editType">
-                                                <span>类型:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" id="editDep">
-                                                <span>所属部门:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" id="editOwner">
-                                                <span>所有者:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" style="position: relative" id="editStatus">
-                                                <span>状态:</span>
-                                                <input type="text" readonly="readonly">
-                                                <button id="button5" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" style="top: 90%;left: 159px;">
-                                                    <li><a href="javascript:">已确认</a></li>
-                                                    <li><a href="javascript:">未确认</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                                        </button>
-                                        <button type="button" class="btn btn-primary" id="editAffirm">
-                                            确认
-                                        </button>
-                                    </div>
-                                </div><!-- /.modal-content -->
-                            </div><!-- /.modal -->
-                        </div>
-                        <!--添加资产弹出框-->
-                        <div class="modal fade" id="assetAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content" style="background:#f0f0f0">
-                                    <div class="modal-header" style="padding: 0">
-                                        <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
-                                            &times;
-                                        </button>
-                                        <h4 class="modal-title">
-                                            <div class="addMange">添加资产</div>
-                                        </h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div style="margin-top: 30px;">
-                                            <div class="addManC" id="addIP">
-                                                <span>IP:</span>
-                                                <input type="text">
-                                            </div>
-                                            <div class="addManC" id="addMAC">
-                                                <span>MAC:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" id="addLive" style="position:relative">
-                                                <span>存活状态:</span>
-                                                <input type="text" readonly="readonly" value="在线" />
-                                                <button id="button3" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" style="top: 90%;left: 159px;">
-                                                    <li><a href="javascript:">在线</a></li>
-                                                    <li><a href="javascript:">不在线</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="addManC" id="addType">
-                                                <span>类型:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" id="addOwner">
-                                                <span>所有者:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" id="addDep">
-                                                <span>所属部门:</span>
-                                                <input type="text" placeholder="">
-                                            </div>
-                                            <div class="addManC" id="addStatus" style="position:relative">
-                                                <span>状态:</span>
-                                                <input type="text" readonly="readonly" value="确认">
-                                                <button id="button4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu" style="top: 90%;left: 159px;">
-                                                    <li><a href="javascript:">确认</a></li>
-                                                    <li><a href="javascript:">未确认</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                                        </button>
-                                        <button type="button" class="btn btn-primary" id="addAffirm">
-                                            确认
-                                        </button>
-                                    </div>
-                                </div><!-- /.modal-content -->
-                            </div><!-- /.modal -->
-                        </div>
-                    </div>
-                </div>
-                <!--自动识别资产-->
-                <div role="tabpanel" class="tab-pane fade" id="profile">
-                   <div class="assetWrap">
-                       <div class="assetLeft">
-                           <button data-toggle="modal" data-target="#assetIndent" id="addView">添加</button>
-                       </div>
-                       <div style="min-height: 467px">
-                           <table class="table table-striped tablee" id="scanManTab">
+                              </table>
+                          </div>
+                          <!--页码部分-->
+                          <div id="yema"></div>
+                          <div style="float: right; margin:30px 3% 3% 0;">
+                              <span class="pageTotal pagee">每页显示: <span>10</span></span>
+                              <span class="pageTotal pagez">总页数: <span></span></span>
+                          </div>
+                          <!--资产编辑弹出框-->
+                          <div class="modal fade" id="assetEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                  <div class="modal-content" style="background:#f0f0f0">
+                                      <div class="modal-header" style="padding: 0">
+                                          <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
+                                              &times;
+                                          </button>
+                                          <h4 class="modal-title" id="myModalLabel">
+                                              <div class="addMange">资产编辑</div>
+                                          </h4>
+                                      </div>
+                                      <div class="modal-body">
+                                          <div style="margin-top: 30px;">
+                                              <div class="addManC" id="editIp">
+                                                  <span>IP:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="editMac">
+                                                  <span>MAC:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" style="position: relative" id="editLive">
+                                                  <span>存活状态:</span>
+                                                  <input type="text" readonly="readonly"  data-toggle="dropdown">
+                                                  <button id="button2" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                          aria-expanded="false">
+                                                      <span class="caret"></span>
+                                                  </button>
+                                                  <ul class="dropdown-menu" style="top: 90%;left: 159px;">
+                                                      <li><a href="javascript:">在线</a></li>
+                                                      <li><a href="javascript:">不在线</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="addManC" id="editType">
+                                                  <span>类型:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="editDep">
+                                                  <span>所属部门:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="editOwner">
+                                                  <span>所有者:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" style="position: relative" id="editStatus">
+                                                  <span>状态:</span>
+                                                  <input type="text" readonly="readonly" data-toggle="dropdown">
+                                                  <button id="button5" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                          aria-expanded="false">
+                                                      <span class="caret"></span>
+                                                  </button>
+                                                  <ul class="dropdown-menu" style="top: 90%;left: 159px;">
+                                                      <li><a href="javascript:">已确认</a></li>
+                                                      <li><a href="javascript:">未确认</a></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                          </button>
+                                          <button type="button" class="btn btn-primary" id="editAffirm">
+                                              确认
+                                          </button>
+                                      </div>
+                                  </div><!-- /.modal-content -->
+                              </div><!-- /.modal -->
+                          </div>
+                          <!--添加资产弹出框-->
+                          <div class="modal fade" id="assetAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                  <div class="modal-content" style="background:#f0f0f0">
+                                      <div class="modal-header" style="padding: 0">
+                                          <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
+                                              &times;
+                                          </button>
+                                          <h4 class="modal-title">
+                                              <div class="addMange">添加资产</div>
+                                          </h4>
+                                      </div>
+                                      <div class="modal-body">
+                                          <div style="margin-top: 30px;">
+                                              <div class="addManC" id="addIP">
+                                                  <span>IP:</span>
+                                                  <input type="text">
+                                              </div>
+                                              <div class="addManC" id="addMAC">
+                                                  <span>MAC:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="addLive" style="position:relative">
+                                                  <span>存活状态:</span>
+                                                  <input type="text" readonly="readonly" data-toggle="dropdown" value="在线" />
+                                                  <button id="button3" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                          aria-expanded="false">
+                                                      <span class="caret"></span>
+                                                  </button>
+                                                  <ul class="dropdown-menu" style="top: 90%;left: 159px;">
+                                                      <li><a href="javascript:">在线</a></li>
+                                                      <li><a href="javascript:">不在线</a></li>
+                                                  </ul>
+                                              </div>
+                                              <div class="addManC" id="addType">
+                                                  <span>类型:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="addOwner">
+                                                  <span>所有者:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="addDep">
+                                                  <span>所属部门:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="addStatus" style="position:relative">
+                                                  <span>状态:</span>
+                                                  <input type="text" readonly="readonly" data-toggle="dropdown" value="确认">
+                                                  <button id="button4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                          aria-expanded="false">
+                                                      <span class="caret"></span>
+                                                  </button>
+                                                  <ul class="dropdown-menu" style="top: 90%;left: 159px;">
+                                                      <li><a href="javascript:">确认</a></li>
+                                                      <li><a href="javascript:">未确认</a></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                          </button>
+                                          <button type="button" class="btn btn-primary" id="addAffirm">
+                                              确认
+                                          </button>
+                                      </div>
+                                  </div><!-- /.modal-content -->
+                              </div><!-- /.modal -->
+                          </div>
+                      </div>
+                  </div>
+                  <!--自动识别资产-->
+                  <div role="tabpanel" class="tab-pane fade" id="profile">
+                      <div class="assetWrap">
+                          <div class="assetLeft">
+                              <button data-toggle="modal" data-target="#assetIndent" id="addView">添加</button>
+                          </div>
+                          <div style="min-height: 467px;margin:23px 0 0 0;">
+                              <table class="table table-striped tablee" id="scanManTab">
 
-                           </table>
-                       </div>
-                       <!--页码部分-->
-                       <div id="yemaa"></div>
-                       <div style="float: right; margin:30px 3% 3% 0;">
-                           <span class="pageTotal">每页显示: <span>10</span></span>
-                           <span class="pageTotal pagezz">总页数: <span></span></span>
-                       </div>
-                       <!--自动识别资产添加弹出框-->
-                       <div class="modal fade" id="assetIndent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                           <div class="modal-dialog">
-                               <div class="modal-content" style="background:#f0f0f0">
-                                   <div class="modal-header" style="padding: 0">
-                                       <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
-                                           &times;
-                                       </button>
-                                       <h4 class="modal-title">
-                                           <div class="addMange">添加识别对象</div>
-                                       </h4>
-                                   </div>
-                                   <div class="modal-body">
-                                       <div style="margin-top: 10px;">
-                                           <div class="shibieText">
-                                               <i class="fa fa-question-circle-o" style="font-size: 35px;color: orange"></i>
-                                               <p>当起始端口和终止端口都填写0的时候，将只识别IP的存活。当起始端口和终止端口都填-1
-                                                   的时候，将识别0-65535内所有端口。资产类型和所属部门可以为空！</p>
-                                           </div>
-                                           <div class="addManC" id="startIP">
-                                               <span>起始IP:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="endIP">
-                                               <span>终止IP:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="startPort">
-                                               <span>起始端口:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="endPort">
-                                               <span>终止端口:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="scanType">
-                                               <span>资产类型:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="scanDep">
-                                               <span>所属部门:</span>
-                                               <input type="text" placeholder=" ">
-                                           </div>
-                                       </div>
-                                   </div>
-                                   <div class="modal-footer">
-                                       <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                                       </button>
-                                       <button type="button" class="btn btn-primary" id="manageAffirm">
-                                           确认
-                                       </button>
-                                   </div>
-                               </div><!-- /.modal-content -->
-                           </div><!-- /.modal -->
-                       </div>
-                       <!--自动识别资产编辑弹出框-->
-                       <div class="modal fade" id="assetEditIndent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                           <div class="modal-dialog">
-                               <div class="modal-content" style="background:#f0f0f0">
-                                   <div class="modal-header" style="padding: 0">
-                                       <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
-                                           &times;
-                                       </button>
-                                       <h4 class="modal-title">
-                                           <div class="addMange">编辑识别对象</div>
-                                       </h4>
-                                   </div>
-                                   <div class="modal-body">
-                                       <div style="margin-top: 10px;">
-                                           <div class="addManC" id="startIPP">
-                                               <span>起始IP:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="endIPP">
-                                               <span>终止IP:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="startPortt">
-                                               <span>起始端口:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="endPortt">
-                                               <span>终止端口:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="scanTypee">
-                                               <span>资产类型:</span>
-                                               <input type="text" placeholder="">
-                                           </div>
-                                           <div class="addManC" id="scanDepp">
-                                               <span>所属部门:</span>
-                                               <input type="text" placeholder=" ">
-                                           </div>
-                                       </div>
-                                   </div>
-                                   <div class="modal-footer">
-                                       <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                                       </button>
-                                       <button type="button" class="btn btn-primary" id="scanAffirm">
-                                           确认
-                                       </button>
-                                   </div>
-                               </div><!-- /.modal-content -->
-                           </div><!-- /.modal -->
-                       </div>
-                   </div>
-                </div>
-
+                              </table>
+                          </div>
+                          <!--页码部分-->
+                          <div id="yemaa"></div>
+                          <div style="float: right; margin:30px 3% 3% 0;">
+                              <span class="pageTotal">每页显示: <span>10</span></span>
+                              <span class="pageTotal pagezz">总页数: <span></span></span>
+                          </div>
+                          <!--自动识别资产添加弹出框-->
+                          <div class="modal fade" id="assetIndent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                  <div class="modal-content" style="background:#f0f0f0">
+                                      <div class="modal-header" style="padding: 0">
+                                          <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
+                                              &times;
+                                          </button>
+                                          <h4 class="modal-title">
+                                              <div class="addMange">添加识别对象</div>
+                                          </h4>
+                                      </div>
+                                      <div class="modal-body">
+                                          <div style="margin-top: 10px;">
+                                              <div class="shibieText">
+                                                  <i class="fa fa-question-circle-o" style="font-size: 35px;color: orange"></i>
+                                                  <p>当起始端口和终止端口都填写0的时候，将只识别IP的存活。当起始端口和终止端口都填-1
+                                                      的时候，将识别0-65535内所有端口。资产类型和所属部门可以为空！</p>
+                                              </div>
+                                              <div class="addManC" id="startIP">
+                                                  <span>起始IP:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="endIP">
+                                                  <span>终止IP:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="startPort">
+                                                  <span>起始端口:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="endPort">
+                                                  <span>终止端口:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="scanType">
+                                                  <span>资产类型:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="scanDep">
+                                                  <span>所属部门:</span>
+                                                  <input type="text" placeholder=" ">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                          </button>
+                                          <button type="button" class="btn btn-primary" id="manageAffirm">
+                                              确认
+                                          </button>
+                                      </div>
+                                  </div><!-- /.modal-content -->
+                              </div><!-- /.modal -->
+                          </div>
+                          <!--自动识别资产编辑弹出框-->
+                          <div class="modal fade" id="assetEditIndent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                  <div class="modal-content" style="background:#f0f0f0">
+                                      <div class="modal-header" style="padding: 0">
+                                          <button type="button" style="padding: 8px" class="close" data-dismiss="modal" aria-hidden="true">
+                                              &times;
+                                          </button>
+                                          <h4 class="modal-title">
+                                              <div class="addMange">编辑识别对象</div>
+                                          </h4>
+                                      </div>
+                                      <div class="modal-body">
+                                          <div style="margin-top: 10px;">
+                                              <div class="addManC" id="startIPP">
+                                                  <span>起始IP:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="endIPP">
+                                                  <span>终止IP:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="startPortt">
+                                                  <span>起始端口:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="endPortt">
+                                                  <span>终止端口:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="scanTypee">
+                                                  <span>资产类型:</span>
+                                                  <input type="text" placeholder="">
+                                              </div>
+                                              <div class="addManC" id="scanDepp">
+                                                  <span>所属部门:</span>
+                                                  <input type="text" placeholder=" ">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                          </button>
+                                          <button type="button" class="btn btn-primary" id="scanAffirm">
+                                              确认
+                                          </button>
+                                      </div>
+                                  </div><!-- /.modal-content -->
+                              </div><!-- /.modal -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
 </div>
 </body>
+
 </html>

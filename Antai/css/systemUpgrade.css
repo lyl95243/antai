@@ -1,49 +1,41 @@
 .sysSet{
-    height: 790px;
-    border: 1px solid lightgray;
+    height: 700px;
+    /*border: 1px solid lightgray;*/
     border-top: none;
     border-radius: 4px;
     padding: 22px 0 0 18px;
     margin: 0 12px 0 12px;
-    background: #f7f7f7;
+    /*background: #f7f7f7;*/
     position: relative;
 }
+#gujianCon,#guizekuCon{
+    padding-left: 25px;
+}
+
 .fenxian{
-    width: 100%;
+    width: 99%;
     height: 20px;
     background: url("../image/hacker_03.png") center;
     position: absolute;
     top: 36px;
-    left: 0;
+    left: 18px;
 }
-.setWrap{
-    float: left;
-    position: relative;
+.nav-pills>li{
+    background: url("../image/sysset_03.png");
+    border: 1px solid #e2e1e1;
+    border-radius: 3px;
+    width: 88px;
 }
-.portset{
-    width: 90px;
-    height: 30px;
-    line-height: 30px;
+.nav-pills > li + li {
+    margin-left: 0px;
+}
+.nav>li>a{
+    padding: 5px  15px;
+    color: #333;
     text-align: center;
-    background: #dedede;
-    border-radius: 2px;
-    cursor: pointer;
-    border: 1px solid #aaaaaa;
-}
-.portset:hover{
-    background: #367ac5;
-    color: white;
 }
 .setWrapXl{
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width:750px;
-    display:none;
-}
-.portsetB{
-    background: #367ac5;
-    color: white;
+    margin: 40px 0 0 0;
 }
 .shuxing{
     font-size: 14px;
@@ -55,8 +47,8 @@
 }
 .shuxingR,.shuxingRR{
     width: 757px;
-    height: 83px;
-    float: left;
+    height: 70px;
+    /*float: left;*/
 }
 .shuxingRR{
     height: 80px;
@@ -66,14 +58,14 @@
     height: 35px;
     margin:0 40px 0 25px;
     border-radius: 2px;
-    padding:4px 0 0 12px;
+    padding:0px 0 0 12px;
     border: 1px solid #bcb4ad;
     position: relative;
     float: left;
 }
 .threatAnalList input{
     width: 80%;
-    padding-top: 3px;
+    padding-top: 7px;
     border: none;
     outline: none;
     background-color: transparent;
@@ -83,8 +75,9 @@
     border: none;
     background: none;
     width: 15%;
-    height: 32px;
+    height: 33px;
     margin-right: 0;
+    outline:none;
     border-left: 1px solid #bcb4ad;
 }
 .upgradee{
@@ -97,10 +90,58 @@
     text-align: center;
     font-size: 15px;
     border-radius: 7px;
-    float: left;
+    border: none;
     cursor: pointer;
-    margin-top:3px;
+    margin-left: 25px;
+    position: absolute;
 }
 .table tr th,.table tr td{
     text-align: center;
 }
+.table-striped>tbody>tr:first-child{
+    background-color: #eeeeee;
+    border: 1px solid lightgrey;
+}
+.table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,
+.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td{
+    border-top:0px solid #ddd
+}
+.gujianNow,.guizeNow{
+    margin:0 0 25px 0px;
+    font-size: 15px
+}
+.shuxingR input{
+    float: left;
+    margin:0 0 0 0px;
+}
+#form,#formGZK{
+    position: relative;
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter:alpha(opacity=0)
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+

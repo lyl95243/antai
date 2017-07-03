@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #qq{
+            float: right;
+            margin: 20px;
+            color: #3479c1;
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/placehlod.js"></script>
+    <script>
+        $(function () {
+            // 起始结束时间
+            function laydatee(i) {
+                laydate({
+                    elem: '#hello' + i,
+                    format: 'YYYY.MM.DD hh:mm:ss', // 分隔符可以任意定义
+                    festival: true, //显示节日
+                    choose: function (datas) { //选择日期完毕的回调
+//                         console.log(datas);
+                    }
+                })
+            }
+            laydatee(5)
+            laydatee(6)
+        })
+    </script>
+</head>
+<body>
+<div id="qq">返回DNS查询列表</div>
+<div class="DNSTable" style="margin-top:40px">
+    <p>域名相关的查询列表 www.baidu.com</p>
+    <!--筛选项-->
+    <div>
+        <div class="threatAnalList">
+            <input type="text" class="laydate-icon" placeholder="起止时间" id="hello5">
+        </div>
+        <div class="threatAnalList">
+            <input type="text" class="laydate-icon" placeholder="结束时间" id="hello6">
+        </div>
+        <div class="threatAnalList">
+            <input type="text" class="attkIP" placeholder="DNS服务器">
+        </div>
+        <div class="threatAnalList">
+            <input type="text" class="attkIP" placeholder="域名">
+        </div>
+        <div class="threatAnalListt">
+            <input type="text" class="evenTypes" placeholder="类型">
+            <button id="button6" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" id="DNSType">
+                <li><a href="javascript:">A</a></li>
+                <li><a href="javascript:">B</a></li>
+                <li><a href="javascript:">C</a></li>
+                <li><a href="javascript:">D</a></li>
+            </ul>
+        </div>
+        <div class="threatAnalListt">
+            <input type="text" class="protos" placeholder="排序类型">
+            <button id="button7" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="javascript:">A</a></li>
+                <li><a href="javascript:">B</a></li>
+                <li><a href="javascript:">C</a></li>
+                <li><a href="javascript:">D</a></li>
+            </ul>
+        </div>
+        <button class="btn btn-default chaxun" type="submit">查找</button>
+    </div>
+    <!--表格部分-->
+    <div style="min-height: 467px;">
+        <table class="table table-striped" id="DNStable">
+            <tr>
+                <th>最早查询时间</th>
+                <th>最近查询时间</th>
+                <th>DNS服务器</th>
+                <th>域名</th>
+                <th>操作</th>
+                <th>类型</th>
+                <th>查询次数</th>
+                <th>查询百分比</th>
+                <th>深度分析</th>
+            </tr>
+            <tr>
+                <td>2017.6.21 12:30:50</td>
+                <td>2017.6.21 12:30:50</td>
+                <td>8.8.8.8</td>
+                <td>www.baidu.com</td>
+                <td>QUERY</td>
+                <td>A</td>
+                <td>1200</td>
+                <td>70%</td>
+                <td>
+                    <button class="trace">查看查询列表</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2017.6.21 12:30:50</td>
+                <td>2017.6.21 12:30:50</td>
+                <td>8.8.8.8</td>
+                <td>www.baidu.com</td>
+                <td>QUERY</td>
+                <td>A</td>
+                <td>1200</td>
+                <td>70%</td>
+                <td>
+                    <button class="trace">查看查询列表</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2017.6.21 12:30:50</td>
+                <td>2017.6.21 12:30:50</td>
+                <td>8.8.8.8</td>
+                <td>www.baidu.com</td>
+                <td>QUERY</td>
+                <td>A</td>
+                <td>1200</td>
+                <td>70%</td>
+                <td>
+                    <button class="trace">查看查询列表</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2017.6.21 12:30:50</td>
+                <td>2017.6.21 12:30:50</td>
+                <td>8.8.8.8</td>
+                <td>www.baidu.com</td>
+                <td>QUERY</td>
+                <td>A</td>
+                <td>1200</td>
+                <td>70%</td>
+                <td>
+                    <button class="trace">查看查询列表</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2017.6.21 12:30:50</td>
+                <td>2017.6.21 12:30:50</td>
+                <td>8.8.8.8</td>
+                <td>www.baidu.com</td>
+                <td>QUERY</td>
+                <td>A</td>
+                <td>1200</td>
+                <td>70%</td>
+                <td>
+                    <button class="trace">查看查询列表</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--页码部分-->
+    <div id="DNSyema"></div>
+    <div style="float: right; margin:30px 3% 1% 0;">
+        <span class="pageTotal pagee">每页显示: <span>10</span></span>
+        <span class="pageTotal DNSpagez">总页数: <span></span></span>
+    </div>
+</div>
+</body>
+</html>

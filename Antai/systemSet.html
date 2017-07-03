@@ -11,6 +11,7 @@
     <script src="js/bootstrap.js"></script>
     <script src=js/placehlod.js></script>
     <script src="js/common.js"></script>
+    <script src="js/bootstrapPaginator.js"></script>
     <script src="js/laydate-v1.1/laydate/laydate.js"></script>
     <script src="js/systemSet.js"></script>
     <!--[if lt IE 9]>
@@ -23,7 +24,7 @@
 <div class="header">
     <div class="logoWrap" onclick="window.open('index.html','_self')">
         <p class="logo">LOGO</p>
-        <span class="logoText">慧眼网络空间威胁感知系统</span>
+        <span class="logoText">安态网络空间威胁感知系统</span>
     </div>
     <div class="menu">
         <img src="image/menu_03.png" alt="">
@@ -65,7 +66,7 @@
                 </div>
                 <div class="evenXl system" style="display: block">
                     <a href="systemView.html" target="_self">系统概览</a>
-                    <a href="systemSet.html" target="_self">系统设置</a>
+                    <a href="systemSet.html" target="_self" class="evenXlHover">系统设置</a>
                     <a href="systemUpgrade.html" target="_self">系统升级</a>
                     <a href="userManage.html" target="_self">用户管理</a>
                 </div>
@@ -78,225 +79,150 @@
                 <p>系统设置</p>
             </div>
             <div class="sysSet">
-                <div class="fenxian"></div>
-                <div class="setWrap">
-                    <div class="portset portsetB">
-                        接口设置
-                    </div>
-                    <div class="setWrapXl" style="display: block">
-                        <div>
-                            <div class="shuxing">
-                                属性:
-                            </div>
-                            <div class="shuxingR">
-                                <!--<select name="" class="threatAnalList">-->
-                                    <!--<option selected="selected">管理口</option>-->
-                                    <!--<option value="">1</option>-->
-                                    <!--<option value="">2</option>-->
-                                    <!--<option value="">3</option>-->
-                                    <!--<option value="">4</option>-->
-                                    <!--<option value="">5</option>-->
-                                <!--</select>-->
-                                <div class="threatAnalList">
-                                    <input type="text" placeholder="管理口">
-                                    <button id="button" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:">Action</a></li>
-                                        <li><a href="javascript:">Another action</a></li>
-                                        <li><a href="javascript:">Something else here</a></li>
-                                        <li><a href="javascript:">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <div class="ipInput">
-                                    <span>IP :</span>
-                                    <input type="text" placeholder="192.168.1.1">
-                                    <span>mask :</span>
-                                    <input type="text">
-                                    <span>mut :</span>
-                                    <input type="text">
-                                </div>
-                                <div class="save">
-                                    保存
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="shuxing">
-                                属性:
-                            </div>
-                            <div class="shuxingR">
-                                <div class="threatAnalList">
-                                    <input type="text" placeholder="工作口">
-                                    <button id="button2" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:">Action</a></li>
-                                        <li><a href="javascript:">Another action</a></li>
-                                        <li><a href="javascript:">Something else here</a></li>
-                                        <li><a href="javascript:">Separated link</a></li>
-                                    </ul>
-                                </div>
+                <!--<div class="fenxian"></div>-->
+                <div class="rightTab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#jiekou" aria-controls="home" role="tab"
+                                                                  data-toggle="tab">接口设置</a>
+                        </li>
+                        <li role="presentation"><a href="#yunxing" aria-controls="profile" role="tab" data-toggle="tab">运行模式</a>
+                        </li>
+                        <li role="presentation"><a href="#shiqu" aria-controls="profile" role="tab"
+                                                   data-toggle="tab">时区</a>
+                        </li>
+                        <li role="presentation"><a href="#yuyan" aria-controls="profile" role="tab"
+                                                   data-toggle="tab">语言</a>
+                        </li>
+                        <li role="presentation"><a href="#caozuo" aria-controls="profile" role="tab" data-toggle="tab">操作</a>
+                        </li>
+                    </ul>
+                   <div class="tab-content">
+                       <!--接口设置-->
+                       <div role="tabpanel" class="tab-pane fade in active" id="jiekou">
+                           <div class="setWrapXl">
+                               <div style="padding: 0 0 0 12px;">
+                                   <p class="interNew">接口信息</p>
+                                   <div class="jiekouxinxi">
+                                       <div class="inter">
+                                           <div>
+                                               <span></span>
+                                               <span></span>
 
-                                <div class="ipInput" style="margin-left: 25px">
-                                    <span>嗅标类型 :</span>
-                                    <input type="text" placeholder="DPDK/RE-RING">
-                                </div>
-                                <div class="save">
-                                    保存
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="setWrap">
-                    <div class="portset">
-                        运行模式
-                    </div>
-                    <div class="setWrapXl">
-                        <div class="shuxing">
-                            模式链接:
-                        </div>
-                        <div class="shuxingRR">
-                            <!--<select name="" class="threatAnalList">-->
-                                <!--<option selected="selected">分布式模式</option>-->
-                                <!--<option value="">1</option>-->
-                                <!--<option value="">2</option>-->
-                                <!--<option value="">3</option>-->
-                                <!--<option value="">4</option>-->
-                                <!--<option value="">5</option>-->
-                            <!--</select>-->
-                            <div class="threatAnalList">
-                                <input type="text" placeholder="分布式模式">
-                                <button id="button3" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:">Action</a></li>
-                                    <li><a href="javascript:">Another action</a></li>
-                                    <li><a href="javascript:">Something else here</a></li>
-                                    <li><a href="javascript:">Separated link</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="shuxing" style="height: 80px;">
-                            中心地址:
-                            <input type="text" style="margin-left: 21px" placeholder="192.168.163.2">
-                        </div>
-                        <div class="save" style="margin-left: 86px">
-                            保存
-                        </div>
-                    </div>
-                </div>
-                <div class="setWrap">
-                    <div class="portset">
-                        DNS
-                    </div>
-                    <div class="setWrapXl" style="width:400px;left: -107px">
-                        <div class="shuxing" style="height: 80px;">
-                            首选DNS服务器地址:
-                            <input type="text" style="margin-left: 21px" placeholder="8.8.8.8">
-                        </div>
-                        <div class="shuxing" style="height: 80px;">
-                            备用DNS服务器地址:
-                            <input type="text" style="margin-left: 21px" placeholder="8.8.8.8">
-                        </div>
-                        <div class="save" style="margin-left: 157px">
-                            保存
-                        </div>
-                    </div>
-                </div>
-                <div class="setWrap">
-                    <div class="portset">
-                        时区
-                    </div>
-                    <div class="setWrapXl" style="left: -209px">
-                        <div class="shuxing">
-                            时区:
-                        </div>
-                        <div class="shuxingRR">
-                            <!--<select name="" class="threatAnalList">-->
-                                <!--<option selected="selected">UTC-8</option>-->
-                                <!--<option value="">1</option>-->
-                                <!--<option value="">2</option>-->
-                                <!--<option value="">3</option>-->
-                                <!--<option value="">4</option>-->
-                                <!--<option value="">5</option>-->
-                            <!--</select>-->
-                            <div class="threatAnalList">
-                                <input type="text" placeholder="UTC-8">
-                                <button id="button4" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:">Action</a></li>
-                                    <li><a href="javascript:">Another action</a></li>
-                                    <li><a href="javascript:">Something else here</a></li>
-                                    <li><a href="javascript:">Separated link</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="save" style="margin-left: 57px">
-                            保存
-                        </div>
-                    </div>
-                </div>
-                <div class="setWrap">
-                    <div class="portset">
-                        语言
-                    </div>
-                    <div class="setWrapXl" style="left: -300px;">
-                        <div class="shuxing">
-                            语言:
-                        </div>
-                        <div class="shuxingRR">
-                            <!--<select name="" class="threatAnalList">-->
-                                <!--<option selected="selected">中文</option>-->
-                                <!--<option value="">1</option>-->
-                                <!--<option value="">2</option>-->
-                                <!--<option value="">3</option>-->
-                                <!--<option value="">4</option>-->
-                                <!--<option value="">5</option>-->
-                            <!--</select>-->
-                            <div class="threatAnalList">
-                                <input type="text" placeholder="中文">
-                                <button id="button5" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="javascript:">Action</a></li>
-                                    <li><a href="javascript:">Another action</a></li>
-                                    <li><a href="javascript:">Something else here</a></li>
-                                    <li><a href="javascript:">Separated link</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="save" style="margin-left: 57px">
-                            保存
-                        </div>
-                    </div>
-                </div>
-                <div class="setWrap">
-                    <div class="portset">
-                        操作
-                    </div>
-                    <div class="setWrapXl" style="left: -328px">
-                        <div class="guanji">
-                            <img src="image/guanji_06.png" alt="">
-                            关机
-                        </div>
-                        <div class="guanji chongqi">
-                            <img src="image/guanji_03.png" alt="">
-                            重新启动
-                        </div>
-                    </div>
+                                           </div>
+                                           <div>
+                                               <span></span>
+                                               <span></span>
+
+                                           </div>
+                                           <div>
+                                               <span></span>
+                                               <span></span>
+                                               <span></span>
+                                               <span></span>
+
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div style="min-height: 467px">
+                                   <table class="table table-striped" id="portTable">
+
+                                   </table>
+                               </div>
+                               <!--页码部分-->
+                               <div id="yema"></div>
+                               <div style="float: right; margin:30px 3% 3% 0;">
+                                   <span class="pageTotal pagee">每页显示: <span>10</span></span>
+                                   <span class="pageTotal pagez">总页数: <span></span></span>
+                               </div>
+                           </div>
+                       </div>
+                       <!--运行模式-->
+                       <div role="tabpanel" class="tab-pane fade" id="yunxing">
+                           <div class="setWrapXl" style="width: 818px;margin-left: 50px">
+                               <div class="shuxing">
+                                   模式链接:
+                               </div>
+                               <div class="shuxingRR">
+                                   <div class="threatAnalList">
+                                       <input type="text" value="单机模式" disabled="disabled">
+                                   </div>
+                               </div>
+                               <div class="shuxing" style="height: 80px;">
+                                   中心地址:
+                                   <input type="text" style="margin-left: 21px" value="192.168.163.2">
+                               </div>
+                               <div class="save" style="margin-left: 86px">
+                                   保存
+                               </div>
+                           </div>
+                       </div>
+                       <!--时区-->
+                       <div role="tabpanel" class="tab-pane fade" id="shiqu">
+                           <div class="setWrapXl" style="margin-left: 104px">
+                               <div class="shuxing">
+                                   时区:
+                               </div>
+                               <div class="shuxingRR">
+                                   <div class="threatAnalList">
+                                       <input type="text" value="UTC-8" disabled="disabled">
+                                       <button id="button4" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                               aria-expanded="false" disabled="disabled">
+                                           <span class="caret" style="color:#a2a2a2;"></span>
+                                       </button>
+                                       <ul class="dropdown-menu">
+                                           <li><a href="javascript:">Action</a></li>
+                                           <li><a href="javascript:">Another action</a></li>
+                                           <li><a href="javascript:">Something else here</a></li>
+                                           <li><a href="javascript:">Separated link</a></li>
+                                       </ul>
+                                   </div>
+                               </div>
+                               <div class="save" style="margin-left: 57px">
+                                   保存
+                               </div>
+                           </div>
+                       </div>
+                       <!--语言-->
+                       <div role="tabpanel" class="tab-pane fade" id="yuyan">
+                           <div class="setWrapXl" style="margin-left: 104px;">
+                               <div class="shuxing">
+                                   语言:
+                               </div>
+                               <div class="shuxingRR">
+                                   <div class="threatAnalList">
+                                       <input type="text" value="中文" disabled="disabled">
+                                       <button id="button5" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                               aria-expanded="false" disabled="disabled">
+                                           <span class="caret" style="color:#a2a2a2;"></span>
+                                       </button>
+                                       <ul class="dropdown-menu">
+                                           <li><a href="javascript:">Action</a></li>
+                                           <li><a href="javascript:">Another action</a></li>
+                                           <li><a href="javascript:">Something else here</a></li>
+                                           <li><a href="javascript:">Separated link</a></li>
+                                       </ul>
+                                   </div>
+                               </div>
+                               <div class="save" style="margin-left: 57px">
+                                   保存
+                               </div>
+                           </div>
+                       </div>
+                       <!--操作-->
+                       <div role="tabpanel" class="tab-pane fade" id="caozuo">
+                           <div class="setWrapXl">
+                               <div class="guanji">
+                                   <img src="image/shutdown.png" alt="">
+                                   关机
+                               </div>
+                               <div class="chongqi">
+                                   <img src="image/restart.png" alt="">
+                                   重新启动
+                               </div>
+                           </div>
+                       </div>
+                   </div>
                 </div>
             </div>
 

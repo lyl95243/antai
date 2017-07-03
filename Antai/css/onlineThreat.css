@@ -109,10 +109,11 @@
     height: 33px;
     margin-right: 0;
     border-left: 1px solid #e3e2e2;
+    outline:none;
 }
 .chaxun{
     width: 8%;
-    background: url("../image/chaxun.png");
+    background: url("../image/referBg.png");
     color: white;
 }
 .chaxun:hover{
@@ -141,7 +142,7 @@
 .trace{
     width: 70%;
     height: 26px;
-    background: url("../image/zhuiz.png");
+    background: url("../image/traceBg.png");
     color: white;
     border: none;
     border-radius: 4px;

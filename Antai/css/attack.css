@@ -36,7 +36,8 @@
 }
 .chaxun{
     width: 6%;
-    background: #3a8cc3;
+    /*background: #3a8cc3;*/
+    background: url("../image/referBg.png");
     color: white;
 }
 .chaxun:hover{

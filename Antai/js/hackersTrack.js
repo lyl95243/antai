@@ -3,7 +3,6 @@
  */
 
 $(function () {
-
     // 起始结束时间
     function laydatee(i) {
         laydate({
@@ -20,6 +19,8 @@ $(function () {
     laydatee(2)
     laydatee(3)
     laydatee(4)
+    laydatee(5)
+    laydatee(6)
 
     // 事件威胁下拉选项
     var oAjax = new XMLHttpRequest();
@@ -48,13 +49,14 @@ $(function () {
 
     var inputPlaceHolder;
     $("input").focus(function () {
-        // console.log(1);
+
         inputPlaceHolder = $(this).attr("placeholder")
-        $(this).prop("placeholder", "");
+        $(this).attr("placeholder", "");
         // $(this).val("")
     })
     $("input").blur(function () {
-        $(this).prop("placeholder", inputPlaceHolder)
+
+        $(this).attr("placeholder", inputPlaceHolder)
     })
 // 事件列表tab下内容
     $(".ipC ul li").eq(0).find("span").html(getQueryString('attkIP'));
@@ -101,7 +103,7 @@ $(function () {
     // 表格数据
     function tableCon() {
         Ajax(
-            "/smarteye/api/search/security/eventDetails?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&servIP=&attkType=" + eventTypes + "&proto=" + protos + "&level=" + level + "&page=1&pageSize=12",
+            "/smarteye/api/search/security/eventDetails?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&servIP=&attkType=" + eventTypes + "&proto=" + protos + "&level=" + level + "&page=1&pageSize=10",
             "get",
             "json",
             "",
@@ -133,13 +135,12 @@ $(function () {
                         '<td>' + arrResult[i].protocol + '</td>' +
                         '<td>' + arrResult[i].attkType + '</td>' +
                         '<td>' + levell + '</td>' +
-                        '<td> <a href="JavaScript:" class="trace" style="background:url(\'../image/zhuiz.png\');">查看攻击过程</a></td></tr>';
+                        '<td> <a href="JavaScript:" class="trace">查看攻击过程</a></td></tr>';
                     // var tr = document.createElement("tr");
                     // tr.innerHTML = tableCon;
                     tb.append(tableCon);
                     var tbb = $("#tablee");
                     tbb.replaceAll(tb);
-
                 });
                 tracHover()
                 var height = $(".rightC").height();
@@ -165,8 +166,8 @@ $(function () {
                 var totalCount = result.count; // 总条数
                 var currentPage = result.curPage; // 当前页
                 var pageCount = result.pageCount;
-                var pageSize = 12;  // 每页条数
-                $(".pagez span").html(pageCount)
+                var pageSize = 10;  // 每页条数
+                $(".pagez span").html(pageCount);
                 var options = {
                     bootstrapMajorVersion: 2,
                     currentPage: currentPage,
@@ -188,7 +189,7 @@ $(function () {
                     }, onPageClicked: function (event, originaEvent, type, page) {
                         function tablePage() {
                             Ajax(
-                                "/smarteye/api/search/security/eventDetails?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&servIP=&attkType=" + eventTypes + "&proto=" + protos + "&level=" + level + "&page=" + page + "&pageSize=12",
+                                "/smarteye/api/search/security/eventDetails?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&servIP=&attkType=" + eventTypes + "&proto=" + protos + "&level=" + level + "&page=" + page + "&pageSize=10",
                                 "get",
                                 "json",
                                 "",
@@ -218,7 +219,7 @@ $(function () {
                                             '<td>' + arrResult[i].protocol + '</td>' +
                                             '<td>' + arrResult[i].attkType + '</td>' +
                                             '<td>' + levell + '</td>' +
-                                            '<td> <a href="JavaScript:" class="trace" style="background:url(\'../image/zhuiz.png\');">查看攻击过程</a></td></tr>';
+                                            '<td> <a href="JavaScript:" class="trace">查看攻击过程</a></td></tr>';
                                         // var tr = document.createElement("tr");
                                         // tr.innerHTML = tableCon;
                                         tb.append(tableCon);
@@ -285,7 +286,7 @@ $(function () {
         // console.log(level);
         function chaxunCon() {
             Ajax(
-                "/smarteye/api/search/security/eventDetails?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&servIP=&attkType=" + evenTypes + "&proto=" + protos + "&level=" + level + "&page=1&pageSize=12",
+                "/smarteye/api/search/security/eventDetails?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&servIP=&attkType=" + evenTypes + "&proto=" + protos + "&level=" + level + "&page=1&pageSize=10",
                 "get",
                 "json",
                 "",
@@ -317,7 +318,7 @@ $(function () {
                             '<td>' + arrResult[i].protocol + '</td>' +
                             '<td>' + arrResult[i].attkType + '</td>' +
                             '<td>' + levell + '</td>' +
-                            '<td> <a href="JavaScript:" class="trace" style="background:url(\'../image/zhuiz.png\');">查看攻击过程</a></td></tr>';
+                            '<td> <a href="JavaScript:" class="trace">查看攻击过程</a></td></tr>';
                         // var tr = document.createElement("tr");
                         // tr.innerHTML = tableCon;
                         tb.append(tableCon);
@@ -348,7 +349,7 @@ $(function () {
                     })
                     var totalCount = result.count; // 总条数
                     var currentPage = result.curPage; // 当前页
-                    var pageSize = 12;  // 每页条数
+                    var pageSize = 10;  // 每页条数
                     var pageCount = result.pageCount;
                     $(".pagez span").html(pageCount)
                     var options = {
@@ -372,7 +373,7 @@ $(function () {
                         }, onPageClicked: function (event, originaEvent, type, page) {
                             function chaxunPage() {
                                 Ajax(
-                                    "/smarteye/api/search/security/eventDetails?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&servIP=&attkType=" + evenTypes + "&proto=" + protos + "&level=" + level + "&page=" + page + "&pageSize=12",
+                                    "/smarteye/api/search/security/eventDetails?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&servIP=&attkType=" + evenTypes + "&proto=" + protos + "&level=" + level + "&page=" + page + "&pageSize=10",
                                     "get",
                                     "json",
                                     "",
@@ -402,7 +403,7 @@ $(function () {
                                                 '<td>' + arrResult[i].protocol + '</td>' +
                                                 '<td>' + arrResult[i].attkType + '</td>' +
                                                 '<td>' + levell + '</td>' +
-                                                '<td> <a href="JavaScript:" class="trace" style="background:url(\'../image/zhuiz.png\');">查看攻击过程</a></td></tr>';
+                                                '<td> <a href="JavaScript:" class="trace">查看攻击过程</a></td></tr>';
                                             // var tr = document.createElement("tr");
                                             // tr.innerHTML = tableCon;
                                             tb.append(tableCon);
@@ -441,9 +442,16 @@ $(function () {
 
         chaxunCon();
     })
-// 流量分析tab下内容
-    $("#flowf").click(function () {
+    $("#evenF").click(function () {
+        $(".leftNav").height("960px")
+    })
+    $("#tongji").click(function () {
+        $(".leftNav").height("1080px")
+    })
 
+// 流量分析tab下内容
+
+    $("#flowf").click(function () {
         $(".leftNav").height("1490px")
     })
     Ajax(
@@ -453,7 +461,7 @@ $(function () {
         "",
         false,
         function (result) {
-            console.log(result);
+            // console.log(result);
             $(".liulfx ul li").eq(0).find("span").html(result.startTime);
             $(".liulfx ul li").eq(1).find("span").html(result.lastTime);
             $(".liulfx ul li").eq(2).find("span").html(result.upBytes);
@@ -470,7 +478,7 @@ $(function () {
         "",
         false,
         function (result) {
-            console.log(result);
+            // console.log(result);
             var arrResult = eval(result.results);
             // console.log(arrResult);
             var tb = $("#flowTab");
@@ -488,7 +496,7 @@ $(function () {
                     '<td>' + arrResult[i].protocol + '</td>' +
                     '<td>' + arrResult[i].reqBytes + '</td>' +
                     '<td>' + arrResult[i].resBytes + '</td><td>' + arrResult[i].attackNum + '</td>' +
-                    '<td> <a href="JavaScript:" class="trace" style="background:url(\'../image/zhuiz.png\');">查看详情</a></td></tr>';
+                    '<td> <a href="JavaScript:" class="trace">查看详情</a></td></tr>';
                 // var tr = document.createElement("tr");
                 // tr.innerHTML = tableCon;
                 tb.append(tableCon);
@@ -507,68 +515,70 @@ $(function () {
             var pageCount = result.pageCount;
             var pageSize = 10;  // 每页条数
             $(".pagezz span").html(pageCount)
-            var options = {
-                bootstrapMajorVersion: 2,
-                currentPage: currentPage,
-                totalPages: pageCount,
-                numberOfPages: 5,
-                itemTexts: function (type, page, current) {
-                    // console.log(type);
-                    switch (type) {
-                        case "first":
-                            return "首页";
-                        case "prev":
-                            return "上一页";
-                        case "next":
-                            return "下一页";
-                        case "last":
-                            return "末页";
-                        case "page":
-                            return page;
-                    }
-                }, onPageClicked: function (event, originaEvent, type, page) {
-
-                    Ajax(
-                        "/smarteye/api/search/analysis/streams?startTime=&endTime=&ip=" + attkIP + "&port=0&pairIP=&pairPort=0&proto=&page=" + page + "&pageSize=10",
-                        "get",
-                        "json",
-                        "",
-                        false,
-                        function (result) {
-                            console.log(result);
-                            var arrResult = eval(result.results);
-                            // console.log(arrResult);
-                            tb.html("");
-                            var tableTh = '<tr><th>会话时间</th><th>端口</th><th>对端IP</th><th>对端端口</th><th>传输协议</th><th>上行流量</th><th>下行流量</th><th>包含攻击数</th><th>深度分析</th></tr>';
-                            // var trr = document.createElement("tr");
-                            // trr.innerHTML = (tableTh);
-                            tb.append(tableTh);
-
-                            $.each(arrResult, function (i) {
-                                var tableCon = '<tr><td>' + arrResult[i].startTime + ' — ' + arrResult[i].lastTime + '</td>' +
-                                    '<td>' + arrResult[i].port + '</td>' +
-                                    '<td>' + arrResult[i].pairIP + '</td>' +
-                                    '<td>' + arrResult[i].pairPort + '</td>' +
-                                    '<td>' + arrResult[i].protocol + '</td>' +
-                                    '<td>' + arrResult[i].reqBytes + '</td>' +
-                                    '<td>' + arrResult[i].resBytes + '</td><td>' + arrResult[i].attackNum + '</td>' +
-                                    '<td> <a href="JavaScript:" class="trace" style="background:url(\'../image/zhuiz.png\');">查看详情</a></td></tr>';
-                                // var tr = document.createElement("tr");
-                                // tr.innerHTML = tableCon;
-                                tb.append(tableCon);
-                                var tbb = $("#flowTab");
-                                tbb.replaceAll(tb);
-                            });
-                            tracHover()
-                            // 点击查看攻击过程
-                            $("#flowTab").delegate("tr .trace", "click", function () {
-
-                            })
+            if(pageCount>=1){
+                var options = {
+                    bootstrapMajorVersion: 2,
+                    currentPage: currentPage,
+                    totalPages: pageCount,
+                    numberOfPages: 5,
+                    itemTexts: function (type, page, current) {
+                        // console.log(type);
+                        switch (type) {
+                            case "first":
+                                return "首页";
+                            case "prev":
+                                return "上一页";
+                            case "next":
+                                return "下一页";
+                            case "last":
+                                return "末页";
+                            case "page":
+                                return page;
                         }
-                    )
-                }
-            };
-            $("#yemaa").bootstrapPaginator(options)
+                    }, onPageClicked: function (event, originaEvent, type, page) {
+
+                        Ajax(
+                            "/smarteye/api/search/analysis/streams?startTime=&endTime=&ip=" + attkIP + "&port=0&pairIP=&pairPort=0&proto=&page=" + page + "&pageSize=10",
+                            "get",
+                            "json",
+                            "",
+                            false,
+                            function (result) {
+                                console.log(result);
+                                var arrResult = eval(result.results);
+                                // console.log(arrResult);
+                                tb.html("");
+                                var tableTh = '<tr><th>会话时间</th><th>端口</th><th>对端IP</th><th>对端端口</th><th>传输协议</th><th>上行流量</th><th>下行流量</th><th>包含攻击数</th><th>深度分析</th></tr>';
+                                // var trr = document.createElement("tr");
+                                // trr.innerHTML = (tableTh);
+                                tb.append(tableTh);
+
+                                $.each(arrResult, function (i) {
+                                    var tableCon = '<tr><td>' + arrResult[i].startTime + ' — ' + arrResult[i].lastTime + '</td>' +
+                                        '<td>' + arrResult[i].port + '</td>' +
+                                        '<td>' + arrResult[i].pairIP + '</td>' +
+                                        '<td>' + arrResult[i].pairPort + '</td>' +
+                                        '<td>' + arrResult[i].protocol + '</td>' +
+                                        '<td>' + arrResult[i].reqBytes + '</td>' +
+                                        '<td>' + arrResult[i].resBytes + '</td><td>' + arrResult[i].attackNum + '</td>' +
+                                        '<td> <a href="JavaScript:" class="trace">查看详情</a></td></tr>';
+                                    // var tr = document.createElement("tr");
+                                    // tr.innerHTML = tableCon;
+                                    tb.append(tableCon);
+                                    var tbb = $("#flowTab");
+                                    tbb.replaceAll(tb);
+                                });
+                                tracHover()
+                                // 点击查看攻击过程
+                                $("#flowTab").delegate("tr .trace", "click", function () {
+
+                                })
+                            }
+                        )
+                    }
+                };
+                $("#yemaa").bootstrapPaginator(options)
+            }
         }
     )
     // 查询
@@ -610,7 +620,7 @@ $(function () {
                         '<td>' + arrResult[i].protocol + '</td>' +
                         '<td>' + arrResult[i].reqBytes + '</td>' +
                         '<td>' + arrResult[i].resBytes + '</td><td>' + arrResult[i].attackNum + '</td>' +
-                        '<td> <a href="JavaScript:" class="trace" style="background:url(\'../image/zhuiz.png\');">查看详情</a></td></tr>';
+                        '<td> <a href="JavaScript:" class="trace">查看详情</a></td></tr>';
                     // var tr = document.createElement("tr");
                     // tr.innerHTML = tableCon;
                     tb.append(tableCon);
@@ -630,94 +640,262 @@ $(function () {
                 var pageCount = result.pageCount;
                 var pageSize = 10;  // 每页条数
                 $(".pagezz span").html(pageCount);
-                var options = {
-                    bootstrapMajorVersion: 2,
-                    currentPage: currentPage,
-                    totalPages: pageCount,
-                    numberOfPages: 5,
-                    itemTexts: function (type, page, current) {
-                        console.log(type);
-                        switch (type) {
-                            case "first":
-                                return "首页";
-                            case "prev":
-                                return "上一页";
-                            case "next":
-                                return "下一页";
-                            case "last":
-                                return "末页";
-                            case "page":
-                                return page;
-                        }
-                    }, onPageClicked: function (event, originaEvent, type, page) {
-                        var flowStartTime = $(".flowStartTime").val(),
-                            flowLastTime = $(".flowLastTime").val(),
-                            flowPort = $(".flowPort").val(),
-                            flowPairIP = $(".flowPairIP").val(),
-                            flowPairPort = $(".flowPairPort").val(),
-                            flowProto = $(".flowProto").val();
-                        if(flowPort==""){
-                            flowPort=0
-                        };
-                        if(flowPairPort==""){
-                            flowPairPort=0
-                        }
-                        Ajax(
-                            "/smarteye/api/search/analysis/streams?startTime=" + flowStartTime + "&endTime=" + flowLastTime + "&ip=" + attkIP + "&port=" + flowPort + "&pairIP=" + flowPairIP + "&pairPort=" + flowPairPort + "&proto=" + flowProto + "&page="+page+"&pageSize=10",
-                            "get",
-                            "json",
-                            "",
-                            false,
-                            function (result) {
-                                console.log(result);
-                                var arrResult = eval(result.results);
-                                // console.log(arrResult);
-                                tb.html("");
-                                var tableTh = '<tr><th>会话时间</th><th>端口</th><th>对端IP</th><th>对端端口</th><th>传输协议</th><th>上行流量</th><th>下行流量</th><th>包含攻击数</th><th>深度分析</th></tr>';
-                                // var trr = document.createElement("tr");
-                                // trr.innerHTML = (tableTh);
-                                tb.append(tableTh);
-
-                                $.each(arrResult, function (i) {
-                                    var tableCon = '<tr><td>' + arrResult[i].startTime + ' — ' + arrResult[i].lastTime + '</td>' +
-                                        '<td>' + arrResult[i].port + '</td>' +
-                                        '<td>' + arrResult[i].pairIP + '</td>' +
-                                        '<td>' + arrResult[i].pairPort + '</td>' +
-                                        '<td>' + arrResult[i].protocol + '</td>' +
-                                        '<td>' + arrResult[i].reqBytes + '</td>' +
-                                        '<td>' + arrResult[i].resBytes + '</td><td>' + arrResult[i].attackNum + '</td>' +
-                                        '<td> <a href="JavaScript:" class="trace" style="background:url(\'../image/zhuiz.png\');">查看详情</a></td></tr>';
-                                    // var tr = document.createElement("tr");
-                                    // tr.innerHTML = tableCon;
-                                    tb.append(tableCon);
-                                    var tbb = $("#flowTab");
-                                    tbb.replaceAll(tb);
-                                });
-                                tracHover()
-                                // 点击查看攻击过程
-                                $("#flowTab").delegate("tr .trace", "click", function () {
-                                    window.open("flowDetail.html", "_self")
-                                })
+                if(pageCount>=1){
+                    var options = {
+                        bootstrapMajorVersion: 2,
+                        currentPage: currentPage,
+                        totalPages: pageCount,
+                        numberOfPages: 5,
+                        itemTexts: function (type, page, current) {
+                            console.log(type);
+                            switch (type) {
+                                case "first":
+                                    return "首页";
+                                case "prev":
+                                    return "上一页";
+                                case "next":
+                                    return "下一页";
+                                case "last":
+                                    return "末页";
+                                case "page":
+                                    return page;
                             }
-                        )
-                    }
-                };
-                $("#yemaa").bootstrapPaginator(options)
+                        }, onPageClicked: function (event, originaEvent, type, page) {
+                            var flowStartTime = $(".flowStartTime").val(),
+                                flowLastTime = $(".flowLastTime").val(),
+                                flowPort = $(".flowPort").val(),
+                                flowPairIP = $(".flowPairIP").val(),
+                                flowPairPort = $(".flowPairPort").val(),
+                                flowProto = $(".flowProto").val();
+                            if(flowPort==""){
+                                flowPort=0
+                            };
+                            if(flowPairPort==""){
+                                flowPairPort=0
+                            }
+                            Ajax(
+                                "/smarteye/api/search/analysis/streams?startTime=" + flowStartTime + "&endTime=" + flowLastTime + "&ip=" + attkIP + "&port=" + flowPort + "&pairIP=" + flowPairIP + "&pairPort=" + flowPairPort + "&proto=" + flowProto + "&page="+page+"&pageSize=10",
+                                "get",
+                                "json",
+                                "",
+                                false,
+                                function (result) {
+                                    console.log(result);
+                                    var arrResult = eval(result.results);
+                                    // console.log(arrResult);
+                                    tb.html("");
+                                    var tableTh = '<tr><th>会话时间</th><th>端口</th><th>对端IP</th><th>对端端口</th><th>传输协议</th><th>上行流量</th><th>下行流量</th><th>包含攻击数</th><th>深度分析</th></tr>';
+                                    // var trr = document.createElement("tr");
+                                    // trr.innerHTML = (tableTh);
+                                    tb.append(tableTh);
+
+                                    $.each(arrResult, function (i) {
+                                        var tableCon = '<tr><td>' + arrResult[i].startTime + ' — ' + arrResult[i].lastTime + '</td>' +
+                                            '<td>' + arrResult[i].port + '</td>' +
+                                            '<td>' + arrResult[i].pairIP + '</td>' +
+                                            '<td>' + arrResult[i].pairPort + '</td>' +
+                                            '<td>' + arrResult[i].protocol + '</td>' +
+                                            '<td>' + arrResult[i].reqBytes + '</td>' +
+                                            '<td>' + arrResult[i].resBytes + '</td><td>' + arrResult[i].attackNum + '</td>' +
+                                            '<td> <a href="JavaScript:" class="trace">查看详情</a></td></tr>';
+                                        // var tr = document.createElement("tr");
+                                        // tr.innerHTML = tableCon;
+                                        tb.append(tableCon);
+                                        var tbb = $("#flowTab");
+                                        tbb.replaceAll(tb);
+                                    });
+                                    tracHover()
+                                    // 点击查看攻击过程
+                                    $("#flowTab").delegate("tr .trace", "click", function () {
+                                        window.open("flowDetail.html", "_self")
+                                    })
+                                }
+                            )
+                        }
+                    };
+                    $("#yemaa").bootstrapPaginator(options)
+                }
             }
         )
     })
     function tracHover() {
-        $(".trace").hover(function () {
-            $(this).css({
-                background:"#3a8cc3"
-            })
-        },function () {
-            $(this).css({
-                background:"url('../image/zhuiz.png')"
-            })
-        })
+
     };
     tracHover()
+
+// DNS统计分析
+
+    $("#DNSfx").click(function () {
+        $(".leftNav").height("1281")
+    });
+    $("#DNS").delegate(".DNSTrace","click",function () {
+        $("#DNS").load("DNSDomainList.html")
+    });
+    $("#DNS").delegate("#qq","click",function(){
+        $("#DNS").load("DNSreferList.html");
+    })
+
+    $(".DNStjfx span:last-child").html(attkIP);
+    var DNSColor=["#a82100","#d64f09","#d2950d","#d5e222","#b5cd18","#adb91b","#8fcd1b","#50dc20","#4ec630","#2dbb0c"]
+    // 前TOP10域名排名
+    Ajax(
+        "/smarteye/api/search/dns/facetForIP?field=domain&ip="+attkIP+"&topn=10&asc=false&isSrcIP=true",
+        "get",
+        "json",
+        "",
+        false,
+        function (result) {
+            console.log(result);
+            var resultCount=result[0].count;
+            var resultCountStr=resultCount.toString();
+            var resultCountNum=parseInt(resultCountStr[0]);
+            var maxNum=(resultCountNum+1)*Math.pow(10,(resultCountStr.length-1))
+            $(".DNSDomainBefore>div span:last-child").html(maxNum);
+            $(".DNSDomainBefore>div span:nth-child(3)").html(maxNum/5);
+            $(".DNSDomainBefore>div span:nth-child(4)").html(2*maxNum/5);
+            $(".DNSDomainBefore>div span:nth-child(5)").html(3*maxNum/5);
+            $(".DNSDomainBefore>div span:nth-child(6)").html(4*maxNum/5);
+            $.each(result,function (i) {
+                var DNSLi='<li><span class="DNSName" title="'+result[i].key+'">'+result[i].key+'</span>' +
+                    '<div class="DNSPer"><div><div></div></div><span>'+result[i].count+'</span></div></li>'
+                $(".DNSDomainB>ul").append(DNSLi);
+                $(".DNSDomainB>ul li").eq(i).find(".DNSPer>div").css({
+                    width:result[i].count*100/maxNum+"%",
+                    background:DNSColor[i]
+                });
+                if(result[i].count/maxNum>0.8){
+                    $(".DNSDomainB>ul li").eq(i).find(".DNSPer>div").css({
+                        width:result[i].count*100/maxNum+"%",
+                        background:DNSColor[i]
+                    });
+                    $(".DNSDomainB>ul li").eq(i).find(".DNSPer>div>div").html(result[i].count).css({
+                        textAlign:"center",
+                        color:"#fff"
+                    })
+                }
+            });
+        }
+    );
+    // 后TOP10域名排名
+    Ajax(
+        "/smarteye/api/search/dns/facetForIP?field=domain&ip="+attkIP+"&topn=10&asc=true&isSrcIP=true",
+        "get",
+        "json",
+        "",
+        false,
+        function (result) {
+            console.log(result);
+            var resultCount=result[9].count;
+            var resultCountStr=resultCount.toString();
+            var resultCountNum=parseInt(resultCountStr[0]);
+            var maxNum=(resultCountNum+1)*Math.pow(10,(resultCountStr.length-1));
+            if(resultCountStr.length==1){
+                maxNum=resultCountNum*10
+            };
+            $(".DNSDomainAfter>div span:last-child").html(maxNum);
+            $(".DNSDomainAfter>div span:nth-child(3)").html(maxNum/5);
+            $(".DNSDomainAfter>div span:nth-child(4)").html(2*maxNum/5);
+            $(".DNSDomainAfter>div span:nth-child(5)").html(3*maxNum/5);
+            $(".DNSDomainAfter>div span:nth-child(6)").html(4*maxNum/5);
+            $.each(result,function (i) {
+                var DNSLi='<li><span class="DNSName" title="'+result[i].key+'">'+result[i].key+'</span>' +
+                    '<div class="DNSPer"><div><div></div></div><span>'+result[i].count+'</span></div></li>'
+                $(".DNSDomainA>ul").append(DNSLi);
+                $(".DNSDomainA>ul li").eq(i).find(".DNSPer>div").css({
+                    width:result[i].count*100/maxNum+"%",
+                    background:DNSColor[9-i]
+                });
+                if(result[i].count/maxNum>0.8){
+                    $(".DNSDomainA>ul li").eq(i).find(".DNSPer>div").css({
+                        width:result[i].count*100/maxNum+"%",
+                        background:DNSColor[9-i]
+                    });
+                    $(".DNSDomainA>ul li").eq(i).find(".DNSPer>div>div").html(result[i].count).css({
+                        textAlign:"center",
+                        color:"#fff"
+                    })
+                }
+            })
+        }
+    );
+    // DNS查询类型排名
+    Ajax(
+        "/smarteye/api/search/dns/facetForIP?field=type&ip="+attkIP+"&topn=10&asc=false&isSrcIP=true",
+        "get",
+        "json",
+        "",
+        false,
+        function (result) {
+            console.log(result);
+            var resultCount=result[0].count;
+            var resultCountStr=resultCount.toString();
+            var resultCountNum=parseInt(resultCountStr[0]);
+            var maxNum=(resultCountNum+1)*Math.pow(10,(resultCountStr.length-1))
+            $(".DNSTypeB>div span:last-child").html(maxNum);
+            $(".DNSTypeB>div span:nth-child(3)").html(maxNum/5);
+            $(".DNSTypeB>div span:nth-child(4)").html(2*maxNum/5);
+            $(".DNSTypeB>div span:nth-child(5)").html(3*maxNum/5);
+            $(".DNSTypeB>div span:nth-child(6)").html(4*maxNum/5);
+            $.each(result,function (i) {
+                var DNSLi='<li><span class="DNSName" title="'+result[i].key+'">'+result[i].key+'</span>' +
+                    '<div class="DNSPer"><div><div></div></div><span>'+result[i].count+'</span></div></li>'
+                $(".DNSType>ul").append(DNSLi);
+                $(".DNSType>ul li").eq(i).find(".DNSPer>div").css({
+                    width:result[i].count*100/maxNum+"%",
+                    background:DNSColor[i]
+                });
+                if(result[i].count/maxNum>0.79){
+                    $(".DNSType>ul li").eq(i).find(".DNSPer>div").css({
+                        width:result[i].count*100/maxNum+"%",
+                        background:DNSColor[i]
+                    });
+                    $(".DNSType>ul li").eq(i).find(".DNSPer>div>div").html(result[i].count).css({
+                        textAlign:"center",
+                        color:"#fff"
+                    })
+                }
+            })
+        }
+    );
+    // DNS操作排名
+    Ajax(
+        "/smarteye/api/search/dns/facetForIP?field=opcode&ip="+attkIP+"&topn=10&asc=false&isSrcIP=true",
+        "get",
+        "json",
+        "",
+        false,
+        function (result) {
+            console.log(result);
+            var resultCount=result[0].count;
+            var resultCountStr=resultCount.toString();
+            var resultCountNum=parseInt(resultCountStr[0]);
+            var maxNum=(resultCountNum+1)*Math.pow(10,(resultCountStr.length-1))
+            $(".DNSOpcodeB>div span:last-child").html(maxNum);
+            $(".DNSOpcodeB>div span:nth-child(3)").html(maxNum/5);
+            $(".DNSOpcodeB>div span:nth-child(4)").html(2*maxNum/5);
+            $(".DNSOpcodeB>div span:nth-child(5)").html(3*maxNum/5);
+            $(".DNSOpcodeB>div span:nth-child(6)").html(4*maxNum/5);
+            $.each(result,function (i) {
+                var DNSLi='<li><span class="DNSName" title="'+result[i].key+'">'+result[i].key+'</span>' +
+                    '<div class="DNSPer"><div><div></div></div><span>'+result[i].count+'</span></div></li>'
+                $(".DNSOpcode>ul").append(DNSLi);
+                $(".DNSOpcode>ul li").eq(i).find(".DNSPer>div").css({
+                    width:result[i].count*100/maxNum+"%",
+                    background:DNSColor[i]
+                });
+                if(result[i].count/maxNum>0.8){
+                    $(".DNSOpcode>ul li").eq(i).find(".DNSPer>div").css({
+                        width:result[i].count*100/maxNum+"%",
+                        background:DNSColor[i]
+                    });
+                    $(".DNSOpcode>ul li").eq(i).find(".DNSPer>div>div").html(result[i].count).css({
+                        textAlign:"center",
+                        color:"#fff"
+                    })
+                }
+            })
+        }
+    );
     // 图表
     var chart01 = echarts.init(document.getElementById('chart01'));
     var chart02 = echarts.init(document.getElementById('chart02'));
@@ -731,7 +909,7 @@ $(function () {
             text: '黑客统计分析',
         },
         tooltip: {
-            trigger: 'axis'
+            trigger: 'item'
         },
 
         grid: {
@@ -929,10 +1107,10 @@ $(function () {
         ]
     };
     // 使用刚指定的配置项和数据显示图表。
-    chart01.setOption(option);
-    chart02.setOption(option2);
-    chart03.setOption(option3);
-    chart04.setOption(option4);
+    chart01.setOption(option,true);
+    chart02.setOption(option2,true);
+    chart03.setOption(option3,true);
+    chart04.setOption(option4,true);
     window.onresize = function () {
         chart01.resize()
         chart02.resize()

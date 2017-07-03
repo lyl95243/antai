@@ -2,6 +2,7 @@
  * Created by dell on 2017/3/28.
  */
 $(function () {
+
     var inputPlaceHolder;
     $("input").focus(function () {
         inputPlaceHolder = $(this).attr("placeholder")
@@ -54,7 +55,7 @@ $(function () {
                         '<td>' + arrResult[i].owner + '</td>' +
                         '<td>' + arrResult[i].dep + '</td>' +
                         '<td>' + status + '</td>' +
-                        '<td><button class="trace editMan" data-toggle="modal" data-target="#assetEdit">编辑</button><button class="trace delMan">删除</button><button class="trace confirm" style="width: 32%;background:url(\'../image/zhuiz.png\')">确认</button></td></tr>'
+                        '<td><button class="trace editMan" data-toggle="modal" data-target="#assetEdit">编辑</button><button class="trace delMan">删除</button><button class="confirm" style="width: 32%;">确认</button></td></tr>'
                     tb.append(tableCon);
                     var height = $(".rightC").height();
                     $(".leftNav").height(height);
@@ -64,70 +65,72 @@ $(function () {
                 var pageCount = result.pageCount;
                 var pageSize = 10;
                 $(".pagez span").html(pageCount);
-                var options = {
-                    bootstrapMajorVersion: 2,
-                    currentPage: currentPage,
-                    totalPages: pageCount,
-                    numberOfPages: 5,
-                    itemTexts: function (type, page, current) {
-                        switch (type) {
-                            case "first":
-                                return "首页";
-                            case "prev":
-                                return "上一页";
-                            case "next":
-                                return "下一页";
-                            case "last":
-                                return "末页";
-                            case "page":
-                                return page;
-                        }
-                    }, onPageClicked: function (event, originaEvent, type, page) {
-                        pagenumber = page
-                        Ajax(
-                            "/smarteye/api/search/devProperty/devPropertyList?ip=&owner=&live=&type=&dep=&status=&page=" + page + "&pageSize=10",
-                            "get",
-                            "json",
-                            "",
-                            false,
-                            function (result) {
-                                console.log(result);
-                                var arrResult = eval(result.results);
-                                tb.html("");
-                                var tableTh = '<tr><th>IP</th><th>MAC</th><th>存活状态</th><th>类型</th><th>所有者</th><th>所属部门</th><th>状态</th><th>操作</th></tr>'
-                                tb.append(tableTh);
-                                $.each(arrResult, function (i) {
-                                    var live = "";
-                                    if (arrResult[i].live == true) {
-                                        live = "在线"
-                                    } else {
-                                        live = "不在线"
-                                    }
-                                    ;
-                                    var status = "";
-                                    if (arrResult[i].status == 0) {
-                                        status = "未确认"
-                                    } else if (arrResult[i].status == 1) {
-                                        status = "已确认"
-                                    }
-                                    var tableCon = '<tr><td>' + arrResult[i].ip + '</td>' +
-                                        '<td>' + arrResult[i].mac + '</td>' +
-                                        '<td>' + live + '</td>' +
-                                        '<td>' + arrResult[i].type + '</td>' +
-                                        '<td>' + arrResult[i].owner + '</td>' +
-                                        '<td>' + arrResult[i].dep + '</td>' +
-                                        '<td>' + status + '</td>' +
-                                        '<td><button class="trace editMan" data-toggle="modal" data-target="#assetEdit">编辑</button><button class="trace delMan">删除</button><button class="trace confirm" style="width: 32%;background:url(\'../image/zhuiz.png\')">确认</button></td></tr>'
-                                    tb.append(tableCon);
-                                })
-                                confirm()
-                                queren()
-                                tracHover()
+                if(pageCount>=1){
+                    var options = {
+                        bootstrapMajorVersion: 2,
+                        currentPage: currentPage,
+                        totalPages: pageCount,
+                        numberOfPages: 5,
+                        itemTexts: function (type, page, current) {
+                            switch (type) {
+                                case "first":
+                                    return "首页";
+                                case "prev":
+                                    return "上一页";
+                                case "next":
+                                    return "下一页";
+                                case "last":
+                                    return "末页";
+                                case "page":
+                                    return page;
                             }
-                        )
+                        }, onPageClicked: function (event, originaEvent, type, page) {
+                            pagenumber = page
+                            Ajax(
+                                "/smarteye/api/search/devProperty/devPropertyList?ip=&owner=&live=&type=&dep=&status=&page=" + page + "&pageSize=10",
+                                "get",
+                                "json",
+                                "",
+                                false,
+                                function (result) {
+                                    console.log(result);
+                                    var arrResult = eval(result.results);
+                                    tb.html("");
+                                    var tableTh = '<tr><th>IP</th><th>MAC</th><th>存活状态</th><th>类型</th><th>所有者</th><th>所属部门</th><th>状态</th><th>操作</th></tr>'
+                                    tb.append(tableTh);
+                                    $.each(arrResult, function (i) {
+                                        var live = "";
+                                        if (arrResult[i].live == true) {
+                                            live = "在线"
+                                        } else {
+                                            live = "不在线"
+                                        }
+                                        ;
+                                        var status = "";
+                                        if (arrResult[i].status == 0) {
+                                            status = "未确认"
+                                        } else if (arrResult[i].status == 1) {
+                                            status = "已确认"
+                                        }
+                                        var tableCon = '<tr><td>' + arrResult[i].ip + '</td>' +
+                                            '<td>' + arrResult[i].mac + '</td>' +
+                                            '<td>' + live + '</td>' +
+                                            '<td>' + arrResult[i].type + '</td>' +
+                                            '<td>' + arrResult[i].owner + '</td>' +
+                                            '<td>' + arrResult[i].dep + '</td>' +
+                                            '<td>' + status + '</td>' +
+                                            '<td><button class="trace editMan" data-toggle="modal" data-target="#assetEdit">编辑</button><button class="trace delMan">删除</button><button class="confirm" style="width: 32%;">确认</button></td></tr>'
+                                        tb.append(tableCon);
+                                    })
+                                    confirmBtn()
+                                    queren()
+                                    tracHover()
+                                }
+                            )
+                        }
                     }
+                    $("#yema").bootstrapPaginator(options)
                 }
-                $("#yema").bootstrapPaginator(options)
             }
         )
     }
@@ -185,12 +188,12 @@ $(function () {
                         '<td>' + arrResult[i].owner + '</td>' +
                         '<td>' + arrResult[i].dep + '</td>' +
                         '<td>' + status + '</td>' +
-                        '<td><button class="trace editMan" data-toggle="modal" data-target="#assetEdit">编辑</button><button class="trace delMan">删除</button><button class="trace confirm" style="width: 32%;background:url(\'../image/zhuiz.png\')">确认</button></td></tr>'
+                        '<td><button class="trace editMan" data-toggle="modal" data-target="#assetEdit">编辑</button><button class="trace delMan">删除</button><button class="confirm" style="width: 32%;">确认</button></td></tr>'
                     tb.append(tableCon);
                     var height = $(".rightC").height();
                     $(".leftNav").height(height);
                 });
-                confirm()
+                confirmBtn()
                 queren()
                 tracHover()
                 var totalCount = result.count;
@@ -198,70 +201,72 @@ $(function () {
                 var pageCount = result.pageCount;
                 var pageSize = 10;
                 $(".pagez span").html(pageCount);
-                var options = {
-                    bootstrapMajorVersion: 2,
-                    currentPage: currentPage,
-                    totalPages: pageCount,
-                    numberOfPages: 5,
-                    itemTexts: function (type, page, current) {
-                        switch (type) {
-                            case "first":
-                                return "首页";
-                            case "prev":
-                                return "上一页";
-                            case "next":
-                                return "下一页";
-                            case "last":
-                                return "末页";
-                            case "page":
-                                return page;
-                        }
-                    }, onPageClicked: function (event, originaEvent, type, page) {
-                        var type = $("#type").val();
-                        Ajax(
-                            "/smarteye/api/search/devProperty/devPropertyList?ip=" + ip + "&owner=" + owner + "&live=" + live + "&type=" + type + "&dep=" + dep + "&status=" + status + "&page=" + page + "&pageSize=10",
-                            "get",
-                            "json",
-                            "",
-                            false,
-                            function (result) {
-                                // console.log(result);
-                                var arrResult = eval(result.results);
-                                tb.html("");
-                                var tableTh = '<tr><th>IP</th><th>MAC</th><th>存活状态</th><th>类型</th><th>所有者</th><th>所属部门</th><th>状态</th><th>操作</th></tr>'
-                                tb.append(tableTh);
-                                $.each(arrResult, function (i) {
-                                    var live = "";
-                                    if (arrResult[i].live == true) {
-                                        live = "在线"
-                                    } else {
-                                        live = "不在线"
-                                    }
-                                    ;
-                                    var status = "";
-                                    if (arrResult[i].status == 0) {
-                                        status = "未确认"
-                                    } else if (arrResult[i].status == 1) {
-                                        status = "已确认"
-                                    }
-                                    var tableCon = '<tr><td>' + arrResult[i].ip + '</td>' +
-                                        '<td>' + arrResult[i].mac + '</td>' +
-                                        '<td>' + live + '</td>' +
-                                        '<td>' + arrResult[i].type + '</td>' +
-                                        '<td>' + arrResult[i].owner + '</td>' +
-                                        '<td>' + arrResult[i].dep + '</td>' +
-                                        '<td>' + status + '</td>' +
-                                        '<td><button class="trace editMan" data-toggle="modal" data-target="#assetEdit">编辑</button><button class="trace delMan">删除</button><button class="trace confirm" style="width: 32%;background:url(\'../image/zhuiz.png\')">确认</button></td></tr>'
-                                    tb.append(tableCon);
-                                })
-                                confirm()
-                                queren()
-                                tracHover()
-                            }
-                        )
-                    }
-                }
-                $("#yema").bootstrapPaginator(options)
+               if(pageCount>=1){
+                   var options = {
+                       bootstrapMajorVersion: 2,
+                       currentPage: currentPage,
+                       totalPages: pageCount,
+                       numberOfPages: 5,
+                       itemTexts: function (type, page, current) {
+                           switch (type) {
+                               case "first":
+                                   return "首页";
+                               case "prev":
+                                   return "上一页";
+                               case "next":
+                                   return "下一页";
+                               case "last":
+                                   return "末页";
+                               case "page":
+                                   return page;
+                           }
+                       }, onPageClicked: function (event, originaEvent, type, page) {
+                           var type = $("#type").val();
+                           Ajax(
+                               "/smarteye/api/search/devProperty/devPropertyList?ip=" + ip + "&owner=" + owner + "&live=" + live + "&type=" + type + "&dep=" + dep + "&status=" + status + "&page=" + page + "&pageSize=10",
+                               "get",
+                               "json",
+                               "",
+                               false,
+                               function (result) {
+                                   // console.log(result);
+                                   var arrResult = eval(result.results);
+                                   tb.html("");
+                                   var tableTh = '<tr><th>IP</th><th>MAC</th><th>存活状态</th><th>类型</th><th>所有者</th><th>所属部门</th><th>状态</th><th>操作</th></tr>'
+                                   tb.append(tableTh);
+                                   $.each(arrResult, function (i) {
+                                       var live = "";
+                                       if (arrResult[i].live == true) {
+                                           live = "在线"
+                                       } else {
+                                           live = "不在线"
+                                       }
+                                       ;
+                                       var status = "";
+                                       if (arrResult[i].status == 0) {
+                                           status = "未确认"
+                                       } else if (arrResult[i].status == 1) {
+                                           status = "已确认"
+                                       }
+                                       var tableCon = '<tr><td>' + arrResult[i].ip + '</td>' +
+                                           '<td>' + arrResult[i].mac + '</td>' +
+                                           '<td>' + live + '</td>' +
+                                           '<td>' + arrResult[i].type + '</td>' +
+                                           '<td>' + arrResult[i].owner + '</td>' +
+                                           '<td>' + arrResult[i].dep + '</td>' +
+                                           '<td>' + status + '</td>' +
+                                           '<td><button class="trace editMan" data-toggle="modal" data-target="#assetEdit">编辑</button><button class="trace delMan">删除</button><button class="confirm" style="width: 32%;">确认</button></td></tr>'
+                                       tb.append(tableCon);
+                                   })
+                                   confirmBtn()
+                                   queren()
+                                   tracHover()
+                               }
+                           )
+                       }
+                   }
+                   $("#yema").bootstrapPaginator(options)
+               }
             }
         )
     });
@@ -277,8 +282,8 @@ $(function () {
         var addTYPE=$("#addType input").val();
         var addOWNER=$("#addOwner input").val();
         var addDEP=$("#addDep input").val();
-        console.log(typeof addTYPE);
-        console.log(addTYPE.indexOf(";"));
+        // console.log(typeof addTYPE);
+        // console.log(addTYPE.indexOf(";"));
         // console.log(addOWNER);
         // console.log(addDEP);
         if (addIP.val() == "") {
@@ -286,13 +291,6 @@ $(function () {
         } else if (addIPReg.test(addIP.val())) {
             if (RegExp.$1 < 256 && RegExp.$2 < 256 && RegExp.$3 < 256 && RegExp.$4 < 256) {
                  if (addMACReg.test(addMAC.val())||addMAC.val()=="") {
-                     if(addTYPE.indexOf(";")!=-1||addTYPE.indexOf("；")!=-1){
-                         alert("类型不能包含分号")
-                     }else if(addOWNER.indexOf(";")!=-1||addOWNER.indexOf("；")!=-1){
-                         alert("所有者不能包含分号")
-                     }else if(addDEP.indexOf(";")!=-1||addDEP.indexOf("；")!=-1){
-                         alert("所属部门不能包含分号")
-                     }else{
                          var addIp = $("#addIP input").val(),
                              addMac = $("#addMAC input").val(),
                              addLive = $("#addLive input").val(),
@@ -327,12 +325,11 @@ $(function () {
                                  }
                                  $('#assetAdd').modal('hide');
                                  manList(pagenumber)
-                                 confirm()
+                                 confirmBtn()
                                  queren()
                                  tracHover()
                              }
                          )
-                     }
                 }else {
                      alert("MAC地址格式不正确")
                  }
@@ -345,6 +342,7 @@ $(function () {
 
     };
     $("#addAffirm").click(function () {
+        console.log(1);
         addMan()
     });
 
@@ -356,57 +354,57 @@ $(function () {
             alert("IP地址不能为空")
         } else if (addIPReg.test(editIp.val())) {
             if (RegExp.$1 < 256 && RegExp.$2 < 256 && RegExp.$3 < 256 && RegExp.$4 < 256) {
-                if (editMac.val() == "") {
-                    alert("MAC地址不能为空")
-                } else if (!addMACReg.test(editMac.val())) {
-                    alert("MAC地址格式不正确")
-                }
+                 if (addMACReg.test(editMac.val())||editMac.val()=="") {
+                     if (addIPReg.test(editIp.val()) && RegExp.$1 < 256 && RegExp.$2 < 256 && RegExp.$3 < 256 && RegExp.$4 < 256) {
+                         var newIp = $("#editIp input").val(),
+                             newMac = $("#editMac input").val(),
+                             newLive,
+                             newType = $("#editType input").val(),
+                             newDep = $("#editDep input").val(),
+                             newOwner = $("#editOwner input").val(),
+                             newStatus;
+                         if ($("#editLive input").val() == "在线") {
+                             newLive = true
+                         } else if ($("#editLive input").val() == "不在线") {
+                             newLive = false
+                         }
+                         if ($("#editStatus input").val() == "未确认") {
+                             newStatus = 0
+                         } else if ($("#editStatus input").val() == "已确认") {
+                             newStatus = 1
+                         }
+                         Ajax(
+                             "/smarteye/api/search/devProperty/updateDevProperty?oldIp=" + oldIp + "&oldMac=" + oldMac + "&oldLive=" + oldLivee + "&oldType=" + oldType + "&oldOwner=" + oldOwner + "&oldDep=" + oldDep + "&oldStatus=" + oldStatuss + "&newIp=" + newIp + "&newMac=" + newMac + "&newLive=" + newLive + "&newType=" + newType + "&newOwner=" + newOwner + "&newDep=" + newDep + "&newStatus=" + newStatus + "",
+                             "post",
+                             "json",
+                             "",
+                             false,
+                             function (result) {
+                                 console.log(result);
+                                 if (result.status == 0) {
+                                     alert("修改成功")
+                                 } else {
+                                     alert("修改失败")
+                                 }
+                                 $("#assetEdit").modal("hide")
+                                 manList(pagenumber)
+                                 confirmBtn()
+                                 queren()
+                                 tracHover()
+                             }
+                         )
+                     }
+                     ;
+                }else {
+                     alert("MAC地址格式不正确")
+                 }
             } else {
                 alert("IP地址格式不正确")
             }
         } else {
             alert("IP地址格式不正确")
         }
-        if (addMACReg.test(editMac.val()) && addIPReg.test(editIp.val()) && RegExp.$1 < 256 && RegExp.$2 < 256 && RegExp.$3 < 256 && RegExp.$4 < 256) {
-            var newIp = $("#editIp input").val(),
-                newMac = $("#editMac input").val(),
-                newLive,
-                newType = $("#editType input").val(),
-                newDep = $("#editDep input").val(),
-                newOwner = $("#editOwner input").val(),
-                newStatus;
-            if ($("#editLive input").val() == "在线") {
-                newLive = true
-            } else if ($("#editLive input").val() == "不在线") {
-                newLive = false
-            }
-            if ($("#editStatus input").val() == "未确认") {
-                newStatus = 0
-            } else if ($("#editStatus input").val() == "已确认") {
-                newStatus = 1
-            }
-            Ajax(
-                "/smarteye/api/search/devProperty/updateDevProperty?oldIp=" + oldIp + "&oldMac=" + oldMac + "&oldLive=" + oldLivee + "&oldType=" + oldType + "&oldOwner=" + oldOwner + "&oldDep=" + oldDep + "&oldStatus=" + oldStatuss + "&newIp=" + newIp + "&newMac=" + newMac + "&newLive=" + newLive + "&newType=" + newType + "&newOwner=" + newOwner + "&newDep=" + newDep + "&newStatus=" + newStatus + "",
-                "post",
-                "json",
-                "",
-                false,
-                function (result) {
-                    console.log(result);
-                    if (result.status == 0) {
-                        alert("修改成功")
-                    } else {
-                        alert("修改失败")
-                    }
-                    $("#assetEdit").modal("hide")
-                    manList(pagenumber)
-                    confirm()
-                    queren()
-                    tracHover()
-                }
-            )
-        }
-        ;
+
     };
     $("#editAffirm").click(function () {
         editMan()
@@ -460,43 +458,48 @@ $(function () {
             editStatus = 0
         } else if (td.eq(6).html() == "已确认") {
             editStatus = 1
-        }
-        Ajax(
-            "/smarteye/api/search/devProperty/delDevProperty?ip=" + editIp + "&mac=" + editMac + "&live=" + editLive + "&type=" + editType + "&owner=" + editOwner + "&dep=" + editDep + "&status=" + editStatus + "",
-            "post",
-            "json",
-            "",
-            false,
-            function (result) {
-                console.log(result);
-                if (result.status == 0) {
-                    alert("删除成功")
-                } else {
-                    alert("删除失败")
+        };
+        if(confirm('确定要删除吗？')) {
+            Ajax(
+                "/smarteye/api/search/devProperty/delDevProperty?ip=" + editIp + "&mac=" + editMac + "&live=" + editLive + "&type=" + editType + "&owner=" + editOwner + "&dep=" + editDep + "&status=" + editStatus + "",
+                "post",
+                "json",
+                "",
+                false,
+                function (result) {
+                    console.log(result);
+                    if (result.status == 0) {
+                        alert("删除成功")
+                    } else {
+                        alert("删除失败")
+                    }
+                    manList(pagenumber)
+                    confirmBtn()
+                    queren()
+                    tracHover()
                 }
-                manList(pagenumber)
-                confirm()
-                queren()
-                tracHover()
-            }
-        )
+            )
+        }else {
+
+        }
     });
+
 
     // 已确认未确认
    function tracHover() {
-       $(".confirm").hover(function () {
-           $(this).css({
-               background:"#2f7eb3"
-           })
-       },function () {
-           $(this).css({
-               background:"url('../image/zhuiz.png')"
-           })
-       })
+       // $(".confirm").hover(function () {
+       //     $(this).css({
+       //         background:"#2f7eb3"
+       //     })
+       // },function () {
+       //     $(this).css({
+       //         background:"url('../image/zhuiz.png')"
+       //     })
+       // })
    };
     tracHover()
     // 确认按钮
-    function confirm() {
+    function confirmBtn() {
         $(".confirm").click(function () {
             var querr=$(this);
             var quer=$(this).parents("td").prev("td");
@@ -523,7 +526,7 @@ $(function () {
                     console.log(result);
                     if(result.status==0){
                         quer.html("已确认");
-                        querr.attr("disabled", "true").css({"cursor": "default", background: "#c7c3c3", color: "#333"});
+                        querr.attr("disabled", "true").css({"cursor": "default", background: "#ebebeb", color: "#bfbfbf"});
                     }else {
 
                     }
@@ -532,15 +535,15 @@ $(function () {
             )
         })
     };
-    confirm()
+    confirmBtn()
    function queren() {
        var btn = $(".manTab tr");
        for (var i = 0; i < btn.length; i++) {
            if ($(".manTab tr").eq(i).find("td:last-child").prev("td").html() == "已确认") {
                $(".manTab tr").eq(i).find("td:last-child").find("button:last-child").attr("disabled", "true").css({
                    "cursor": "default",
-                   background: "#c7c3c3",
-                   color:"#333"
+                   background: "#ebebeb",
+                   color:"#bfbfbf"
                });
            }
        }
@@ -548,7 +551,7 @@ $(function () {
     queren()
     // 自动识别资产列表
     var pageNum = 1;
-    var scanTableTrTd=[],scanTableTrTdd=[];
+    var scanTableTrTdStart=[],scanTableTrTdEnd=[];
     function scanManList(pagenum) {
         Ajax(
             "/smarteye/api/search/devPropertyScan/devPropertyScanList?enable=&startIP=&endIP=&startPort=&endPort=&type=&dep=&status=&page=" + pagenum + "&pageSize=10",
@@ -558,15 +561,15 @@ $(function () {
             false,
             function (result) {
                 console.log(result);
-                scanTableTrTd=[];scanTableTrTdd=[];
+                scanTableTrTdStart=[];scanTableTrTdEnd=[];
                 var arrResult = eval(result.results);
                 var tb = $("#scanManTab");
                 tb.html("");
                 var tableTh = '<tr><th>状态</th><th>起始IP</th><th>终止IP</th><th>起始端口</th><th>终止端口</th><th>资产类型</th><th>所属部门</th><th>操作</th></tr>'
                 tb.append(tableTh);
                 $.each(arrResult, function (i) {
-                    scanTableTrTd.push(arrResult[i].IPStart);
-                    scanTableTrTdd.push(arrResult[i].IPEnd);
+                    scanTableTrTdStart.push(arrResult[i].IPStart);
+                    scanTableTrTdEnd.push(arrResult[i].IPEnd);
                     var tableCon = '<tr><td class="qiyong"><span title="启用" class=""></span></td>' +
                         '<td>' + arrResult[i].IPStart + '</td>' +
                         '<td>' + arrResult[i].IPEnd + '</td>' +
@@ -590,63 +593,65 @@ $(function () {
                 var pageCount = result.pageCount;
                 var pageSize = 10;
                 $(".pagezz span").html(pageCount)
-                var options = {
-                    bootstrapMajorVersion: 2,
-                    currentPage: currentPage,
-                    totalPages: pageCount,
-                    numberOfPages: 5,
-                    itemTexts: function (type, page, current) {
-                        switch (type) {
-                            case "first":
-                                return "首页";
-                            case "prev":
-                                return "上一页";
-                            case "next":
-                                return "下一页";
-                            case "last":
-                                return "末页";
-                            case "page":
-                                return page;
-                        }
-                    }, onPageClicked: function (event, originaEvent, type, page) {
-                        pageNum = page;
-                        scanTableTrTd=[];scanTableTrTdd=[];
-                        Ajax(
-                            "/smarteye/api/search/devPropertyScan/devPropertyScanList?enable=&startIP=&endIP=&startPort=&endPort=&type=&dep=&status=&page=" + page + "&pageSize=10",
-                            "get",
-                            "json",
-                            "",
-                            false,
-                            function (result) {
-                                var arrResult = eval(result.results);
-                                tb.html("");
-                                var tableTh = '<tr><th>状态</th><th>起始IP</th><th>终止IP</th><th>起始端口</th><th>终止端口</th><th>资产类型</th><th>所属部门</th><th>操作</th></tr>'
-                                tb.append(tableTh);
-                                $.each(arrResult, function (i) {
-                                    scanTableTrTd.push(arrResult[i].IPStart);
-                                    scanTableTrTdd.push(arrResult[i].IPEnd);
-                                    var tableCon = '<tr><td class="qiyong"><span title="启用" class=""></span></td>' +
-                                        '<td>' + arrResult[i].IPStart + '</td>' +
-                                        '<td>' + arrResult[i].IPEnd + '</td>' +
-                                        '<td>' + arrResult[i].PortStart + '</td>' +
-                                        '<td>' + arrResult[i].PortEnd + '</td>' +
-                                        '<td>' + arrResult[i].type + '</td>' +
-                                        '<Td>' + arrResult[i].dep + '</Td>' +
-                                        '<td><i class="fa fa-edit scanEdit" data-toggle="modal" data-target="#assetEditIndent" style="font-size: 18px;cursor:pointer" title="修改"></i> <i class="fa fa-remove scanDel" style="font-size: 18px;cursor:pointer" title="删除"></i> <span title="启用" class="qiyongSpan"></span> <span title="停用" class="tingyongSpan"></span></td></tr>'
-                                    tb.append(tableCon);
-                                    if (arrResult[i].enabled == true) {
-                                        $("#scanManTab").find("tr").eq(i + 1).find(".qiyong span").addClass("qiyongT")
-                                    } else if (arrResult[i].enabled == false) {
-                                        $("#scanManTab").find("tr").eq(i + 1).find(".qiyong span").addClass("qiyongB")
-                                    }
-                                })
-                                qiting()
-                                qitingqiehuan()
+                if(pageCount>=1){
+                    var options = {
+                        bootstrapMajorVersion: 2,
+                        currentPage: currentPage,
+                        totalPages: pageCount,
+                        numberOfPages: 5,
+                        itemTexts: function (type, page, current) {
+                            switch (type) {
+                                case "first":
+                                    return "首页";
+                                case "prev":
+                                    return "上一页";
+                                case "next":
+                                    return "下一页";
+                                case "last":
+                                    return "末页";
+                                case "page":
+                                    return page;
                             }
-                        )
-                    }
-                };
-                $("#yemaa").bootstrapPaginator(options)
+                        }, onPageClicked: function (event, originaEvent, type, page) {
+                            pageNum = page;
+                            scanTableTrTdStart=[];scanTableTrTdEnd=[];
+                            Ajax(
+                                "/smarteye/api/search/devPropertyScan/devPropertyScanList?enable=&startIP=&endIP=&startPort=&endPort=&type=&dep=&status=&page=" + page + "&pageSize=10",
+                                "get",
+                                "json",
+                                "",
+                                false,
+                                function (result) {
+                                    var arrResult = eval(result.results);
+                                    tb.html("");
+                                    var tableTh = '<tr><th>状态</th><th>起始IP</th><th>终止IP</th><th>起始端口</th><th>终止端口</th><th>资产类型</th><th>所属部门</th><th>操作</th></tr>'
+                                    tb.append(tableTh);
+                                    $.each(arrResult, function (i) {
+                                        scanTableTrTdStart.push(arrResult[i].IPStart);
+                                        scanTableTrTdEnd.push(arrResult[i].IPEnd);
+                                        var tableCon = '<tr><td class="qiyong"><span title="启用" class=""></span></td>' +
+                                            '<td>' + arrResult[i].IPStart + '</td>' +
+                                            '<td>' + arrResult[i].IPEnd + '</td>' +
+                                            '<td>' + arrResult[i].PortStart + '</td>' +
+                                            '<td>' + arrResult[i].PortEnd + '</td>' +
+                                            '<td>' + arrResult[i].type + '</td>' +
+                                            '<Td>' + arrResult[i].dep + '</Td>' +
+                                            '<td><i class="fa fa-edit scanEdit" data-toggle="modal" data-target="#assetEditIndent" style="font-size: 18px;cursor:pointer" title="修改"></i> <i class="fa fa-remove scanDel" style="font-size: 18px;cursor:pointer" title="删除"></i> <span title="启用" class="qiyongSpan"></span> <span title="停用" class="tingyongSpan"></span></td></tr>'
+                                        tb.append(tableCon);
+                                        if (arrResult[i].enabled == true) {
+                                            $("#scanManTab").find("tr").eq(i + 1).find(".qiyong span").addClass("qiyongT")
+                                        } else if (arrResult[i].enabled == false) {
+                                            $("#scanManTab").find("tr").eq(i + 1).find(".qiyong span").addClass("qiyongB")
+                                        }
+                                    })
+                                    qiting()
+                                    qitingqiehuan()
+                                }
+                            )
+                        }
+                    };
+                    $("#yemaa").bootstrapPaginator(options)
+                }
             }
         )
     };
@@ -690,17 +695,18 @@ $(function () {
 
 
       function scanAddMan() {
-          for (var i = 0; i < scanTableTrTdd.length; i++) {
+          var q=true;
+          for (var i = 0; i < scanTableTrTdEnd.length; i++) {
               ipNum=0;
-              ipToNumber(scanTableTrTdd[i])
+              ipToNumber(scanTableTrTdEnd[i])
               var end=ipNum;
 
               ipNum=0;
-              ipToNumber(scanTableTrTd[i])
+              ipToNumber(scanTableTrTdStart[i])
               var start=ipNum;
                   if (!(startIpNum > end || start > endIpNum)) {
                       alert("添加失败:添加IP地址范围与已添加列表中IP地址范围重叠")
-                      var q=false;
+                      q=false;
                       break;
                   }else {
                        q=true;
@@ -752,13 +758,7 @@ $(function () {
                                     if (parseInt(startPort) > parseInt(endPort)) {
                                         alert("起始端口大于终止端口")
                                     } else {
-                                        if(scanType.indexOf(";")!=-1||scanType.indexOf("；")!=-1){
-                                            alert("资产类型不能包含分号")
-                                        }else if(scanDep.indexOf(";")!=-1||scanDep.indexOf("；")!=-1){
-                                            alert("所属部门不能包含分号")
-                                        }else {
-                                            scanAddMan()
-                                        }
+                                        scanAddMan()
                                     }
                                 } else {
                                     alert("终止端口填写不正确")
@@ -784,6 +784,7 @@ $(function () {
     }
 
     $("#manageAffirm").click(function () {
+        console.log(2);
         scanAdd()
     });
 
@@ -801,7 +802,7 @@ $(function () {
             Enablee = true
         } else if (enabled.hasClass("qiyongB")) {
             Enablee = false
-        }
+        };
         Ajax(
             "/smarteye/api/search/devPropertyScan/delDevPropertyScan?enable=" + Enablee + "&startIP=" + startIp + "&endIP=" + endIp + "&startPort=" + startPort + "&endPort=" + endPort + "&type=" + type + "&dep=" + dep + "&status=",
             "post",
@@ -821,11 +822,9 @@ $(function () {
                 qitingqiehuan()
             }
         )
-
     })
 
     // 自动识别 编辑资产
-
 
     function scanEditMan() {
 
@@ -837,22 +836,26 @@ $(function () {
         var endPort = $("#endPortt input").val();
         ipNum = 0;
         ipToNumber(startIP);
-        var startIpNum = ipNum;
+        var startIpNum = ipNum; //填入的IP
         ipNum = 0;
         ipToNumber(endIP);
         var endIpNum = ipNum;
-        function scanUpdeat() {
-            for (var i = 0; i < scanTableTrTdd.length; i++) {
+        function scanUpdate() {
+            for (var i = 0; i < scanTableTrTdEnd.length; i++) {
                 ipNum=0;
-                ipToNumber(scanTableTrTdd[i])
+                ipToNumber(scanTableTrTdEnd[i])
                 var end=ipNum;
 
                 ipNum=0;
-                ipToNumber(scanTableTrTd[i])
+                ipToNumber(scanTableTrTdStart[i])
                 var start=ipNum;
 
+                if(startIpNum == start||end == endIpNum){
+                    f=true;
+                    break;
+                }
                 if (!(startIpNum > end || start > endIpNum)) {
-                    alert("修改失败:IP地址范围与已添加列表中IP地址范围重叠")
+                    alert("修改失败:IP地址范围与已添加列表中IP地址范围重叠");
                     var f=false;
                     break;
                 }else {
@@ -872,7 +875,7 @@ $(function () {
                             alert("修改成功")
                             $("#assetEditIndent").modal("hide");
                         } else {
-
+                            // alert("修改失败")
                         }
                         scanManList(pageNum);
                         qiting()
@@ -909,13 +912,7 @@ $(function () {
                                                 newEndPort = $("#endPortt input").val(),
                                                 scanType = $("#scanTypee input").val(),
                                                 scanDep = $("#scanDepp input").val();
-                                            if(scanType.indexOf(";")!=-1||scanType.indexOf("；")!=-1){
-                                                alert("资产类型不能包含分号")
-                                            }else if(scanDep.indexOf(";")!=-1||scanDep.indexOf("；")!=-1){
-                                                alert("所属部门不能包含分号")
-                                            }else{
-                                                scanUpdeat()
-                                            }
+                                            scanUpdate()
                                         }
                                     } else {
                                         alert("终止端口填写错误")
@@ -974,6 +971,7 @@ $(function () {
 function qiting() {
     for (var i = 0; i < $(".tablee tr").length; i++) {
         if ($(".tablee tr").eq(i).find(".qiyong span").hasClass("qiyongB")) {
+            $(".tablee tr").eq(i).find(".qiyong span").attr("title","停用")
             $(".qiyongB").parents("tr").find(".tingyongSpan").addClass("qitingyong").css({cursor: "default"})
         } else {
             $(".tablee tr").eq(i).find(".qiyongSpan").addClass("qitingyong").css({cursor: "default"})

@@ -96,7 +96,6 @@ body{
     display: none;
 }
 .evenXll{
-
     height: 28px;
 }
 .system{
@@ -117,7 +116,10 @@ body{
 /*.system a{padding-right: 31%}*/
 .evenXl a:hover{
     text-decoration: none;
-    background: lightblue;
+    color: #3479c1;
+}
+.evenXl .evenXlHover{
+    color: #3479c1;
 }
 .row .rightC{
     width: 89%;

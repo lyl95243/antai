@@ -1,11 +1,11 @@
 .sysSet{
     height: 790px;
-    border: 1px solid lightgray;
+    /*border: 1px solid lightgray;*/
     border-top: none;
     border-radius: 4px;
     padding: 22px 0 0 18px;
     margin: 0 12px 0 12px;
-    background: #f7f7f7;
+    /*background: #f7f7f7;*/
     position: relative;
 }
 .fenxian{
@@ -16,60 +16,63 @@
     top: 36px;
     left: 0;
 }
-.setWrap{
-    float: left;
-    position: relative;
+.nav-pills>li{
+    background: url("../image/sysset_03.png");
+    border: 1px solid #e2e1e1;
+    border-radius: 3px;
+    width: 106px;
 }
-.portset{
-    width: 90px;
-    height: 30px;
-    line-height: 30px;
+.nav-pills > li + li {
+    margin-left: 0px;
+}
+.nav>li>a{
+    padding: 5px  15px;
+    color: #333;
     text-align: center;
-    background: #dedede;
-    border-radius: 2px;
-    cursor: pointer;
-    border: 1px solid #aaaaaa;
-}
-.portset:hover{
-    background: #367ac5;
-    color: white;
 }
 .setWrapXl{
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 500px;
-    display:none;
+    margin: 40px 0 0 0;
 }
-.portsetB{
-    background: #367ac5;
-    color: white;
+.table{
+    width: 35%;
 }
 .table tr th,.table tr td{
     text-align: center;
 }
+.table-striped>tbody>tr:first-child{
+    background-color: #eeeeee;
+    border: 1px solid lightgrey;
+}
+.table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,
+.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td{
+    border-top:0px solid #ddd
+}
 .edit{
-    height: 21px;
-    width: 68px;
-    border: none;
-    color:#3c8fc7;
-    background: transparent;
+    width:41%;
+    height: 26px;
+    margin-right: 2%;
+    background: #fff;
+    color: #333;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
 }
 .edit:hover{
-    background: #3c8fc7;
-    border-radius: 5px;
+    background: #3a8cc3;
     color: white;
 }
 .addd{
-    height: 24px;
-    line-height: 24px;
-    width: 73px;
+    height: 26px;
+    line-height: 26px;
+    width: 80px;
     border: none;
     cursor: pointer;
-    background: #3c8fc7;
+    background: url("../image/traceBg.png");
     border-radius: 5px;
     color: white;
     margin:15px 0 0 29px;
+}
+.addd:hover{
+    background:#3a8cc3;
 }
 .addMange{
     height: 41px;

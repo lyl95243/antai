@@ -15,8 +15,7 @@ $(function () {
     var indexL=getQueryString("indexL");
     // console.log(esID);
     $(".tracee").click(function(){
-        // console.log(1);
-        if(protos=="SMTP"){
+        if(protos=="SMTP"||protos=="POP3"||protos=="IMAP"){
             window.open("emailDetail.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
         }else {
             window.open("webDetails.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
@@ -125,7 +124,7 @@ $(function () {
                    var indexL=arrResult[index].index;
                    var type=arrResult[index].type;
                    // console.log(esID);
-                   if(protos=="SMTP"){
+                   if(protos=="SMTP"||protos=="POP3"||protos=="IMAP"){
                        window.open("emailDetail.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
                    }else{
                        window.open("webDetails.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
@@ -201,7 +200,7 @@ $(function () {
                                    var esID=arrResult[index].esID;
                                    var indexL=arrResult[index].index;
                                    var type=arrResult[index].type;
-                                   if(protos=="SMTP"){
+                                   if(protos=="SMTP"||protos=="POP3"||protos=="IMAP"){
                                        window.open("emailDetail.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
                                    }else{
                                        window.open("webDetails.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
@@ -263,7 +262,7 @@ $(function () {
                        var esID=arrResult[index].esID;
                        var indexL=arrResult[index].index;
                        var type=arrResult[index].type;
-                       if(protos=="SMTP"){
+                       if(protos=="SMTP"||protos=="POP3"||protos=="IMAP"){
                            window.open("emailDetail.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
                        }else{
                            window.open("webDetails.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
@@ -339,7 +338,7 @@ $(function () {
                                        var esID=arrResult[index].esID;
                                        var indexL=arrResult[index].index;
                                        var type=arrResult[index].type;
-                                       if(protos=="SMTP"){
+                                       if(protos=="SMTP"||protos=="POP3"||protos=="IMAP"){
                                            window.open("emailDetail.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")
                                        }else{
                                            window.open("webDetails.html?esID="+esID+"&indexL="+indexL+"&type="+type+"","_self")

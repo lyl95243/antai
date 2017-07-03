@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>邮件详情</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css" >
     <link rel="stylesheet" href="css/emailDetail.css">
     <link rel="stylesheet" href="css/common.css">
     <script src="js/jquery.min.js"></script>
@@ -21,7 +21,7 @@
 <div class="header">
     <div class="logoWrap" onclick="window.open('index.html','_self')">
         <p class="logo">LOGO</p>
-        <span class="logoText">慧眼网络空间威胁感知系统</span>
+        <span class="logoText">安态网络空间威胁感知系统</span>
     </div>
     <div class="menu">
         <img src="image/menu_03.png" alt="">
@@ -80,71 +80,62 @@
                     <ul>
                         <li>
                             <span>标题 &nbsp;:</span>
-                            <div class="dd">
-                                <p>我爱你</p>
+                            <div class="mailD title">
+                                <p></p>
                             </div>
                         </li>
                         <li>
                             <span>时间 &nbsp;:</span>
-                            <div class="dd">
-                                <p>2017-03-17 11:03:42</p>
-                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            <div class="mailD date">
+                                <p></p>
                             </div>
                         </li>
                         <li>
                             <span>发件人 &nbsp;:</span>
-                            <div class="dd">
-                                <p>952430243@qq.com</p>
-                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            <div class="mailD mailForm">
+                                <p></p>
+                                <div class="traceNew">跟踪通信信息</div>
                             </div>
                         </li>
                         <li>
                             <span>收件人 &nbsp;:</span>
-                            <div class="dd">
-                                <p>csp001314@sohu.com</p>
-                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            <div class="mailD mailTo">
+                                <p></p>
+                                <div class="traceNew">跟踪通信信息</div>
                             </div>
                         </li>
                         <li>
                             <span>抄送 &nbsp;:</span>
-                            <div class="dd">
-                                <p>cso1234@163.com</p>
-                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                            <div class="mailD mailCC">
+                                <ul>
+
+                                </ul>
                             </div>
-                            <div class="dd" style="margin-left: 5%">
-                                <p>kaoaaa@sina.com</p>
-                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
-                            </div>
-                            <div class="dd" style="margin-left: 5%">
-                                <p>kkkkkk@126.com</p>
-                                <div class="traceNew" onclick="window.open('emailTrace.html')">跟踪通信信息</div>
+                        </li>
+                        <li>
+                            <span>附件 &nbsp;:</span>
+                            <div class="mailD attachments">
+                                <p style="color: #21c210;">
+                                    <span  style="margin-right: 6px"></span>
+                                    <a href="#attachm"></a>
+                                </p>
                             </div>
                         </li>
                     </ul>
-                    <p style="color: darkgray">
-                        附件: <span>3</span>个 （png-w02-begond-student-state-of-ask 等）
-                    </p>
                 </div>
                 <div class="rightConM">
-                    <p>context->cpool = NULL;</p>
-                    <p>context->port = NULL;</p>
-                    <p>context->rxtp = NULL;</p>
-                    <p>context->log_name = LOG_NAME_DEFAULT;</p>
-                    <p>context->log_level = LOG_LEVEL_DEFAULT;</p>
-                    <p>context->core_mask = 0;</p>
-                    <p>context->port_rx_mask = 0;</p>
-                    <p>context->n_rxtasks = 1;</p>
-                    <p>context->astask_ring_size = 0;</p>
-                    <p>context->tcp_cfname = "/usr/local/dpdk/CloudHands/conf/assemble_tcp.conf";</p>
-                    <p>context->udp_cfname = "/usr/local/dpdk/CloudHands/conf/assemble_udp.conf";</p>
-                    <p>context->app_tcp_cfname = "/usr/local/dpdk/CloudHands/conf/app_tcp.conf";</p>
-                    <p>context->app_udp_cfname = "/usr/local/dpdk/CloudHands/conf/app_udp.conf";</p>
-                    <p>context->port_cfname = "/usr/local/dpdk/CloudHands/conf/port.conf";</p>
+
                 </div>
-                <div class="rightConB">
+                <div class="rightConB" id="attachm">
                     <div class="fujian">
-                        附件:(<span>1</span>)
+                        附件:
                     </div>
+                    <ul>
+                        <!--<li>-->
+                            <!--<span>2222</span>-->
+                            <!--<a href="sdfsdfsd">tttt</a>-->
+                        <!--</li>-->
+                    </ul>
                 </div>
             </div>
 

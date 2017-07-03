@@ -3854,8 +3854,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .tab-content > .tab-pane {
-  /*display: none;*/
-  visibility: hidden;
+  display: none;
+  /*visibility: hidden;*/
   display: block;     /* undo display:none          */
   height: 0;          /* height:0 is also invisible */
   overflow-y: hidden; /* no-overflow                */

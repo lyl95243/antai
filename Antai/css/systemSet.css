@@ -1,6 +1,6 @@
 .sysSet{
     height: 790px;
-    border: 1px solid lightgray;
+    /*border: 1px solid lightgray;*/
     border-top: none;
     border-radius: 4px;
     padding: 22px 0 0 18px;
@@ -16,34 +16,85 @@
     top: 36px;
     left: 19px;
 }
-.setWrap{
-    float: left;
-    position: relative;
+
+.nav-pills>li{
+    background: url("../image/sysset_03.png");
+    border: 1px solid #e2e1e1;
+    border-radius: 3px;
+    width: 88px;
 }
-.portset{
-    width: 90px;
-    height: 30px;
-    line-height: 30px;
+.nav-pills > li + li {
+     margin-left: 0px;
+}
+.nav>li>a{
+    padding: 5px  15px;
+    color: #333;
     text-align: center;
-    background:url("../image/sysset_03.png");
-    border-radius: 2px;
-    cursor: pointer;
-    border: 1px solid #e2e0e0;
-}
-.portset:hover{
-    background: #3a8cc3;
-    color: white;
 }
 .setWrapXl{
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 818px;
-    display:none;
+    margin: 40px 0 0 0;
 }
-.portsetB{
+.table tbody tr th,.table tbody tr td{
+    vertical-align: middle;
+    text-align: center
+}
+.jiekouxinxi{
+    width: 435px;
+    height: 94px;
+    background: url("../image/portSetBg.png");
+    position: relative;
+}
+#portTable{
+    margin: 25px 0 20px 12px;
+    width: 99%;
+}
+.table-striped>tbody>tr:first-child{
+    background-color: #eeeeee;
+    border: 1px solid lightgrey;
+}
+#portTable>thead>tr>th,#portTable>tbody>tr>th,#portTable>tfoot>tr>th,
+#portTable>thead>tr>td,#portTable>tbody>tr>td,#portTable>tfoot>tr>td{
+    border-top:0px solid #ddd
+}
+.trace{
+    width:36%;
+    height: 26px;
+    background: #fff;
+    color: #333;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+}
+.trace:hover{
     background: #3a8cc3;
     color: white;
+}
+
+#portTable > tbody > .trClick{
+    background:#D8EFFB
+}
+.interNew{
+    color: #3a8cc3;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.inter{
+    position: absolute;
+    top: 14px;
+    left: 234px
+}
+.inter>div span{
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+}
+.interUp{
+    background: url("../image/portSetUp.png");
+}
+.interDown{
+    background: url("../image/portSetDown.png");
+}
+.interHightL{
+    background: url("../image/portSet03.png");
 }
 .shuxing{
    font-size: 14px;
@@ -51,7 +102,6 @@
     height: 33px;
     line-height: 33px;
     float: left;
-
 }
 .shuxingR,.shuxingRR{
     width: 757px;
@@ -86,6 +136,7 @@
     height: 33px;
     margin-right: 0;
     border-left: 1px solid #bcb4ad;
+    outline:none;
 }
 .ipInput{
     margin: 40px 0 0 25px;
@@ -101,7 +152,7 @@
     height: 26px;
     line-height: 26px;
     text-align: center;
-    background: #2e7eb3;
+    background:url("../image/traceBg.png");
     border-radius: 7px;
     color: white;
     cursor: pointer;
@@ -111,7 +162,7 @@
 .save:hover{
     background: #3a8cc3;
 }
-.guanji{
+.guanji,.chongqi{
     width: 140px;
     height: 34px;
     float: left;
@@ -119,23 +170,21 @@
     text-align: center;
     font-weight: 600;
     font-size: 15px;
-    background: #3b8ec6;
+    /*background: #3b8ec6;*/
+    background: url("../image/referBg.png");
     color: white;
     border-radius: 8px;
     margin:36px 30px 0 0;
     font-family: "微软雅黑";
     cursor: pointer;
 }
-.guanji:hover{
-    background: #1b74c3;
+.guanji{
+    margin-left: 75px;
 }
-.chongqi{
-    color: #454747;
-    background: #d2d2d2;
+.guanji:hover,.chongqi:hover{
+    background: #3a8cc3;
 }
-.chongqi:hover{
-    background: #c8c7cf;
-}
+
 
 
 

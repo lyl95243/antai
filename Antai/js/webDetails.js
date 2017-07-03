@@ -4,12 +4,10 @@
 $(function () {
     //
 
-
     var esID=getQueryString("esID");
     var indexL=getQueryString("indexL");
     var type=getQueryString("type");
     // console.log(esID);
-
 
        // 请求头、头部信信息
        Ajax(
@@ -56,7 +54,7 @@ $(function () {
            "",
            false,
            function (result) {
-               // console.log(result);
+               console.log(result);
                if(result.contentType==0){
                    $(".reqBody").html(result.content)
                }else if(result.contentType==1){
@@ -87,6 +85,7 @@ $(function () {
                    var contentt=resultCon.replace(regex,"");
                    // console.log(contentt);
                    $(".resBody pre").html(contentt);
+                   // console.log(contentt);
                    $("#settingss .textWrap").html(contentt)
                }else if(result.contentType==1){
                    $(".resBody pre").remove();

@@ -76,7 +76,7 @@ $(function () {
     var evenPageTimer,chaxunPageTimer,chaxunTimer,evenTimer;  //定时器
     function evenTab() {
         Ajax(
-            "/smarteye/api/search/security/events?startTime=&endTime=&attkIP=&attkType=&proto=&level=-1&page=1&pageSize=12",
+            "/smarteye/api/search/security/events?startTime=&endTime=&attkIP=&attkType=&proto=&level=-1&page=1&pageSize=10",
             "get",
             "json",
             "",
@@ -114,7 +114,7 @@ $(function () {
                         '<td>' + arrResult[i].types + '</td>' +
                         '<td>' + levell + '</td>' +
                         '<td>' + arrResult[i].attkNum + '</td>' +
-                        '<td> <a href="JavaScript:" class="trace" style="background: url(\'../image/zhuiz.png\')">追踪</a></td></tr>';
+                        '<td> <a href="JavaScript:" class="trace">追踪</a></td></tr>';
                     // var tr = document.createElement("tr");
                     // tr.innerHTML = tableCon;
                     // console.log(tr);
@@ -157,109 +157,109 @@ $(function () {
                 var totalCount = result.count; // 总条数
                 var currentPage = result.curPage; // 当前页
                 var pageCount = result.pageCount;
-                var pageSize = 12;  // 每页条数
+                var pageSize = 10;  // 每页条数
                 $(".pagez span").html(pageCount)
-                var options = {
-                    bootstrapMajorVersion: 2,
-                    currentPage: currentPage,
-                    totalPages: pageCount,
-                    numberOfPages: 5,
-                    itemTexts: function (type, page, current) {
-                        switch (type) {
-                            case "first":
-                                return "首页";
-                            case "prev":
-                                return "上一页";
-                            case "next":
-                                return "下一页";
-                            case "last":
-                                return "末页";
-                            case "page":
-                                return page;
-                        }
-                    }, onPageClicked: function (event, originaEvent, type, page) {
-                        clearInterval(evenPageTimer)
-                        function evenTabPage() {
-                            Ajax(
-                                "/smarteye/api/search/security/events?startTime=&endTime=&attkIP=&attkType=&proto=&level=-1&page=" + page + "&pageSize=" + pageSize + "",
-                                "get",
-                                "json",
-                                "",
-                                false,
-                                function (result) {
-                                    var arrResult = eval(result.results)
-                                    tb.html("");
-                                    var tableTh = '<tr><th>最早攻击时间</th><th>最近攻击时间</th><th>黑客国家信息</th><th>攻击IP</th><th>利用协议</th><th>事件类型</th><th>危险级别</th><th>攻击次数</th><th>深度分析</th></tr>';
-                                    // var trr = document.createElement("tr");
-                                    // trr.innerHTML = (tableTh);
-                                    // $(".table tr:first-child").addClass("trr");
-                                    tb.append(tableTh);
+                   var options = {
+                       bootstrapMajorVersion: 2,
+                       currentPage: currentPage,
+                       totalPages: pageCount,
+                       numberOfPages: 5,
+                       itemTexts: function (type, page, current) {
+                           switch (type) {
+                               case "first":
+                                   return "首页";
+                               case "prev":
+                                   return "上一页";
+                               case "next":
+                                   return "下一页";
+                               case "last":
+                                   return "末页";
+                               case "page":
+                                   return page;
+                           }
+                       }, onPageClicked: function (event, originaEvent, type, page) {
+                           clearInterval(evenPageTimer)
+                           function evenTabPage() {
+                               Ajax(
+                                   "/smarteye/api/search/security/events?startTime=&endTime=&attkIP=&attkType=&proto=&level=-1&page=" + page + "&pageSize=" + pageSize + "",
+                                   "get",
+                                   "json",
+                                   "",
+                                   false,
+                                   function (result) {
+                                       var arrResult = eval(result.results)
+                                       tb.html("");
+                                       var tableTh = '<tr><th>最早攻击时间</th><th>最近攻击时间</th><th>黑客国家信息</th><th>攻击IP</th><th>利用协议</th><th>事件类型</th><th>危险级别</th><th>攻击次数</th><th>深度分析</th></tr>';
+                                       // var trr = document.createElement("tr");
+                                       // trr.innerHTML = (tableTh);
+                                       // $(".table tr:first-child").addClass("trr");
+                                       tb.append(tableTh);
 
-                                    $.each(arrResult, function (i) {
-                                        var levell = "";
-                                        if (arrResult[i].level == 1) {
-                                            levell = "低级威胁"
-                                        } else if (arrResult[i].level == 2) {
-                                            levell = "中级威胁"
-                                        } else {
-                                            levell = "高级威胁"
-                                        }
-                                        var imgSrc = "";
-                                        if (arrResult[i].location == "") {
-                                            imgSrc = "image/flags/CN.png"
-                                        } else {
-                                            imgSrc = "image/flags/" + arrResult[i].location + ".png"
-                                        }
-                                        var tableCon = '<tr><td>' + arrResult[i].attkStartTime + '</td>' +
-                                            '<td>' + arrResult[i].attkEndTime + '</td>' +
-                                            '<td class="tdImg"><img src="' + imgSrc + '">' + arrResult[i].country + '</td>' +
-                                            '<td>' + arrResult[i].attkIP + '</td>' +
-                                            '<td>' + arrResult[i].protos + '</td>' +
-                                            '<td>' + arrResult[i].types + '</td>' +
-                                            '<td>' + levell + '</td>' +
-                                            '<td>' + arrResult[i].attkNum + '</td>' +
-                                            '<td> <a href="JavaScript:" class="trace" style="background: url(\'../image/zhuiz.png\')">追踪</a></td></tr>';
+                                       $.each(arrResult, function (i) {
+                                           var levell = "";
+                                           if (arrResult[i].level == 1) {
+                                               levell = "低级威胁"
+                                           } else if (arrResult[i].level == 2) {
+                                               levell = "中级威胁"
+                                           } else {
+                                               levell = "高级威胁"
+                                           }
+                                           var imgSrc = "";
+                                           if (arrResult[i].location == "") {
+                                               imgSrc = "image/flags/CN.png"
+                                           } else {
+                                               imgSrc = "image/flags/" + arrResult[i].location + ".png"
+                                           }
+                                           var tableCon = '<tr><td>' + arrResult[i].attkStartTime + '</td>' +
+                                               '<td>' + arrResult[i].attkEndTime + '</td>' +
+                                               '<td class="tdImg"><img src="' + imgSrc + '">' + arrResult[i].country + '</td>' +
+                                               '<td>' + arrResult[i].attkIP + '</td>' +
+                                               '<td>' + arrResult[i].protos + '</td>' +
+                                               '<td>' + arrResult[i].types + '</td>' +
+                                               '<td>' + levell + '</td>' +
+                                               '<td>' + arrResult[i].attkNum + '</td>' +
+                                               '<td> <a href="JavaScript:" class="trace">追踪</a></td></tr>';
 
-                                        // var tr = document.createElement("tr");
-                                        // tr.innerHTML = tableCon;
-                                        tb.append(tableCon);
-                                        var tbb = $("#tablee");
-                                        tbb.replaceAll(tb);
-                                    });
-                                    tracHover()
-                                    // 点击追踪
-                                    $(".table").delegate("tr .trace", "click", function () {
+                                           // var tr = document.createElement("tr");
+                                           // tr.innerHTML = tableCon;
+                                           tb.append(tableCon);
+                                           var tbb = $("#tablee");
+                                           tbb.replaceAll(tb);
+                                       });
+                                       tracHover()
+                                       // 点击追踪
+                                       $(".table").delegate("tr .trace", "click", function () {
 
-                                        var index = $(this).parents("tr").index() - 1;
+                                           var index = $(this).parents("tr").index() - 1;
 
-                                        var attkStartTime = arrResult[index].attkStartTime;
-                                        var attkEndTime = arrResult[index].attkEndTime;
-                                        var attkIP = arrResult[index].attkIP;
-                                        var country = arrResult[index].country;
-                                        var types = $(".evenTypes").val();
-                                        var protos = $(".protos").val();
-                                        var level;
-                                        // console.log($(".level").val());
-                                        if ($(".level").val() == "低级威胁") {
-                                            level = 1
-                                        } else if ($(".level").val() == "中级威胁") {
-                                            level = 2
-                                        } else if ($(".level").val() == "高级威胁") {
-                                            level = 3
-                                        } else {
-                                            level = -1
-                                        }
-                                        window.open("hackersTrack.html?attkStartTime=" + attkStartTime + "&attkEndTime=" + attkEndTime + "&attkIP=" + attkIP + "&level=" + level + "&types=" + types + "&protos=" + protos + "&country=" + country + "", "_self")
-                                    })
-                                }
-                            )
-                        }
-                        evenTabPage();
-                        clearInterval(evenTimer);clearInterval(chaxunPageTimer);clearInterval(chaxunTimer)
-                        // evenPageTimer=setInterval(evenTabPage,1000)
-                    }
-                }
-                $("#yema").bootstrapPaginator(options)
+                                           var attkStartTime = arrResult[index].attkStartTime;
+                                           var attkEndTime = arrResult[index].attkEndTime;
+                                           var attkIP = arrResult[index].attkIP;
+                                           var country = arrResult[index].country;
+                                           var types = $(".evenTypes").val();
+                                           var protos = $(".protos").val();
+                                           var level;
+                                           // console.log($(".level").val());
+                                           if ($(".level").val() == "低级威胁") {
+                                               level = 1
+                                           } else if ($(".level").val() == "中级威胁") {
+                                               level = 2
+                                           } else if ($(".level").val() == "高级威胁") {
+                                               level = 3
+                                           } else {
+                                               level = -1
+                                           }
+                                           window.open("hackersTrack.html?attkStartTime=" + attkStartTime + "&attkEndTime=" + attkEndTime + "&attkIP=" + attkIP + "&level=" + level + "&types=" + types + "&protos=" + protos + "&country=" + country + "", "_self")
+                                       })
+                                   }
+                               )
+                           }
+                           evenTabPage();
+                           clearInterval(evenTimer);clearInterval(chaxunPageTimer);clearInterval(chaxunTimer)
+                           // evenPageTimer=setInterval(evenTabPage,1000)
+                       }
+                   }
+                   $("#yema").bootstrapPaginator(options)
             }
         )
     }
@@ -286,7 +286,7 @@ $(function () {
             // console.log(level);
             function chaxunTab() {
                 Ajax(
-                    "/smarteye/api/search/security/events?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&attkType=" + evenTypes + "&proto=" + protos + "&level=" + level + "&page=1&pageSize=12",
+                    "/smarteye/api/search/security/events?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&attkType=" + evenTypes + "&proto=" + protos + "&level=" + level + "&page=1&pageSize=10",
                     "get",
                     "json",
                     "",
@@ -324,7 +324,7 @@ $(function () {
                                 '<td>' + arrResult[i].types + '</td>' +
                                 '<td>' + levell + '</td>' +
                                 '<td>' + arrResult[i].attkNum + '</td>' +
-                                '<td> <a href="JavaScript:" class="trace" style="background: url(\'../image/zhuiz.png\')">追踪</a></td></tr>';
+                                '<td> <a href="JavaScript:" class="trace">追踪</a></td></tr>';
                             // var tr = document.createElement("tr");
                             // tr.innerHTML = tableCon;
                             tb.append(tableCon);
@@ -359,109 +359,111 @@ $(function () {
                         var totalCount = result.count;
                         var currentPage = result.curPage;
                         var pageCount = result.pageCount;
-                        var pageSize = 12;
+                        var pageSize = 10;
                         $(".pagez span").html(pageCount);
-                        var options = {
-                            bootstrapMajorVersion: 2,
-                            currentPage: currentPage,
-                            totalPages: pageCount,
-                            numberOfPages: 5,
-                            itemTexts: function (type, page, current) {
-                                switch (type) {
-                                    case "first":
-                                        return "首页";
-                                    case "prev":
-                                        return "上一页";
-                                    case "next":
-                                        return "下一页";
-                                    case "last":
-                                        return "末页";
-                                    case "page":
-                                        return page;
+                        if(pageCount>=1){
+                            var options = {
+                                bootstrapMajorVersion: 2,
+                                currentPage: currentPage,
+                                totalPages: pageCount,
+                                numberOfPages: 5,
+                                itemTexts: function (type, page, current) {
+                                    switch (type) {
+                                        case "first":
+                                            return "首页";
+                                        case "prev":
+                                            return "上一页";
+                                        case "next":
+                                            return "下一页";
+                                        case "last":
+                                            return "末页";
+                                        case "page":
+                                            return page;
+                                    }
+                                }, onPageClicked: function (event, originaEvent, type, page) {
+                                    clearInterval(chaxunPageTimer)
+                                    function chaxunPage() {
+                                        Ajax(
+                                            "/smarteye/api/search/security/events?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&attkType=" + evenTypes + "&proto=" + protos + "&level=" + level + "&page=" + page + "&pageSize=10",
+                                            "get",
+                                            "json",
+                                            "",
+                                            false,
+                                            function (result) {
+                                                // console.log(1);
+                                                var arrResult = eval(result.results)
+                                                tb.html("");
+                                                var tableTh = '<tr><th>最早攻击时间</th><th>最近攻击时间</th><th>黑客国家信息</th><th>攻击IP</th><th>利用协议</th><th>事件类型</th><th>危险级别</th><th>攻击次数</th><th>深度分析</th></tr>';
+                                                // var trr = document.createElement("tr");
+                                                // trr.innerHTML = (tableTh);
+                                                // $(".table tr:first-child").addClass("trr");
+                                                tb.append(tableTh);
+                                                $.each(arrResult, function (i) {
+                                                    var levell = "";
+                                                    if (arrResult[i].level == 1) {
+                                                        levell = "低级威胁"
+                                                    } else if (arrResult[i].level == 2) {
+                                                        levell = "中级威胁"
+                                                    } else {
+                                                        levell = "高级威胁"
+                                                    }
+                                                    var imgSrc = "";
+                                                    if (arrResult[i].location == "") {
+                                                        imgSrc = "image/flags/CN.png"
+                                                    } else {
+                                                        imgSrc = "image/flags/" + arrResult[i].location + ".png"
+                                                    }
+                                                    var tableCon = '<tr><td>' + arrResult[i].attkStartTime + '</td>' +
+                                                        '<td>' + arrResult[i].attkEndTime + '</td>' +
+                                                        '<td class="tdImg"><img src="' + imgSrc + '">' + arrResult[i].country + '</td>' +
+                                                        '<td>' + arrResult[i].attkIP + '</td>' +
+                                                        '<td>' + arrResult[i].protos + '</td>' +
+                                                        '<td>' + arrResult[i].types + '</td>' +
+                                                        '<td>' + levell + '</td>' +
+                                                        '<td>' + arrResult[i].attkNum + '</td>' +
+                                                        '<td> <a href="JavaScript:" class="trace">追踪</a></td></tr>';
+
+                                                    // var tr = document.createElement("tr");
+                                                    // tr.innerHTML = tableCon;
+                                                    tb.append(tableCon);
+                                                    var tbb = $("#tablee");
+                                                    tbb.replaceAll(tb);
+                                                });
+                                                tracHover()
+                                                // 点击追踪
+                                                $(".table").delegate("tr .trace", "click", function () {
+
+                                                    var index = $(this).parents("tr").index() - 1;
+
+                                                    var attkStartTime = arrResult[index].attkStartTime;
+                                                    var attkEndTime = arrResult[index].attkEndTime;
+                                                    var attkIP = arrResult[index].attkIP;
+                                                    var country = arrResult[index].country;
+                                                    var types = $(".evenTypes").val();
+                                                    var protos = $(".protos").val();
+                                                    var level;
+                                                    // console.log($(".level").val());
+                                                    if ($(".level").val() == "低级威胁") {
+                                                        level = 1
+                                                    } else if ($(".level").val() == "中级威胁") {
+                                                        level = 2
+                                                    } else if ($(".level").val() == "高级威胁") {
+                                                        level = 3
+                                                    } else {
+                                                        level = -1
+                                                    }
+                                                    window.open("hackersTrack.html?attkStartTime=" + attkStartTime + "&attkEndTime=" + attkEndTime + "&attkIP=" + attkIP + "&level=" + level + "&types=" + types + "&protos=" + protos + "&country=" + country + "", "_self")
+                                                })
+                                            }
+                                        )
+                                    };
+                                    chaxunPage();
+                                    clearInterval(chaxunTimer);clearInterval(evenPageTimer);clearInterval(evenTimer)
+                                    // chaxunPageTimer=setInterval(chaxunPage,1000)
                                 }
-                            }, onPageClicked: function (event, originaEvent, type, page) {
-                                clearInterval(chaxunPageTimer)
-                                function chaxunPage() {
-                                    Ajax(
-                                        "/smarteye/api/search/security/events?startTime=" + attkStartTime + "&endTime=" + attkEndTime + "&attkIP=" + attkIP + "&attkType=" + evenTypes + "&proto=" + protos + "&level=" + level + "&page=" + page + "&pageSize=12",
-                                        "get",
-                                        "json",
-                                        "",
-                                        false,
-                                        function (result) {
-                                            // console.log(1);
-                                            var arrResult = eval(result.results)
-                                            tb.html("");
-                                            var tableTh = '<tr><th>最早攻击时间</th><th>最近攻击时间</th><th>黑客国家信息</th><th>攻击IP</th><th>利用协议</th><th>事件类型</th><th>危险级别</th><th>攻击次数</th><th>深度分析</th></tr>';
-                                            // var trr = document.createElement("tr");
-                                            // trr.innerHTML = (tableTh);
-                                            // $(".table tr:first-child").addClass("trr");
-                                            tb.append(tableTh);
-                                            $.each(arrResult, function (i) {
-                                                var levell = "";
-                                                if (arrResult[i].level == 1) {
-                                                    levell = "低级威胁"
-                                                } else if (arrResult[i].level == 2) {
-                                                    levell = "中级威胁"
-                                                } else {
-                                                    levell = "高级威胁"
-                                                }
-                                                var imgSrc = "";
-                                                if (arrResult[i].location == "") {
-                                                    imgSrc = "image/flags/CN.png"
-                                                } else {
-                                                    imgSrc = "image/flags/" + arrResult[i].location + ".png"
-                                                }
-                                                var tableCon = '<tr><td>' + arrResult[i].attkStartTime + '</td>' +
-                                                    '<td>' + arrResult[i].attkEndTime + '</td>' +
-                                                    '<td class="tdImg"><img src="' + imgSrc + '">' + arrResult[i].country + '</td>' +
-                                                    '<td>' + arrResult[i].attkIP + '</td>' +
-                                                    '<td>' + arrResult[i].protos + '</td>' +
-                                                    '<td>' + arrResult[i].types + '</td>' +
-                                                    '<td>' + levell + '</td>' +
-                                                    '<td>' + arrResult[i].attkNum + '</td>' +
-                                                    '<td> <a href="JavaScript:" class="trace" style="background: url(\'../image/zhuiz.png\')">追踪</a></td></tr>';
-
-                                                // var tr = document.createElement("tr");
-                                                // tr.innerHTML = tableCon;
-                                                tb.append(tableCon);
-                                                var tbb = $("#tablee");
-                                                tbb.replaceAll(tb);
-                                            });
-                                            tracHover()
-                                            // 点击追踪
-                                            $(".table").delegate("tr .trace", "click", function () {
-
-                                                var index = $(this).parents("tr").index() - 1;
-
-                                                var attkStartTime = arrResult[index].attkStartTime;
-                                                var attkEndTime = arrResult[index].attkEndTime;
-                                                var attkIP = arrResult[index].attkIP;
-                                                var country = arrResult[index].country;
-                                                var types = $(".evenTypes").val();
-                                                var protos = $(".protos").val();
-                                                var level;
-                                                // console.log($(".level").val());
-                                                if ($(".level").val() == "低级威胁") {
-                                                    level = 1
-                                                } else if ($(".level").val() == "中级威胁") {
-                                                    level = 2
-                                                } else if ($(".level").val() == "高级威胁") {
-                                                    level = 3
-                                                } else {
-                                                    level = -1
-                                                }
-                                                window.open("hackersTrack.html?attkStartTime=" + attkStartTime + "&attkEndTime=" + attkEndTime + "&attkIP=" + attkIP + "&level=" + level + "&types=" + types + "&protos=" + protos + "&country=" + country + "", "_self")
-                                            })
-                                        }
-                                    )
-                                };
-                                chaxunPage();
-                                clearInterval(chaxunTimer);clearInterval(evenPageTimer);clearInterval(evenTimer)
-                                // chaxunPageTimer=setInterval(chaxunPage,1000)
-                            }
-                        };
-                        $("#yema").bootstrapPaginator(options)
+                            };
+                            $("#yema").bootstrapPaginator(options)
+                        }
                     }
                 )
             }
@@ -474,19 +476,17 @@ $(function () {
             //     clearInterval(evenTimer);clearInterval(evenPageTimer);clearInterval(chaxunPageTimer);
             //     chaxunTimer=setInterval(chaxunTab,1000)
             // }
-
         })
-
     function tracHover() {
-        $(".trace").hover(function () {
-            $(this).css({
-                background:"#3a8cc3"
-            })
-        },function () {
-            $(this).css({
-                background:"url('../image/zhuiz.png')"
-            })
-        })
+        // $(".trace").hover(function () {
+        //     $(this).css({
+        //         background:"#3a8cc3"
+        //     })
+        // },function () {
+        //     $(this).css({
+        //         background:"url('image/traceBg.png')"
+        //     })
+        // })
     };
     tracHover()
 })

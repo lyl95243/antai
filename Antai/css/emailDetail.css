@@ -2,14 +2,15 @@
     padding:0 12px 0 12px;
 }
 .rightConT{
-    height: 275px;
+    min-height: 215px;
     background: #f6f6f6;
     padding: 30px 0 0 15px;
 }
-.rightConT ul li ,.dd {
+.rightConT ul li ,.mailD {
     overflow: hidden;
+    min-height: 30px;
 }
-.rightConT ul li span{
+.rightConT ul li>span{
     color: #333;
     font-size: 14px;
     display: block;
@@ -17,10 +18,11 @@
     width: 5%;
 }
 
-.dd p{
+.mailD p{
     color: #868f9b;
     float: left;
     width: 15%;
+    height: 20px;
 }
 .traceNew {
     color: #3479c1;
@@ -37,8 +39,14 @@
     border-radius: 5px;
     background: #d2d2d2;
 }
+.attachments p a{
+    color: #21c210;
+}
+.attachments p a:hover{
+    text-decoration: none;
+}
 .rightConM{
-    height: 550px;
+    min-height: 365px;
     overflow: auto;
     padding: 15px;
     margin-top: 15px;
@@ -51,6 +59,12 @@
     padding: 12px;
     margin-top: 22px;
     border-radius: 5px;
+}
+.rightConB ul li{
+    margin: 10px 0;
+}
+.rightConB ul li span{
+    margin: 0 10px;
 }
 .fujian{
     border-bottom: 1px solid darkgray;

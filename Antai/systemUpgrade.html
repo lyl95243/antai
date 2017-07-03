@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>系统升级</title>
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css" >
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/systemUpgrade.css">
     <script src="js/jquery.min.js"></script>
@@ -12,6 +12,7 @@
     <script src=js/placehlod.js></script>
     <script src="js/common.js"></script>
     <script src="js/laydate-v1.1/laydate/laydate.js"></script>
+    <script src="js/bootstrapPaginator.js"></script>
     <script src="js/systemUpgrade.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
@@ -23,7 +24,7 @@
 <div class="header">
     <div class="logoWrap" onclick="window.open('index.html','_self')">
         <p class="logo">LOGO</p>
-        <span class="logoText">慧眼网络空间威胁感知系统</span>
+        <span class="logoText">安态网络空间威胁感知系统</span>
     </div>
     <div class="menu">
         <img src="image/menu_03.png" alt="">
@@ -66,7 +67,7 @@
                 <div class="evenXl system" style="display: block">
                     <a href="systemView.html" target="_self">系统概览</a>
                     <a href="systemSet.html" target="_self">系统设置</a>
-                    <a href="systemUpgrade.html" target="_self">系统升级</a>
+                    <a href="systemUpgrade.html" target="_self" class="evenXlHover">系统升级</a>
                     <a href="userManage.html" target="_self">用户管理</a>
                 </div>
             </div>
@@ -78,157 +79,79 @@
                 <p>系统升级</p>
             </div>
             <div class="sysSet">
-                <div class="fenxian"></div>
-                <!--固件升级-->
-                <div class="setWrap">
-                    <div class="portset portsetB">
-                        固件升级
-                    </div>
-                    <div class="setWrapXl" style="display: block">
-                        <div>
-                            <div class="shuxingR">
-                                <!--<select name="" class="threatAnalList">-->
-                                    <!--<option selected="selected">选择固件</option>-->
-                                    <!--<option value="">1</option>-->
-                                    <!--<option value="">2</option>-->
-                                    <!--<option value="">3</option>-->
-                                    <!--<option value="">4</option>-->
-                                    <!--<option value="">5</option>-->
-                                <!--</select>-->
-                                <div class="threatAnalList">
-                                    <input type="text" placeholder="选择固件">
-                                    <button id="button" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:">Action</a></li>
-                                        <li><a href="javascript:">Another action</a></li>
-                                        <li><a href="javascript:">Something else here</a></li>
-                                        <li><a href="javascript:">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <div class="upgradee">
-                                    升级
-                                </div>
-                            </div>
-                            <div style="margin:0 0 15px 25px">固件升级记录:</div>
-                            <table class="table table-striped" style="margin-left: 25px">
-                                <tr style="background: #d8d8d8">
-                                    <th>时间</th>
-                                    <th>版本</th>
-                                    <th>结果</th>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!--规则库升级-->
-                <div class="setWrap">
-                    <div class="portset">
-                        规则库升级
-                    </div>
-                    <div class="setWrapXl" style="left: -90px">
-                        <div>
-                            <div class="shuxingR">
-                                <!--<select name="" class="threatAnalList">-->
-                                    <!--<option selected="selected">选择固件</option>-->
-                                    <!--<option value="">1</option>-->
-                                    <!--<option value="">2</option>-->
-                                    <!--<option value="">3</option>-->
-                                    <!--<option value="">4</option>-->
-                                    <!--<option value="">5</option>-->
-                                <!--</select>-->
-                                <div class="threatAnalList">
-                                    <input type="text" placeholder="选择固件">
-                                    <button id="button2" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="javascript:">Action</a></li>
-                                        <li><a href="javascript:">Another action</a></li>
-                                        <li><a href="javascript:">Something else here</a></li>
-                                        <li><a href="javascript:">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <div class="upgradee">
-                                    升级
-                                </div>
-                            </div>
-                            <div style="margin:0 0 15px 25px">规则库升级记录:</div>
-                            <table class="table table-striped" style="margin-left: 25px">
-                                <tr style="background: #d8d8d8">
-                                    <th>时间</th>
-                                    <th>版本</th>
-                                    <th>结果</th>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                                <tr>
-                                    <td>2016.01.02</td>
-                                    <td>10.1.2(16D32)</td>
-                                    <td>成功</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                <!--<div class="fenxian"></div>-->
+                <div class="rightTab">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#gujianCon" aria-controls="home" role="tab"
+                                                                  data-toggle="tab">固件升级</a>
+                        </li>
+                        <li role="presentation"><a href="#guizekuCon" aria-controls="profile" role="tab"
+                                                   data-toggle="tab">运行模式</a>
+                        </li>
+                    </ul>
+                   <div class="tab-content">
+                       <!--固件升级-->
+                       <div role="tabpanel" class="tab-pane fade in active" id="gujianCon">
+                           <div class="setWrapXl" style="display: block">
+                               <div>
+                                   <div class="shuxingR">
+                                       <form id="form" action="" enctype="multipart/form-data" name="" method="post">
+                                           <a href="javascript:;" class="file">选择固件
+                                               <input if="file" type="file" name="" id="">
+                                           </a>
+                                           <button type="submit" class="upgradee" id="gujian">升级</button>
+                                       </form>
+                                   </div>
+                                   <div class="gujianNow">当前版本: <span></span></div>
+                                   <div style="margin:0 0 15px 0">固件升级记录:</div>
+                                   <div style="width: 40%;">
+                                       <div style="min-height: 335px;">
+                                           <table class="table table-striped" id="gujianTab">
+
+                                           </table>
+                                       </div>
+                                       <div id="yema"></div>
+                                       <div style="float: right; margin:30px 3% 3% 0;">
+                                           <span class="pageTotal pagee">每页显示: <span>10</span></span>
+                                           <span class="pageTotal pagez">总页数: <span></span></span>
+                                       </div>
+                                   </div>
+                                   <!--页码部分-->
+                               </div>
+                           </div>
+                       </div>
+                       <!--规则库升级-->
+                       <div role="tabpanel" class="tab-pane fade" id="guizekuCon">
+                           <div class="setWrapXl">
+                               <div>
+                                   <div class="shuxingR">
+                                       <form id="formGZK" action="" enctype="multipart/form-data" name="" method="post">
+                                           <a href="javascript:;" class="file">选择规则库
+                                               <input type="file" name="">
+                                           </a>
+                                           <button type="submit" class="upgradee" id="guizeku">升级</button>
+                                       </form>
+                                   </div>
+                                   <div class="guizeNow">当前版本: <span></span></div>
+                                   <div style="margin:0 0 15px 0px">规则库升级记录:</div>
+                                   <div style="width: 40%;">
+                                       <div style="min-height: 335px;">
+                                           <table class="table table-striped" id="guizekTab">
+
+                                           </table>
+                                       </div>
+                                       <div id="yemaa"></div>
+                                       <div style="float: right; margin:30px 3% 3% 0;">
+                                           <span class="pageTotal pagee">每页显示: <span>10</span></span>
+                                           <span class="pageTotal pagezz">总页数: <span></span></span>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

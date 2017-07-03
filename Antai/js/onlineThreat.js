@@ -52,7 +52,7 @@ $(function () {
         ],
         series: [
             {
-                name: 'ECharts例子个数统计',
+                name: '上网IP数量',
                 type: 'bar',
                 itemStyle: {
                     normal: {
@@ -105,7 +105,7 @@ $(function () {
         ],
         series: [
             {
-                name: 'ECharts例子个数统计',
+                name: '事件类型数量',
                 type: 'bar',
                 itemStyle: {
                     normal: {
